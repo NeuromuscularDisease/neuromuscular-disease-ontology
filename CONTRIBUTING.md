@@ -20,6 +20,12 @@ changes to this document in a pull request.
 
 ## Guidelines for Contributions and Requests
 
+<a id="github-quickstart-guide"></a>
+
+### Getting started with Github
+
+If you're new to Github or would like a short refresher please checkout the [Github quickstart guide](https://docs.github.com/en/get-started/start-your-journey/hello-world). It is a short hands-on tutorial that teaches you GitHub essentials like repositories, branches, commits, and pull requests. 
+
 <a id="reporting-bugs"></a>
 
 ### Reporting problems with the ontology
