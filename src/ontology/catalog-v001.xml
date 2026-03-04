@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+<?xml version='1.0' encoding='UTF-8'?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
   <group id="odk-managed-catalog" prefer="public">
-    <uri name="http://purl.obolibrary.org/obo/nmdo/imports/merged_import.owl" uri="imports/merged_import.owl"/>
+    <uri name="https://w3id.org/nmdo/imports/merged_import.owl" uri="imports/merged_import.owl" />
+    <uri name="https://w3id.org/nmdo/components/nmdo_extra.owl" uri="components/nmdo_extra.owl" />
   </group>
 </catalog>

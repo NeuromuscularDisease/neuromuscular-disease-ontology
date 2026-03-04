@@ -2,7 +2,7 @@
 ![Build Status](https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/actions/workflows/qc.yml/badge.svg)
 # Neuromuscular Disease Ontology
 
-Description: None
+Description: The Neuromuscular Disease Ontology (NMDO) is a project ontology built to support the mapping and integration of NMD datasets.
 
 More information can be found at http://obofoundry.org/ontology/nmdo
 

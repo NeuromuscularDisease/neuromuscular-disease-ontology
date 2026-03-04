@@ -13,6 +13,6 @@ WHERE {
     oboInOwl:inSubset
     dcterms:contributor  }
   ?term ?property ?value .
-  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/NMDO_")))
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "https://w3id.org/NMDO_")))
   FILTER (!isIRI(?value))
 }

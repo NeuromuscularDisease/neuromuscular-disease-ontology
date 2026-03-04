@@ -1,0 +1,4 @@
+IAO:0000111   # editor preferred term
+IAO:0000115   # definition
+IAO:0000116   # editor note
+IAO:0100001   # term replaced by

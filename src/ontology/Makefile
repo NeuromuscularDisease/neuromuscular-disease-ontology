@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                5e3d3841d686ca5274c05b6dee20df3d34553098a68155e34854ffa7ec40be7a
+CONFIG_HASH=                d5fa23f07c478ada7e369261a38981d004ec930245f70b794a162f70bcc30cef
 
 
 # ----------------------------------------
@@ -19,10 +19,10 @@ CONFIG_HASH=                5e3d3841d686ca5274c05b6dee20df3d34553098a68155e34854
 # these can be overwritten on the command line
 
 OBOBASE=                    http://purl.obolibrary.org/obo
-URIBASE=                    http://purl.obolibrary.org/obo
+URIBASE=                    https://w3id.org
 ONT=                        nmdo
-ONTBASE=                    http://purl.obolibrary.org/obo/nmdo
-EDIT_FORMAT=                owl
+ONTBASE=                    https://w3id.org/nmdo
+EDIT_FORMAT=                obo
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 MAKE_FAST=                  $(MAKE) IMP=false PAT=false COMP=false MIR=false
 CATALOG=                    catalog-v001.xml
@@ -57,7 +57,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 
+OTHER_SRC =                 $(COMPONENTSDIR)/nmdo_extra.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -187,7 +187,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  hp mondo
+IMPORTS =  go hgnc hp iao mondo nbo ncbitaxon pato ro so uberon
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -379,7 +379,7 @@ $(IMPORTSEED): $(PRESEED) | $(TMPDIR)
 
 T_IMPORTSEED = --term-file $(IMPORTSEED)
 
-ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref rdfs:comment 
+ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0100001 oboInOwl:consider 
 
 # ----------------------------------------
 # Import modules
@@ -398,11 +398,11 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals include \
-		         --method BOT \
+		         --method STAR \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		        --select complement --select annotation-properties \
-		 odk:normalize --base-iri http://purl.obolibrary.org/obo \
+		 odk:normalize --base-iri https://w3id.org \
 		               --subset-decls true --synonym-decls true \
 		 repair --merge-axiom-annotations true \
 		 $(ANNOTATE_CONVERT_FILE)
@@ -434,10 +434,69 @@ no-mirror-refresh-%:
 		IMP=true IMP_LARGE=true MIR=false PAT=false $(IMPORTDIR)/$*_import.owl
 
 # ----------------------------------------
+# Components
+# ----------------------------------------
+# Some ontologies contain external and internal components. A component is included in the ontology in its entirety.
+
+ifeq ($(COMP),true)
+.PHONY: all_components
+all_components: $(OTHER_SRC)
+
+.PHONY: recreate-components
+recreate-components:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-nmdo_extra.owl \
+		COMP=true IMP=false MIR=true PAT=true all_components
+
+.PHONY: no-mirror-recreate-components
+no-mirror-recreate-components:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-nmdo_extra.owl \
+		COMP=true IMP=false MIR=false PAT=true all_components
+
+.PHONY: recreate-%
+recreate-%:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-$*.owl \
+		COMP=true IMP=false MIR=true PAT=true $(COMPONENTSDIR)/$*.owl
+
+.PHONY: no-mirror-recreate-%
+no-mirror-recreate-%:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-$*.owl \
+		COMP=true IMP=false MIR=false PAT=true $(COMPONENTSDIR)/$*.owl
+
+$(COMPONENTSDIR)/%.owl: $(TMPDIR)/stamp-component-%.owl | $(COMPONENTSDIR)
+	test -f $@ || touch $@
+.PRECIOUS: $(COMPONENTSDIR)/%.owl
+
+$(TMPDIR)/stamp-component-%.owl: | $(TMPDIR)
+	touch $@
+.PRECIOUS: $(TMPDIR)/stamp-component-%.owl
+
+$(COMPONENTSDIR)/nmdo_extra.owl: $(TEMPLATEDIR)/nmdo.tsv $(TMPDIR)/stamp-component-nmdo_extra.owl
+	$(ROBOT) template --input imports/merged_import.owl \
+		 --template $(TEMPLATEDIR)/nmdo.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/nmdo_extra.owl
+
+endif # COMP=true
+# ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------
 
 ifeq ($(MIR),true)
+
+
+## ONTOLOGY: go
+.PHONY: mirror-go
+.PRECIOUS: $(MIRRORDIR)/go.owl
+mirror-go: | $(TMPDIR)
+	curl -L $(OBOBASE)/go.owl --create-dirs -o $(TMPDIR)/go-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/go-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: hgnc
+.PHONY: mirror-hgnc
+.PRECIOUS: $(MIRRORDIR)/hgnc.owl
+mirror-hgnc: | $(TMPDIR)
+	$(ROBOT) convert -I https://data.monarchinitiative.org/dipper-kg/final/rdf/hgnc.ttl -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: hp
@@ -448,12 +507,66 @@ mirror-hp: | $(TMPDIR)
 	$(ROBOT) convert -i $(TMPDIR)/hp-download.owl -o $(TMPDIR)/$@.owl
 
 
+## ONTOLOGY: iao
+.PHONY: mirror-iao
+.PRECIOUS: $(MIRRORDIR)/iao.owl
+mirror-iao: | $(TMPDIR)
+	curl -L $(OBOBASE)/iao.owl --create-dirs -o $(TMPDIR)/iao-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/iao-download.owl -o $(TMPDIR)/$@.owl
+
+
 ## ONTOLOGY: mondo
 .PHONY: mirror-mondo
 .PRECIOUS: $(MIRRORDIR)/mondo.owl
 mirror-mondo: | $(TMPDIR)
 	curl -L $(OBOBASE)/mondo/mondo-base.owl --create-dirs -o $(TMPDIR)/mondo-download.owl --retry 4 --max-time 500 && \
 	$(ROBOT) convert -i $(TMPDIR)/mondo-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: nbo
+.PHONY: mirror-nbo
+.PRECIOUS: $(MIRRORDIR)/nbo.owl
+mirror-nbo: | $(TMPDIR)
+	curl -L $(OBOBASE)/nbo.owl --create-dirs -o $(TMPDIR)/nbo-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/nbo-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: ncbitaxon
+.PHONY: mirror-ncbitaxon
+.PRECIOUS: $(MIRRORDIR)/ncbitaxon.owl
+mirror-ncbitaxon: | $(TMPDIR)
+	$(ROBOT) convert -I http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: pato
+.PHONY: mirror-pato
+.PRECIOUS: $(MIRRORDIR)/pato.owl
+mirror-pato: | $(TMPDIR)
+	curl -L $(OBOBASE)/pato.owl --create-dirs -o $(TMPDIR)/pato-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/pato-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: ro
+.PHONY: mirror-ro
+.PRECIOUS: $(MIRRORDIR)/ro.owl
+mirror-ro: | $(TMPDIR)
+	curl -L $(OBOBASE)/ro.owl --create-dirs -o $(TMPDIR)/ro-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/ro-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: so
+.PHONY: mirror-so
+.PRECIOUS: $(MIRRORDIR)/so.owl
+mirror-so: | $(TMPDIR)
+	curl -L $(OBOBASE)/so.owl --create-dirs -o $(TMPDIR)/so-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/so-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: uberon
+.PHONY: mirror-uberon
+.PRECIOUS: $(MIRRORDIR)/uberon.owl
+mirror-uberon: | $(TMPDIR)
+	$(ROBOT) convert -I http://purl.obolibrary.org/obo/uberon/subsets/human-view.owl -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
@@ -585,11 +698,15 @@ validate-all-tsv: $(ALL_TSV_FILES)
 $(EXTENDED_PREFIX_MAP): /tools/obo.epm.json
 	cp $< $@
 
-
+.PHONY: normalize_obo_src
+normalize_obo_src: $(SRC) | all_robot_plugins
+	$(ROBOT) repair -i $< --merge-axiom-annotations true \
+		 convert -o $(TMPDIR)/NORM.tmp.obo && \
+	mv $(TMPDIR)/NORM.tmp.obo $(SRC)
 
 .PHONY: normalize_src
 normalize_src: $(SRC)
-	$(ROBOT) convert -i $< -f ofn -o $(TMPDIR)/normalise && mv $(TMPDIR)/normalise $<
+	$(ROBOT) convert -i $< -f obo --check false -o $(TMPDIR)/normalise && mv $(TMPDIR)/normalise $<
 
 .PHONY: validate_idranges
 validate_idranges:
@@ -653,6 +770,7 @@ Imports management:
 Editor utilities:
 * validate_idranges:	Make sure your ID ranges file is formatted correctly
 * normalize_src:	Load and save your nmdo-edit file after you to make sure its serialised correctly
+* normalize_obo_src:	Load and save your nmdo-edit.obo file after you to merge duplicate annotation assertions
 * explain_unsat:	If you have unsatisfiable classes, this command will create a markdown file (tmp/explain_unsat.md) which will explain all your unsatisfiable classes
 * validate-all-tsv:	Check all your tsv files for possible problems in syntax. Use ALL_TSV_FILES variable to list files
 * validate-tsv:		Check a tsv file for syntactic problems with tsvalid. Use TSV variable to pass filepath, e.g. make TSV=../my.tsv validate-tsv.
