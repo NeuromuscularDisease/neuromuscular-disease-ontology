@@ -1,0 +1,23 @@
+format-version: 1.2
+import: https://w3id.org/nmdo/components/nmdo_extra.owl
+import: https://w3id.org/nmdo/imports/merged_import.owl
+ontology: nmdo
+property_value: http://purl.org/dc/terms/description "The Neuromuscular Disease Ontology is a project ontology built to support the mapping and integration of NMD datasets." xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/unspecified
+property_value: http://purl.org/dc/terms/title "Neuromuscular Disease Ontology" xsd:string
+
+[Typedef]
+id: http://purl.org/dc/terms/description
+name: description
+is_metadata_tag: true
+
+[Typedef]
+id: http://purl.org/dc/terms/license
+name: license
+is_metadata_tag: true
+
+[Typedef]
+id: http://purl.org/dc/terms/title
+name: title
+is_metadata_tag: true
+

@@ -3,40 +3,103 @@ title: "Neuromuscular Disease Ontology"
 github_org: NeuromuscularDisease
 repo: neuromuscular-disease-ontology
 git_main_branch: main
+uribase: https://w3id.org
+create_obo_metadata: FALSE
+remove_owl_nothing: TRUE
 release_artefacts: 
   - full
 #  - base
 primary_release: full
+edit_format: obo
 export_formats:
   - owl
   - obo
 #  - json
+use_templates: TRUE
 import_group:
   use_base_merging: TRUE
   mirror_max_time_download: 500
   annotation_properties:
     - rdfs:label
-    - IAO:0000115
-    - IAO:0000116
-    - IAO:0000111
+    - IAO:0000115   # definition
+    - IAO:0000116   # editor note
+    - IAO:0000111   # editor preferred term
     - oboInOwl:hasDbXref
+    - oboInOwl:source
     - rdfs:comment
+    - rdfs:seeAlso
+    - oboInOwl:hasAlternativeId
+    - oboInOwl:hasBroadSynonym
+    - oboInOwl:hasExactSynonym
+    - oboInOwl:hasNarrowSynonym
+    - oboInOwl:hasRelatedSynonym
+    - oboInOwl:hasSynonymType
+    - oboInOwl:SynonymTypeProperty
+    - skos:broadMatch
+    - skos:closeMatch
+    - skos:exactMatch
+    - skos:narrowMatch
+    - skos:relatedMatch
+    - owl:deprecated
+    - IAO:0100001   # term replaced by
+    - oboInOwl:consider
+  module_type: slme
+  module_type_slme: STAR
   products: 
+    - id: go
+      module_type: filter
+      base_iris:
+        - GO
+    - id: hgnc
+      mirror_from: https://data.monarchinitiative.org/dipper-kg/final/rdf/hgnc.ttl
+      module_type: filter
+      base_iris:
+        - "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:"
     - id: hp
       use_base: TRUE
+    - id: iao
+      module_type: filter
+      base_iris:
+        - IAO
     - id: mondo
       use_base: TRUE
+    - id: nbo
+      module_type: filter
+      base_iris:
+        - NBO
+    - id: ncbitaxon
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+      module_type: filter
+      base_iris:
+        - http://purl.obolibrary.org/obo/NCBITaxon_
 #    - id: ncit
 #      is_large: TRUE
 #      make_base: TRUE
 #      base_iris:
 #        - NCIT
+    - id: pato
+      module_type: filter
+    - id: ro
+      module_type: filter
+    - id: so
+      module_type: filter
+    - id: uberon
+      mirror_from: http://purl.obolibrary.org/obo/uberon/subsets/human-view.owl
+      module_type: filter
+      base_iris:
+        - UBERON
+components:
+  products:
+    - filename: nmdo_extra.owl
+      use_template: TRUE
+      template_options: --input imports/merged_import.owl
+      templates:
+        - nmdo.tsv
 robot_report:
   use_labels: TRUE
   fail_on: ERROR
   report_on:
     - edit
 robot_java_args: '-Xmx16G'
-remove_owl_nothing: TRUE
 documentation:
   documentation_system: mkdocs
