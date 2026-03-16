@@ -10,9 +10,7 @@ Description: The Neuromuscular Disease Ontology (NMDO) is a project ontology bui
 
 The latest version of the ontology can always be found at:
 
-http://purl.obolibrary.org/obo/nmdo.owl
-
-(note this will not show up until the request has been approved by obofoundry.org)
+[https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/releases](https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/releases)
 
 ### Editors' version
 
@@ -20,7 +18,7 @@ Editors of this ontology should use the edit version, [src/ontology/nmdo-edit.ow
 
 ## Contact
 
-Please use this GitHub repository's [Issue tracker](https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/issues) to request new terms/classes or report errors or specific concerns related to the ontology.
+Please use this GitHub repository's [Issue tracker](https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/issues) to request changes or report errors or specific concerns related to the ontology.
 
 ## Acknowledgements
 
