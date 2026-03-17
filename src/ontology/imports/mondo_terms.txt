@@ -810,7 +810,7 @@ MONDO:0019952
 MONDO:0020120
 MONDO:0020121
 MONDO:0020122
-MONDO:0020123
+MONDO:0020123  # metabolic myopathy
 MONDO:0020124
 MONDO:0020125
 MONDO:0020126
@@ -929,3 +929,21 @@ MONDO:0005071  # nervous system disorder
 MONDO:0000437  # cerebellar ataxia
 MONDO:0002412  # disorder of glycogen metabolism
 MONDO:0005395  # movement disorder
+MONDO:0001397  # mononeuropathy
+MONDO:0001583  # diabetic polyneuropathy
+MONDO:0001824  # polyneuropathy
+MONDO:0001904  # polyneuropathy due to drug
+MONDO:0001957  # critical illness polyneuropathy
+MONDO:0002173  # neuroma
+MONDO:0003615  # nerve compression syndrome
+MONDO:0004372  # chronic toxic polyneuropathy
+MONDO:0004569  # brachial plexus neuropathy from injury
+MONDO:0005244  # peripheral neuropathy
+MONDO:0005336  # myopathy
+MONDO:0006645  # alcoholic polyneuropathy
+MONDO:0006888  # paraneoplastic neuropathy
+MONDO:0018940  # congenital myasthenic syndrome
+MONDO:0023757  # meralgia paresthetica
+MONDO:0700058  # Morton neuroma
+MONDO:0700303  # Erb palsy
+MONDO:0800207  # neuropathy, small fiber
