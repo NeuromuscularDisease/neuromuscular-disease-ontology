@@ -12,10 +12,10 @@ changes to this document in a pull request.
     * [Getting started with GitHub](#github-quickstart-guide)
     * [Reporting problems with the ontology](#reporting-bugs)
     * [Requesting new terms](#requesting-terms)
-    * [Adding new terms by yourself](#adding-terms)
-- [Best practices](#best-practices)
-    * [How to write a great issue?](#great-issues)
+    * [How to contribute via pull requests?](#adding-terms-and-identifying-issues)
     * [How to create a great pull/merge request?](#great-pulls)
+- [About NMDO](#about-nmdo)
+
 
 <a id="contributions"></a>
 
@@ -32,53 +32,64 @@ If you're new to GitHub or would like a short refresher, please check out the [G
 ### Reporting problems with the ontology
 
 Please use our [Issue Tracker](https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/issues/) for reporting problems with the ontology. 
-To learn how to write a good issue [see here](#great-issues).
+To learn how to write a good issue [see here](https://oboacademy.github.io/obook/explanation/writing-good-issues/).
 
 <a id="requesting-terms"></a>
 
-### Requesting new terms
+### Considerations for requesting terms to be imported from external ontologies
 
-Before you write a new request, please consider the following: 
+- **Does the term already exist?**  You can search for your term using [OLS](https://www.ebi.ac.uk/ols4/) or [Ontobee](https://ontobee.org/). 
 
-- **Does the term already exist?** Before submitting suggestions for new ontology terms, check whether the term exist, 
-either as a primary term or a synonym term. You can search for your term using [OLS](http://www.ebi.ac.uk/ols/ontologies/nmdo).
-- **Can you provide a definition for the term?** It should be very clear what the term means, and you should be
-able to provide a concise definition, ideally with a scientific reference.
-- **Is the ontology in scope for the term?** Sometimes, it is hard to tell whether a term "belongs" in
-and ontology. A rule of thumb is "if a similar term already exists, the new term is probably in scope."
-It can be very helpful to mention a very similar concept as part of the term request!
+- **Is the ontology in scope for the term?** Please be sure to align with the following hierarchy of ontologies to be incorporated:
 
-#### Who can request a term?
+    Disease – primary ontologies MONDO; secondary ORDO, SNOMED, ICD10/11
+    Phenotype – primary ontology HPO; secondary PhenX
+    Clinical assessment – primary ontologies NCIT; secondary SNOMED
+    Anatomy – primary ontology Uberon, secondary Uberon
+    Function and capacity: ICF
+    Assistive devices: ICF
+    Therapies / (life style) intervention – medical action ontology
+    Genes - HGNC
 
-Anyone can request new terms. However, there is not guarantee that your term will be added automatically. Since this is a 
-community resource, it is often necessary to do at least some of the work of adding the term yourself, see below.
+#### What if my term does not exist in any of the ontologies listed?
+
+Anyone can request new terms. However, there is no guarantee that your term will be added automatically. Some ontologies will have web forms to fill out and others will have github repos where you can request new terms via github issues. Here's a list of links to where you can request terms:
+
+[Mondo](https://github.com/monarch-initiative/mondo/issues)
+[ORDO](https://github.com/Orphanet/ORDO/issues)
+[SNOMED](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct#requests-for-change)
+[ICD11](https://icd.who.int/en/)
+[HPO](https://github.com/obophenotype/human-phenotype-ontology/issues)
+[PhenX](https://www.phenxtoolkit.org/about/contact-form)
+[NCIt](https://evsexplore.semantics.cancer.gov/evsexplore/termform)
+[Uberon](https://github.com/obophenotype/uberon/issues)
+[ICF](https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health)
+[MAxO](https://github.com/monarch-initiative/MAxO/issues)
+[HGNC](https://www.genenames.org/useful/instructions-to-authors/)
 
 #### How to write a new term request
 
-One of the best ways that you can contribute to changes in the ontology is by requesting a new term or identifying issues that you find  _via_ issues. Request a new term or point out a needed update _via_ GitHub [Issue Tracker](https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/issues/).
-
-It is important to remember that it takes a lot of time for curators to process issues submitted to the tracker.
-To make this work easier, please always use issue templates if they are available (https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/issues/new/choose).
-
-For how to write a good term request, please read the [best practices carefully](#great-issues).
+Please refer to the [OBO Academy term request guide](https://oboacademy.github.io/obook/howto/term-request/).
 
 <a id="adding-terms-and-identifying-issues"></a>
 
 ### How to contribute via pull requests
 
-If you feel comfortable making edits to the repo we ask that you follow this tutorial on [using Github to make pull requests](https://oboacademy.github.io/obook/lesson/contributing-to-obo-ontologies/#use-github-make-pull-requests). For more information on best practices related to pull requests and writing issues please visit the links below.
+If you feel comfortable making edits to the repo we ask that you follow this tutorial on [using Github to make pull requests](https://oboacademy.github.io/obook/lesson/contributing-to-obo-ontologies/#use-github-make-pull-requests). For more information on best practices related to pull requests please visit the links below.
 
 ## Best Practices
-
-<a id="great-issues"></a>
-
-### How to write great issues?
-
-Please refer to the [OBO Academy term request guide](https://oboacademy.github.io/obook/howto/term-request/).
 
 <a id="great-pulls"></a>
 
 ### How to create a great pull/merge request?
 
-Please refer to the [OBO Academy best practices](https://oboacademy.github.io/obook/howto/github-create-pull-request/)
+Please refer to the [OBO Academy best practices](https://oboacademy.github.io/obook/howto/github-create-pull-request/).
+
+## About NMDO
+
+<a id="about-nmdo"></a>
+
+### Where can I find more information about NMDO?
+
+Please refer to the [NMDO Ontology's Documentation](https://nmdo-sprints-documentation.readthedocs.io/en/latest/index.html) site.
 
