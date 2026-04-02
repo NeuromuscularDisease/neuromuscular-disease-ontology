@@ -48,24 +48,21 @@ To learn how to write a good issue [see here](https://oboacademy.github.io/obook
    - Anatomy – primary ontology Uberon, secondary Uberon
    - Function and capacity: ICF
    - Assistive devices: ICF
-   - Therapies / (life style) intervention – Medical Action Ontology
+   - Therapies / (life style) intervention – Medical Action Ontology (MAxO)
    - Genes - HGNC
 
 #### What if my term does not exist in any of the ontologies listed?
 
-Anyone can request new terms. However, there is no guarantee that your term will be added automatically. Some ontologies will have web forms to fill out and others will have github repos where you can request new terms via github issues. Here's a list of links to where you can request terms:
+Anyone can request new terms. However, there is no guarantee that your term will be added automatically. Some ontologies will have web forms to fill out and others will have GitHub repos where you can request new terms via github issues. Here's a list of links to where you can request terms:
 
-[Mondo](https://github.com/monarch-initiative/mondo/issues)
-[ORDO](https://github.com/Orphanet/ORDO/issues)
-[SNOMED](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct#requests-for-change)
-[ICD11](https://icd.who.int/en/)
-[HPO](https://github.com/obophenotype/human-phenotype-ontology/issues)
-[PhenX](https://www.phenxtoolkit.org/about/contact-form)
-[NCIt](https://evsexplore.semantics.cancer.gov/evsexplore/termform)
-[Uberon](https://github.com/obophenotype/uberon/issues)
-[ICF](https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health)
-[MAxO](https://github.com/monarch-initiative/MAxO/issues)
-[HGNC](https://www.genenames.org/useful/instructions-to-authors/)
+- [Mondo](https://github.com/monarch-initiative/mondo/issues)
+- [HPO](https://github.com/obophenotype/human-phenotype-ontology/issues)
+- [PhenX](https://www.phenxtoolkit.org/about/contact-form)
+- [NCIt](https://evsexplore.semantics.cancer.gov/evsexplore/termform)
+- [Uberon](https://github.com/obophenotype/uberon/issues)
+- [ICF](https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health)
+- [MAxO](https://github.com/monarch-initiative/MAxO/issues)
+- [HGNC](https://www.genenames.org/useful/instructions-to-authors/)
 
 #### How to write a new term request
 
@@ -91,5 +88,5 @@ Please refer to the [OBO Academy best practices](https://oboacademy.github.io/ob
 
 ### Where can I find more information about NMDO?
 
-Please refer to the [NMDO Ontology's Documentation](https://nmdo-sprints-documentation.readthedocs.io/en/latest/index.html) site.
+Please refer to the [NMDO Ontology Documentation](https://nmdo-sprints-documentation.readthedocs.io/en/latest/index.html) site.
 
