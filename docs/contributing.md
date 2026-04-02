@@ -42,14 +42,14 @@ To learn how to write a good issue [see here](https://oboacademy.github.io/obook
 
 - **Is the ontology in scope for the term?** Please be sure to align with the following hierarchy of ontologies to be incorporated:
 
-    Disease – primary ontologies MONDO; secondary ORDO, SNOMED, ICD10/11
-    Phenotype – primary ontology HPO; secondary PhenX
-    Clinical assessment – primary ontologies NCIT; secondary SNOMED
-    Anatomy – primary ontology Uberon, secondary Uberon
-    Function and capacity: ICF
-    Assistive devices: ICF
-    Therapies / (life style) intervention – medical action ontology
-    Genes - HGNC
+   - Disease – primary ontologies MONDO; secondary ORDO, SNOMED, ICD10/11
+   - Phenotype – primary ontology HPO; secondary PhenX
+   - Clinical assessment – primary ontologies NCIT; secondary SNOMED
+   - Anatomy – primary ontology Uberon, secondary Uberon
+   - Function and capacity: ICF
+   - Assistive devices: ICF
+   - Therapies / (life style) intervention – medical action ontology
+   - Genes - HGNC
 
 #### What if my term does not exist in any of the ontologies listed?
 
