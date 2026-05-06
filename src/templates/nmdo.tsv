@@ -1,2 +1,2 @@
-ID	LABEL
-ID	LABEL
+ID	Label	Definition	Deprecated	Entity Type	Superclass	Superproperty	Domain
+ID	LABEL	A rdfs:comment	A owl:deprecated	TYPE	SC %	SP %	DOMAIN
