@@ -16,13 +16,12 @@ These are the current imports in NMDO
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| go | http://purl.obolibrary.org/obo/go.owl | filter |
-| hgnc | https://data.monarchinitiative.org/dipper-kg/final/rdf/hgnc.ttl | filter |
+| hgnc | https://w3id.org/biopragmatics/resources/hgnc/hgnc.ofn | filter |
 | hp | http://purl.obolibrary.org/obo/hp.owl | slme |
 | iao | http://purl.obolibrary.org/obo/iao.owl | filter |
 | mondo | http://purl.obolibrary.org/obo/mondo.owl | slme |
-| nbo | http://purl.obolibrary.org/obo/nbo.owl | filter |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | filter |
+| ncit | http://purl.obolibrary.org/obo/ncit.owl | slme |
+| omo | http://purl.obolibrary.org/obo/omo.owl | filter |
 | pato | http://purl.obolibrary.org/obo/pato.owl | filter |
 | ro | http://purl.obolibrary.org/obo/ro.owl | filter |
 | so | http://purl.obolibrary.org/obo/so.owl | filter |

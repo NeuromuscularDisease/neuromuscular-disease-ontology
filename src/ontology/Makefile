@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                d5fa23f07c478ada7e369261a38981d004ec930245f70b794a162f70bcc30cef
+CONFIG_HASH=                a9815c3ea1e11b9a1d0c2548c45555fc8d70ae5bfc3d409941e8499a3861f6bb
 
 
 # ----------------------------------------
@@ -187,7 +187,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  go hgnc hp iao mondo nbo ncbitaxon pato ro so uberon
+IMPORTS =  hgnc hp iao mondo ncit omo pato ro so uberon
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -379,7 +379,7 @@ $(IMPORTSEED): $(PRESEED) | $(TMPDIR)
 
 T_IMPORTSEED = --term-file $(IMPORTSEED)
 
-ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0100001 oboInOwl:consider 
+ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
 
 # ----------------------------------------
 # Import modules
@@ -395,9 +395,25 @@ ALL_TERMS = $(foreach imp, $(IMPORTS), $(IMPORTDIR)/$(imp)_terms.txt)
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 				$(IMPORTSEED) | all_robot_plugins
 	$(ROBOT) merge --input $< \
+		 remove --select "<http://purl.obolibrary.org/obo/BFO_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/CHEBI_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/CHR_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/CL_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/CLM_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/PR_*>" \
+		 remove --select "<https://bioregistry.io/*>" \
+		 remove --select "<http://purl.uniprot.org/uniprot/*>" \
+		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
+		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
-		         --individuals include \
+		         --individuals exclude \
 		         --method STAR \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
@@ -484,19 +500,11 @@ endif # COMP=true
 ifeq ($(MIR),true)
 
 
-## ONTOLOGY: go
-.PHONY: mirror-go
-.PRECIOUS: $(MIRRORDIR)/go.owl
-mirror-go: | $(TMPDIR)
-	curl -L $(OBOBASE)/go.owl --create-dirs -o $(TMPDIR)/go-download.owl --retry 4 --max-time 500 && \
-	$(ROBOT) convert -i $(TMPDIR)/go-download.owl -o $(TMPDIR)/$@.owl
-
-
 ## ONTOLOGY: hgnc
 .PHONY: mirror-hgnc
 .PRECIOUS: $(MIRRORDIR)/hgnc.owl
 mirror-hgnc: | $(TMPDIR)
-	$(ROBOT) convert -I https://data.monarchinitiative.org/dipper-kg/final/rdf/hgnc.ttl -o $(TMPDIR)/$@.owl
+	$(ROBOT) convert -I https://w3id.org/biopragmatics/resources/hgnc/hgnc.ofn -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: hp
@@ -523,19 +531,22 @@ mirror-mondo: | $(TMPDIR)
 	$(ROBOT) convert -i $(TMPDIR)/mondo-download.owl -o $(TMPDIR)/$@.owl
 
 
-## ONTOLOGY: nbo
-.PHONY: mirror-nbo
-.PRECIOUS: $(MIRRORDIR)/nbo.owl
-mirror-nbo: | $(TMPDIR)
-	curl -L $(OBOBASE)/nbo.owl --create-dirs -o $(TMPDIR)/nbo-download.owl --retry 4 --max-time 500 && \
-	$(ROBOT) convert -i $(TMPDIR)/nbo-download.owl -o $(TMPDIR)/$@.owl
+## ONTOLOGY: ncit
+.PHONY: mirror-ncit
+.PRECIOUS: $(MIRRORDIR)/ncit.owl
+ifeq ($(IMP_LARGE),true)
+mirror-ncit: | $(TMPDIR)
+	curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(TMPDIR)/ncit-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) remove -i $(TMPDIR)/ncit-download.owl --base-iri NCIT --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
+endif
 
 
-## ONTOLOGY: ncbitaxon
-.PHONY: mirror-ncbitaxon
-.PRECIOUS: $(MIRRORDIR)/ncbitaxon.owl
-mirror-ncbitaxon: | $(TMPDIR)
-	$(ROBOT) convert -I http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -o $(TMPDIR)/$@.owl
+## ONTOLOGY: omo
+.PHONY: mirror-omo
+.PRECIOUS: $(MIRRORDIR)/omo.owl
+mirror-omo: | $(TMPDIR)
+	curl -L $(OBOBASE)/omo.owl --create-dirs -o $(TMPDIR)/omo-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/omo-download.owl -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: pato
