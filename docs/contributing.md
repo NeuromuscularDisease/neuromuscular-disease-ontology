@@ -45,7 +45,6 @@ To learn how to write a good issue [see here](https://oboacademy.github.io/obook
    - Disease – primary ontologies MONDO; secondary ORDO, SNOMED, ICD10/11
    - Phenotype – primary ontology HPO; secondary PhenX
    - Clinical assessment – primary ontologies NCIT; secondary SNOMED
-   - Anatomy – primary ontology Uberon, secondary Uberon
    - Function and capacity: ICF
    - Assistive devices: ICF
    - Therapies / (life style) intervention – Medical Action Ontology (MAxO)
@@ -59,7 +58,6 @@ Anyone can request new terms. However, there is no guarantee that your term will
 - [HPO](https://github.com/obophenotype/human-phenotype-ontology/issues)
 - [PhenX](https://www.phenxtoolkit.org/about/contact-form)
 - [NCIt](https://evsexplore.semantics.cancer.gov/evsexplore/termform)
-- [Uberon](https://github.com/obophenotype/uberon/issues)
 - [ICF](https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health)
 - [MAxO](https://github.com/monarch-initiative/MAxO/issues)
 - [HGNC](https://www.genenames.org/useful/instructions-to-authors/)
