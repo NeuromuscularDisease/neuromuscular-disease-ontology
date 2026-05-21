@@ -1,2 +1,9 @@
-ID	LABEL
-ID	LABEL
+ID	Label	Type	Parent	Parent Label
+ID		TYPE	SC % SPLIT=|	
+HP:0000005	Mode of inheritance	owl:Class	PATO:0000001	quality
+HP:0012823	Clinical modifier	owl:Class	PATO:0000001	quality
+NCIT:C20993	Research or Clinical Assessment Tool	owl:Class	NCIT:C142378	Clinical Outcome Assessment
+NCIT:C215116	Body Organ or System Test	owl:Class	NCIT:C25209	Measurement
+NCIT:C87802	Physical Strength	owl:Class	NCIT:C25209	Measurement
+SO:0000400	sequence_attribute	owl:Class	PATO:0000001	quality
+SO:0001260	sequence_collection	owl:Class	PATO:0000001	quality
