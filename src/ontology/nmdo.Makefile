@@ -63,13 +63,14 @@ mirror-hgnc: | $(TMPDIR)
 .PHONY: mirror-ncit
 .PRECIOUS: $(MIRRORDIR)/ncit.owl
 ifeq ($(IMP_LARGE),true)
-mirror-ncit: $(IMPORTDIR)/ncit_terms.txt | $(TMPDIR)
+mirror-ncit: $(IMPORTDIR)/ncit_terms.txt $(IMPORTDIR)/ncit_terms_exclude.txt | $(TMPDIR)
 	curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(TMPDIR)/ncit-download.owl --retry 4 --max-time 500 && \
 	$(ROBOT) remove -i $(TMPDIR)/ncit-download.owl --base-iri NCIT --axioms external --preserve-structure false --trim false \
 			extract --term-file $< \
 		         --force true --copy-ontology-annotations true \
 		         --individuals exclude \
-		         --method BOT \
+		         --method STAR \
+			remove --term-file $(IMPORTDIR)/ncit_terms_exclude.txt --select "self" \
 			-o $(TMPDIR)/$@.owl
 endif
 

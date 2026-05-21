@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/nmdo/imports/merged_import.owl>
-<https://w3id.org/nmdo/releases/2026-05-15/imports/merged_import.owl>
-Annotation(owl:versionInfo "2026-05-15")
+<https://w3id.org/nmdo/releases/2026-05-21/imports/merged_import.owl>
+Annotation(owl:versionInfo "2026-05-21")
 
 Declaration(Class(<http://identifiers.org/hgnc/1020>))
 Declaration(Class(<http://identifiers.org/hgnc/10379>))
@@ -2771,48 +2771,36 @@ Declaration(Class(<http://purl.obolibrary.org/obo/MONDO_7770010>))
 Declaration(Class(<http://purl.obolibrary.org/obo/MONDO_7770011>))
 Declaration(Class(<http://purl.obolibrary.org/obo/MONDO_8000012>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C100060>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C100172>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C100391>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C100779>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C101875>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C102117>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C102709>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C111361>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C112381>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C115789>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C115791>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C115795>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C115805>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C115807>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C115819>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C121360>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C121361>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C123663>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C139210>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C139223>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C141686>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C141688>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C141689>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C141700>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C141704>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C141706>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C142378>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C160969>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C170719>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C18020>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C20181>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C20189>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C172435>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C202084>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C20993>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C21154>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C211913>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C215116>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C222260>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C25209>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C38053>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C38081>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C38084>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C43431>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C62085>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C7057>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C83060>))
-Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C83146>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C83502>))
+Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C87802>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C91105>))
 Declaration(Class(<http://purl.obolibrary.org/obo/PATO_0000001>))
 Declaration(Class(<http://purl.obolibrary.org/obo/PATO_0000051>))
@@ -72353,13 +72341,15 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C100060> "Intrinsic QRS Duration")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C100060> <http://purl.obolibrary.org/obo/NCIT_C62085>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C100172> (WPAI:SHP v2.0 Questionnaire Question)
+# Class: <http://purl.obolibrary.org/obo/NCIT_C100391> (Corrected QT Interval)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C100172> "A question associated with version 2.0 of the WPAI:SHP questionnaire.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C100172> "C3639159")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C100172> "WPAI:SHP v2.0 Questionnaire Question")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C100172> "WPAI:SHP v2.0 Questionnaire Question")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C100172> <http://purl.obolibrary.org/obo/NCIT_C211913>)
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C100391> "The time interval between the start of the Q wave and the end of the T wave in the cardiac cycle as corrected with a non-specified correction formula.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C100391> "C0860814")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C100391> "Corrected QT Interval")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C100391> "QTc Correction Method Unspecified")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C100391> "QTc Interval")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C100391> "Corrected QT Interval")
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C100391> <http://purl.obolibrary.org/obo/NCIT_C62085>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C100779> (Work Productivity and Activity Impairment Specific Health Problems Version 2.0 Questionnaire)
 
@@ -72371,14 +72361,6 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C100779> "Work Productivity and Activity Impairment Specific Health Problems Version 2.0 Questionnaire")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C100779> <http://purl.obolibrary.org/obo/NCIT_C91105>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C101875> (EQ-5D-5L Questionnaire Question)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C101875> "A question associated with the EQ-5D-5L questionnaire.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C101875> "C3640281")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C101875> "EQ-5D-5L Questionnaire Question")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C101875> "EQ-5D-5L Questionnaire Question")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C101875> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
 # Class: <http://purl.obolibrary.org/obo/NCIT_C102117> (European Quality of Life Five Dimension Five Level Scale Questionnaire)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C102117> "A standardized rating scale which is used as a measure of health outcome. This instrument is a descriptive system consisting of 5 dimensions: mobility, self-care, usual activity, pain/discomfort, and anxiety/depression. Each dimension has 5 levels ranging from no problem to extreme problem or incapable, which are assessed by the patient.")
@@ -72388,15 +72370,6 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C102117> "European Quality of Life Five Dimension Five Level Scale Questionnaire")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C102117> "European Quality of Life Five Dimension Five Level Scale Questionnaire")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C102117> <http://purl.obolibrary.org/obo/NCIT_C91105>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C102709> (Short QTc Interval)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C102709> "An electrocardiographic finding of a QT interval corrected for heart rate that is shorter than the lower limit of normal. Thresholds for different age, sex, and patient populations exist.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C102709> "C3640899")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C102709> "SHORT QTC INTERVAL")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C102709> "Short QTc Interval")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C102709> "Short QTc Interval")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C102709> <http://purl.obolibrary.org/obo/NCIT_C7057>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C111361> (Forced Vital Capacity)
 
@@ -72447,33 +72420,6 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C115795> "Timed Up and Go Functional Test")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C115795> <http://purl.obolibrary.org/obo/NCIT_C222260>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C115805> (6MWT - Distance at 6 Minutes)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C115805> "6 Minute Walk Test (6MWT) Distance at 6 minutes.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C115805> "C3900190")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C115805> "6MWT - Distance at 6 Minutes")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C115805> "SIXMW1-Distance at 6 Minutes")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C115805> "6MWT - Distance at 6 Minutes")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C115805> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C115807> (NHPT - Time to Complete 9-Hole Peg Test)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C115807> "Nine-Hole Peg Test (NHPT) Time in seconds to complete 9-Hole Peg Test.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C115807> "C3898195")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C115807> "NHPT - Time to Complete 9-Hole Peg Test")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C115807> "NHPT01-Time to Complete 9-Hole Peg Test")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C115807> "NHPT - Time to Complete 9-Hole Peg Test")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C115807> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C115819> (TUG - Time to Complete TUG Test)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C115819> "Timed Up and Go (TUG) Time in seconds to complete TUG test.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C115819> "C3897375")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C115819> "TUG - Time to Complete TUG Test")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C115819> "TUG01-Time to Complete TUG Test")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C115819> "TUG - Time to Complete TUG Test")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C115819> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
 # Class: <http://purl.obolibrary.org/obo/NCIT_C121360> (Manual Muscle Testing)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C121360> "A graded muscle strength measurement performed as part of a physical examination without the need for specialized equipment.")
@@ -72508,15 +72454,7 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C139210> "C0429271")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CTRP") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C139210> "Grip Strength")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C139210> "Grip Strength")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C139210> <http://purl.obolibrary.org/obo/NCIT_C20189>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C139223> (Brooke Modified Medical Research Council Manual Muscle Test Score, Abduction)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C139223> "The numerical value that represents the result of a clinical assessment of muscle strength and function during abduction that is based on the Brooke Modified Medical Research Council Manual Muscle Test. (Brooke MH, Griggs RC, Mendell JR, Fenichel GM, et al. Clinical trial in Duchenne dystrophy. I. The design of the protocol. Muscle Nerve. 1981 May-Jun;4(3):186-97. doi:10.1002/mus.880040304).")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C139223> "Brooke Modified Medical Research Council Manual Muscle Test Score, Abduction")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C139223> "Brooke mMRC MMT Score, Abduction")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C139223> "Brooke Modified Medical Research Council Manual Muscle Test Score, Abduction")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C139223> <http://purl.obolibrary.org/obo/NCIT_C20189>)
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C139210> <http://purl.obolibrary.org/obo/NCIT_C87802>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C141686> (10-Meter Walk/Run Test Functional Test)
 
@@ -72549,29 +72487,14 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C141689> "Four Stair Ascend Test Functional Test")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C141689> <http://purl.obolibrary.org/obo/NCIT_C222260>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C141700> (10-Meter Walk/Run - Time to Walk/Run 10 Meters)
+# Class: <http://purl.obolibrary.org/obo/NCIT_C142378> (Clinical Outcome Assessment)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C141700> "Ten Meter Walk/Run Test (10 Meter Walk/Run) Time to walk or run 10 meters.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C141700> "10-Meter Walk/Run - Time to Walk/Run 10 Meters")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C141700> "TENMW1-Time to Walk/Run 10 Meters")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C141700> "10-Meter Walk/Run - Time to Walk/Run 10 Meters")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C141700> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C141704> (4-Stair Descend - Time to Do 4-Stair Descend)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C141704> "Four Stair Descend Test (4 Stair Descend) Time taken to descend 4 stairs.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C141704> "4-Stair Descend - Time to Do 4-Stair Descend")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C141704> "D4STR1-Time to Do 4-Stair Descend")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C141704> "4-Stair Descend - Time to Do 4-Stair Descend")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C141704> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C141706> (4-Stair Ascend - Time to Do 4-Stair Ascend)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C141706> "Four Stair Ascend Test (4 Stair Ascend) Time taken to ascend 4 stairs.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C141706> "4-Stair Ascend - Time to Do 4-Stair Ascend")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C141706> "A4STR1-Time to Do 4-Stair Ascend")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C141706> "4-Stair Ascend - Time to Do 4-Stair Ascend")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C141706> <http://purl.obolibrary.org/obo/NCIT_C211913>)
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C142378> "A measure of a patient's symptoms, overall mental state, or the effects of a disease or condition on how the patient functions as reported by the patient, a clinician, or an observer.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C142378> "COA")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C142378> "Clinical Outcome Assessment")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC-GLOSS") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C142378> "clinical outcome assessment (COA)")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C142378> "Clinical Outcome Assessment")
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C142378> <http://purl.obolibrary.org/obo/NCIT_C25209>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C160969> (Cogstate Assessment Battery)
 
@@ -72580,42 +72503,12 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C160969> "Cogstate Assessment Battery")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C160969> <http://purl.obolibrary.org/obo/NCIT_C20993>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C170719> (SPPB Version 1.2 - Safe to Stand Five Times)
+# Class: <http://purl.obolibrary.org/obo/NCIT_C172435> (Sit to Stand Test)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C170719> "Short Physical Performance Battery Version 1.2 (SPPB Version 1.2) Chair Stand Test - Repeated Chair Stand Test: Safe to stand five times.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C170719> "SPPB Version 1.2 - Safe to Stand Five Times")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C170719> "SPPB1-Safe to Stand Five Times")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C170719> "SPPB Version 1.2 - Safe to Stand Five Times")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C170719> <http://purl.obolibrary.org/obo/NCIT_C211913>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C18020> (Diagnostic Procedure)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C18020> "Any procedure or test to diagnose a disease or disorder.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C18020> "Diagnostic Method")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CTRP") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NICHD") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C18020> "Diagnostic Procedure")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C18020> "Diagnostic Technique")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C18020> "Diagnostic Test")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C18020> "Diagnostic Procedure")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C18020> <http://purl.obolibrary.org/obo/NCIT_C43431>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C20181> (Conceptual Entity)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C20181> "An organizational header for concepts representing mostly abstract entities.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C20181> "C1254372")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C20181> "Conceptual Entity")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C20181> "Conceptual Entity")
-DisjointClasses(<http://purl.obolibrary.org/obo/NCIT_C20181> <http://purl.obolibrary.org/obo/NCIT_C20189>)
-DisjointClasses(<http://purl.obolibrary.org/obo/NCIT_C20181> <http://purl.obolibrary.org/obo/NCIT_C43431>)
-DisjointClasses(<http://purl.obolibrary.org/obo/NCIT_C20181> <http://purl.obolibrary.org/obo/NCIT_C7057>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C20189> (Property or Attribute)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C20189> "A distinguishing quality or prominent aspect of a person, object, action, process, or substance.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C20189> "C1514495")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NICHD") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C20189> "Property or Attribute")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C20189> "Property or Attribute")
-DisjointClasses(<http://purl.obolibrary.org/obo/NCIT_C20189> <http://purl.obolibrary.org/obo/NCIT_C43431>)
-DisjointClasses(<http://purl.obolibrary.org/obo/NCIT_C20189> <http://purl.obolibrary.org/obo/NCIT_C7057>)
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C172435> "A test that asks an individual to rise from sitting to a full standing position. It assesses functional lower extremity strength, transitional movements, balance, and fall risk.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CTRP") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C172435> "Sit to Stand Test")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C172435> "Sit to Stand Test")
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C172435> <http://purl.obolibrary.org/obo/NCIT_C222260>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C202084> (Eating Assessment Tool-10)
 
@@ -72636,7 +72529,6 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C20993> "Research or Clinical Assessment Tool")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/NCIT_C20993> "NCIT:C20993")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C20993> "Research or Clinical Assessment Tool")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C20993> <http://purl.obolibrary.org/obo/NCIT_C18020>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C21154> (Symptom Specific Assessment Tool)
 
@@ -72648,12 +72540,11 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C21154> "Symptom Specific Assessment Tool")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C21154> <http://purl.obolibrary.org/obo/NCIT_C20993>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C211913> (CDISC QRS Instruments Questions)
+# Class: <http://purl.obolibrary.org/obo/NCIT_C215116> (Body Organ or System Test)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C211913> "A header for CDISC Questionnaires, Ratings and Scales.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "HD") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C211913> "CDISC QRS Instruments Questions")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C211913> "CDISC QRS Instruments Questions")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C211913> <http://purl.obolibrary.org/obo/NCIT_C20181>)
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C215116> "Assessment of a body organ or a body system to find irregularities or dysfunction.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C215116> "Body Organ or System Test")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C215116> "Body Organ or System Test")
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C222260> (Clinical or Research Functional Assessment Tool)
 
@@ -72663,6 +72554,26 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C222260> "Clinical or Research Functional Assessment Tool")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C222260> <http://purl.obolibrary.org/obo/NCIT_C20993>)
 
+# Class: <http://purl.obolibrary.org/obo/NCIT_C25209> (Measurement)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C25209> "Annotation used to indicate the size or magnitude of something that was determined by comparison to a standard.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C25209> "C0242485")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C25209> "MEASUREMENT")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C25209> "Measure")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C25209> "Measurement")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C25209> "{Measure}")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C25209> "Measurement")
+
+# Class: <http://purl.obolibrary.org/obo/NCIT_C38053> (Electrocardiography)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C38053> "A procedure that displays the electrical activity of the heart.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C38053> "C1623258")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "AB") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C38053> "ECG")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "AB") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C38053> "EKG")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CTRP") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C38053> "Electrocardiography")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C38053> "Electrocardiography")
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C38053> <http://purl.obolibrary.org/obo/NCIT_C215116>)
+
 # Class: <http://purl.obolibrary.org/obo/NCIT_C38081> (Pulmonary Function Test)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C38081> "A broad range of tests that are performed to assess how well lungs inhale and exhale air and how efficiently they transfer oxygen into the blood.")
@@ -72671,7 +72582,7 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "DN") 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C38081> "Pulmonary Function Testing")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CPTAC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C38081> "Pulmonary Function Tests")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C38081> "Pulmonary Function Test")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C38081> <http://purl.obolibrary.org/obo/NCIT_C18020>)
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C38081> <http://purl.obolibrary.org/obo/NCIT_C215116>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C38084> (Forced Expiratory Volume in 1 Second)
 
@@ -72685,15 +72596,6 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C38084> "Forced Expiratory Volume in 1 Second")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C38084> <http://purl.obolibrary.org/obo/NCIT_C38081>)
 
-# Class: <http://purl.obolibrary.org/obo/NCIT_C43431> (Activity)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C43431> "An active process; excludes processes and mechanisms which fulfill biological functions.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C43431> "C0441655")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "BRIDG 3.0.3") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "BRIDG 5.3") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C43431> "Activity")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "caDSR") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C43431> "General activity")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C43431> "Activity")
-DisjointClasses(<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_C7057>)
-
 # Class: <http://purl.obolibrary.org/obo/NCIT_C62085> (ECG Measurement)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C62085> "Measurements or calculations on measurements obtained from electrocardiographic tracings.")
@@ -72701,32 +72603,7 @@ AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obol
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C62085> "ECG Measurement")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C62085> "EKG Measurement")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C62085> "ECG Measurement")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C62085> <http://purl.obolibrary.org/obo/NCIT_C20189>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C7057> (Disease, Disorder or Finding)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C7057> "A condition that is relevant to human neoplasms and non-neoplastic disorders.  This includes observations, test results, history and other concepts relevant to the characterization of human pathologic conditions.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C7057> "C1511989")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C7057> "Disease, Disorder or Finding")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C7057> "Disease, Disorder or Finding")
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C83060> (Electrocardiogram Performed)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C83060> "An indication or description that an electrocardiogram assessment has occurred.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C83060> "C2826672")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C83060> "EGPERF")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C83060> "Electrocardiogram Performed")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C83060> "Electrocardiogram Performed")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C83060> <http://purl.obolibrary.org/obo/NCIT_C20181>)
-
-# Class: <http://purl.obolibrary.org/obo/NCIT_C83146> (Electrocardiogram Test)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C83146> "A character or string that represents the full name of the ECG assessment.")
-AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C83146> "C2826754")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "CDISC") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C83146> "EGTEST")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C83146> "Electrocardiogram Test")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C83146> "Electrocardiogram Test")
-SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C83146> <http://purl.obolibrary.org/obo/NCIT_C20181>)
+SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C62085> <http://purl.obolibrary.org/obo/NCIT_C25209>)
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C83502> (PR Interval)
 
@@ -72735,6 +72612,14 @@ AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obol
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C83502> "PR Interval")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C83502> "PR Interval")
 SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C83502> <http://purl.obolibrary.org/obo/NCIT_C62085>)
+
+# Class: <http://purl.obolibrary.org/obo/NCIT_C87802> (Physical Strength)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P378> "NCI") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/NCIT_C87802> "Degree of intensity or force in regard to a physical activity.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/NCIT_P207> <http://purl.obolibrary.org/obo/NCIT_C87802> "C0237897")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "PT") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C87802> "Physical Strength")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/NCIT_P383> "SY") Annotation(<http://purl.obolibrary.org/obo/NCIT_P384> "NCI") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/NCIT_C87802> "Strength")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/NCIT_C87802> "Physical Strength")
 
 # Class: <http://purl.obolibrary.org/obo/NCIT_C91105> (Clinical or Research Assessment Questionnaire)
 

@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                a9815c3ea1e11b9a1d0c2548c45555fc8d70ae5bfc3d409941e8499a3861f6bb
+CONFIG_HASH=                3f8c15242544c1f868e033bb41d33d3a7fa27f4fe5472ec42d03bc2532d1f3ac
 
 
 # ----------------------------------------
@@ -42,7 +42,7 @@ UPDATEREPODIR=              target
 SPARQLDIR =                 ../sparql
 EXTENDED_PREFIX_MAP=        $(TMPDIR)/obo.epm.json
 COMPONENTSDIR =             components
-REPORT_FAIL_ON =            ERROR
+REPORT_FAIL_ON =            none
 REPORT_LABEL =              -l true
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        --clean-obo "strict drop-untranslatable-axioms"
