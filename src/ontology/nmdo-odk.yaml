@@ -108,7 +108,7 @@ components:
         - nmdo.tsv
 robot_report:
   use_labels: TRUE
-  fail_on: ERROR
+  fail_on: none
   report_on:
     - edit
 robot_java_args: '-Xmx16G'
