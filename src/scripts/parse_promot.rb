@@ -1,116 +1,328 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'rdf'
 require 'rdf/rdfxml'
 require 'sparql'
 require 'csv'
 
-# Header	Meaning	Generated axiom
-# SC %	SubClass	rdfs:subClassOf <value>
-# SP %	SubProperty	rdfs:subPropertyOf <value>
-# There are several others in the same family:
+PROMOT_OWL = ARGV[0] or abort "Usage: #{$0} <promot.owl> <nmdo-full.owl>"
+NMDO_OWL   = ARGV[1] or abort "Usage: #{$0} <promot.owl> <nmdo-full.owl>"
+TEMPLATES_DIR = File.expand_path('../templates', __dir__)
 
-# Header	Meaning
-# EC %	owl:equivalentClass
-# EP %	owl:equivalentProperty
-# DC %	owl:disjointWith (class)
-# DP %	owl:propertyDisjointWith
-# C %	Anonymous class expression (for use in restrictions like SC 'part of' some %)
-# The % substitution can write Manchester Syntax expressions directly in the cell, e.g.:
+# ── Load ontologies ────────────────────────────────────────────────────────────
+warn "Loading #{PROMOT_OWL}..."
+promot = RDF::Graph.load(PROMOT_OWL, format: :rdfxml)
+warn "  #{promot.count} triples"
 
-# SC %
-# 'part of' some UBERON:0000948
-# Which would generate: rdfs:subClassOf ('part of' some UBERON:0000948)
+warn "Loading #{NMDO_OWL}..."
+nmdo = RDF::Graph.load(NMDO_OWL, format: :rdfxml)
+warn "  #{nmdo.count} triples"
 
-# Headers with novel properties are declared as:
-# A <property IRI>^^xsd:datatype  with the value in that column being the annnotation that is addeed
+BASE_NS = 'urn:local:nmdo_annotations:'.freeze
 
-OWL_FILE = ARGV[0]
-warn "Loading ontology: #{OWL_FILE}"
-graph = RDF::Graph.load(OWL_FILE, format: :rdfxml)
-warn "Loaded #{graph.count} triples."
+# ── Routing: source ObjectProperty → target annotation key ───────────────────
+# :assesses is a special case: filler namespace determines the sub-key.
+SOURCE_PROPS = {
+  'http://purl.obolibrary.org/obo/RO_0004029'     => :associated_phenotype,
+  'http://purl.obolibrary.org/obo/PROMOT_2000006' => :associated_phenotype,
+  'http://purl.obolibrary.org/obo/RO_0000091'     => :associated_phenotype,
+  'http://purl.obolibrary.org/obo/PROMOT_2000002' => :assesses,
+  'http://purl.obolibrary.org/obo/RO_0002328'     => :associated_function,
+  'http://purl.obolibrary.org/obo/RO_0002331'     => :involved_in,
+  'http://purl.obolibrary.org/obo/RO_0001025'     => :located_in,
+}.freeze
 
-OUTPUT_FILE = File.expand_path(__dir__) + '/../templates/annotations-robot-template.csv'
-ANNOTATION_HEADERS_ROW1 = ['ID', 'Label', 'Definition', 'Entity Type']
-ANNOTATION_HEADERS_ROW2 = ['ID', 'LABEL', 'A rdfs:comment', 'TYPE']
-
-OBJECT_PROPERTIES_QUERY = SPARQL.parse(<<~SPARQL)
-  PREFIX owl:  <http://www.w3.org/2002/07/owl#>
-  PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  PREFIX obo:  <http://purl.obolibrary.org/obo/>
-
-  SELECT DISTINCT ?prop ?label ?definition
-  WHERE {
-    ?prop rdf:type owl:ObjectProperty .
-
-    OPTIONAL {
-      ?prop rdfs:label ?label .
-      FILTER(lang(?label) = "en" || lang(?label) = "")
-    }
-
-    OPTIONAL {
-      ?prop obo:IAO_0000115 ?definition .
-      FILTER(lang(?definition) = "en" || lang(?definition) = "")
-    }
-  }
-  ORDER BY ?prop
-SPARQL
-
-results = graph.query(OBJECT_PROPERTIES_QUERY)
-
-CSV.open(OUTPUT_FILE, 'w') do |csv|
-  csv << ANNOTATION_HEADERS_ROW1
-  csv << ANNOTATION_HEADERS_ROW2
-
-  seen = {}
-  results.each do |sol|
-    # id         = sol[:prop]&.to_s.strip
-    label      = sol[:label]&.to_s
-    definition = sol[:definition]&.to_s
-
-    id = "<urn:local:nmdo_annotations:#{label.gsub(/\s/, '-')}>"
-    next if seen[id]
-
-    seen[id] = true
-
-    csv << [id, label, definition, 'owl:AnnotationProperty']
+def route(prop_uri, filler_uri)
+  base = SOURCE_PROPS[prop_uri]
+  return nil unless base
+  return base unless base == :assesses
+  case filler_uri
+  when %r{/obo/HP_}     then :assesses_phenotype
+  when /id\.who\.int/   then :assesses_function
+  when %r{/obo/PROMOT_} then :captures_data_about
   end
 end
 
-warn 'Now doing assesses properties'
+# ── Annotation property declarations (14 = 7 URI + 7 parallel label siblings) ─
+ANNOTATION_PROP_DEFS = [
+  ['associated_phenotype',
+   'associated phenotype',
+   'Associates a class with HPO phenotypic signs that characterise it. ' \
+   'Collapsed from PROMOT disease_has_feature (RO:0004029), is_related_to (PROMOT:2000006), ' \
+   'and has_disposition (RO:0000091) subClass restrictions.'],
+  ['associated_phenotype_label',
+   'associated phenotype label',
+   'Human-readable label for each URI in associated_phenotype. ' \
+   'Values are pipe-separated and positionally parallel to associated_phenotype.'],
 
-OUTPUT_FILE = File.expand_path(__dir__) + '/../templates/assesses-robot-template.csv'
-ASSESSES_HEADERS_ROW1 = ['ID', 'Label', 'Assesses HPO']
-ASSESSES_HEADERS_ROW2 = ['ID', 'LABEL', 'A <urn:local:nmdo_annotations:assesses>^^anyURI']
+  ['assesses_phenotype',
+   'assesses phenotype',
+   'Relates a clinical assessment instrument to the HPO phenotypic sign or symptom ' \
+   'it is designed to detect or measure.'],
+  ['assesses_phenotype_label',
+   'assesses phenotype label',
+   'Human-readable label for each URI in assesses_phenotype. ' \
+   'Values are pipe-separated and positionally parallel to assesses_phenotype.'],
 
-ASSESSES_PROPERTIES_QUERY = SPARQL.parse(<<~SPARQL)
+  ['assesses_function',
+   'assesses function',
+   'Relates a clinical assessment instrument to the WHO-ICF body function or structure ' \
+   'it is designed to measure.'],
+  ['assesses_function_label',
+   'assesses function label',
+   'Human-readable label for each URI in assesses_function. ' \
+   'Values are pipe-separated and positionally parallel to assesses_function.'],
+
+  ['captures_data_about',
+   'captures data about',
+   'Relates a clinical assessment instrument to the PROMOT-defined clinical or data-model ' \
+   'concept whose data it captures. Intended to guide CRF users to the correct form ' \
+   'section or data domain.'],
+  ['captures_data_about_label',
+   'captures data about label',
+   'Human-readable label for each URI in captures_data_about. ' \
+   'Values are pipe-separated and positionally parallel to captures_data_about.'],
+
+  ['associated_function',
+   'associated function',
+   'Associates a class with WHO-ICF functional capacities (b-codes) it is related to. ' \
+   'Derived from PROMOT functionally_related_to (RO:0002328) subClass restrictions.'],
+  ['associated_function_label',
+   'associated function label',
+   'Human-readable label for each URI in associated_function. ' \
+   'Values are pipe-separated and positionally parallel to associated_function.'],
+
+  ['involved_in',
+   'involved in',
+   'Associates a class with WHO-ICF activities and participation (d-codes) it is involved in. ' \
+   'Derived from PROMOT involved_in (RO:0002331) subClass restrictions.'],
+  ['involved_in_label',
+   'involved in label',
+   'Human-readable label for each URI in involved_in. ' \
+   'Values are pipe-separated and positionally parallel to involved_in.'],
+
+  ['located_in',
+   'located in',
+   'Associates a class with WHO-ICF body structures (s-codes) it is anatomically located in. ' \
+   'Derived from PROMOT located_in (RO:0001025) subClass restrictions.'],
+  ['located_in_label',
+   'located in label',
+   'Human-readable label for each URI in located_in. ' \
+   'Values are pipe-separated and positionally parallel to located_in.'],
+].freeze
+
+# ── Column order for class templates ──────────────────────────────────────────
+ANNO_KEYS = %i[
+  associated_phenotype
+  assesses_phenotype
+  assesses_function
+  captures_data_about
+  associated_function
+  involved_in
+  located_in
+].freeze
+
+ANNO_HUMAN = {
+  associated_phenotype: 'Associated Phenotype',
+  assesses_phenotype:   'Assesses Phenotype',
+  assesses_function:    'Assesses Function',
+  captures_data_about:  'Captures Data About',
+  associated_function:  'Associated Function',
+  involved_in:          'Involved In',
+  located_in:           'Located In',
+}.freeze
+
+# Header row 1 fragments (human-readable)
+ANNO_H1 = ANNO_KEYS.flat_map { |k| ["#{ANNO_HUMAN[k]} (URI)", "#{ANNO_HUMAN[k]} (label)"] }.freeze
+
+# Header row 2 fragments (ROBOT template instructions)
+ANNO_H2 = ANNO_KEYS.flat_map do |k|
+  ["A <#{BASE_NS}#{k}>^^xsd:anyURI SPLIT=|", "A <#{BASE_NS}#{k}_label> SPLIT=|"]
+end.freeze
+
+# ── SPARQL queries ─────────────────────────────────────────────────────────────
+
+# All named PROMOT classes (PROMOT_0xxxxx) with label, definition, and named parents.
+CLASSES_Q = SPARQL.parse(<<~SPARQL)
   PREFIX owl:  <http://www.w3.org/2002/07/owl#>
   PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
   PREFIX obo:  <http://purl.obolibrary.org/obo/>
-
-  SELECT DISTINCT ?class ?classLabel ?filler ?fillerLabel
+  SELECT DISTINCT ?class ?label ?definition ?parent
   WHERE {
-    # ?restriction is the blank node; ?class is the named class that uses it
-    ?restriction owl:onProperty obo:PROMOT_2000002 .
-    ?restriction owl:someValuesFrom ?filler .
-    ?class rdfs:subClassOf ?restriction .
-
+    ?class rdf:type owl:Class .
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/PROMOT_0"))
     OPTIONAL {
-      ?class rdfs:label ?classLabel .
-      FILTER(lang(?classLabel) = "en" || lang(?classLabel) = "")
+      ?class rdfs:label ?label .
+      FILTER(lang(?label) = "en" || lang(?label) = "")
+    }
+    OPTIONAL {
+      ?class obo:IAO_0000115 ?definition .
+      FILTER(lang(?definition) = "en" || lang(?definition) = "")
+    }
+    OPTIONAL {
+      ?class rdfs:subClassOf ?parent .
+      FILTER(!isBlank(?parent))
+    }
+  }
+  ORDER BY ?class
+SPARQL
+
+# All someValuesFrom restrictions on the 7 source properties for PROMOT classes.
+RESTRICTIONS_Q = SPARQL.parse(<<~SPARQL)
+  PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+  PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  SELECT DISTINCT ?class ?prop ?filler ?fillerLabel
+  WHERE {
+    ?class rdfs:subClassOf ?restriction .
+    ?restriction owl:onProperty ?prop .
+    ?restriction owl:someValuesFrom ?filler .
+    FILTER(!isBlank(?class))
+    FILTER(!isBlank(?filler))
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/PROMOT_0"))
+    VALUES ?prop {
+      <http://purl.obolibrary.org/obo/RO_0004029>
+      <http://purl.obolibrary.org/obo/PROMOT_2000006>
+      <http://purl.obolibrary.org/obo/RO_0000091>
+      <http://purl.obolibrary.org/obo/PROMOT_2000002>
+      <http://purl.obolibrary.org/obo/RO_0002328>
+      <http://purl.obolibrary.org/obo/RO_0002331>
+      <http://purl.obolibrary.org/obo/RO_0001025>
     }
     OPTIONAL {
       ?filler rdfs:label ?fillerLabel .
       FILTER(lang(?fillerLabel) = "en" || lang(?fillerLabel) = "")
     }
   }
-  ORDER BY ?class ?filler
+  ORDER BY ?class ?prop ?filler
 SPARQL
 
-puts ['ID', 'Label', 'Assesses HPO']
+# All named classes in NMDO with English labels, for label-based matching.
+NMDO_Q = SPARQL.parse(<<~SPARQL)
+  PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+  PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  SELECT DISTINCT ?class ?label
+  WHERE {
+    ?class rdf:type owl:Class .
+    FILTER(!isBlank(?class))
+    ?class rdfs:label ?label .
+    FILTER(lang(?label) = "en" || lang(?label) = "")
+  }
+SPARQL
 
-results = graph.query(ASSESSES_PROPERTIES_QUERY)
-results.each do |r|
-  puts [r[:class], r[:classLabel], r[:filler], r[:fillerLabel]].join("\t")
+# ── Build PROMOT class index ───────────────────────────────────────────────────
+warn 'Querying PROMOT classes...'
+classes = {}
+
+promot.query(CLASSES_Q).each do |sol|
+  iri = sol[:class].to_s
+  rec = classes[iri] ||= {
+    label:      nil,
+    definition: nil,
+    parents:    [],
+    annos:      Hash.new { |h, k| h[k] = [] }
+  }
+  rec[:label]      ||= sol[:label]&.to_s
+  rec[:definition] ||= sol[:definition]&.to_s
+  next unless (p = sol[:parent]) && !p.anonymous?
+  piri = p.to_s
+  rec[:parents] << piri unless rec[:parents].include?(piri)
 end
-warn "#{results.count} restriction(s) found."
+warn "  #{classes.size} classes found"
+
+# ── Route restrictions into annotation buckets ────────────────────────────────
+warn 'Routing restrictions...'
+routed = 0
+promot.query(RESTRICTIONS_Q).each do |sol|
+  key = route(sol[:prop].to_s, sol[:filler].to_s)
+  next unless key
+  rec = classes[sol[:class].to_s]
+  next unless rec
+  pair = [sol[:filler].to_s, sol[:fillerLabel]&.to_s || sol[:filler].to_s]
+  unless rec[:annos][key].include?(pair)
+    rec[:annos][key] << pair
+    routed += 1
+  end
+end
+warn "  #{routed} annotations routed"
+
+# ── Build NMDO label index ─────────────────────────────────────────────────────
+warn 'Indexing NMDO labels...'
+nmdo_by_label = {}
+nmdo.query(NMDO_Q).each do |sol|
+  key = sol[:label].to_s.strip.downcase
+  nmdo_by_label[key] = sol[:class].to_s
+end
+warn "  #{nmdo_by_label.size} NMDO labels indexed"
+
+# ── Split PROMOT classes: matched vs missing ───────────────────────────────────
+matched = {}  # promot_iri => rec + :nmdo_iri
+missing = {}  # promot_iri => rec
+
+classes.each do |promot_iri, rec|
+  nmdo_iri = rec[:label] && nmdo_by_label[rec[:label].strip.downcase]
+  if nmdo_iri
+    matched[promot_iri] = rec.merge(nmdo_iri: nmdo_iri)
+  else
+    missing[promot_iri] = rec
+  end
+end
+warn "Matched to NMDO: #{matched.size} | Missing from NMDO: #{missing.size}"
+
+# ── Helper: serialise annotation pairs to parallel URI / label cells ───────────
+def anno_cells(rec)
+  ANNO_KEYS.flat_map do |k|
+    pairs = rec[:annos][k].uniq
+    [pairs.map(&:first).join('|'), pairs.map(&:last).join('|')]
+  end
+end
+
+# ── 1. annotations-robot-template.csv ─────────────────────────────────────────
+# Declares the 14 new annotation properties (7 URI + 7 label siblings).
+anno_path = File.join(TEMPLATES_DIR, 'annotations-robot-template.csv')
+warn "Writing #{anno_path}..."
+CSV.open(anno_path, 'w') do |csv|
+  csv << ['ID', 'Label', 'Definition', 'Entity Type']
+  csv << ['ID', 'LABEL', 'A IAO:0000115', 'TYPE']
+  ANNOTATION_PROP_DEFS.each do |slug, label, defn|
+    csv << ["<#{BASE_NS}#{slug}>", label, defn, 'owl:AnnotationProperty']
+  end
+end
+
+# ── 2. promot-annotations-existing.csv ────────────────────────────────────────
+# One row per PROMOT class that already has a label-matched equivalent in NMDO.
+# ID is the NMDO class IRI; PROMOT IRI recorded as oboInOwl:hasDbXref.
+existing_path = File.join(TEMPLATES_DIR, 'promot-annotations-existing.csv')
+warn "Writing #{existing_path}..."
+CSV.open(existing_path, 'w') do |csv|
+  csv << ['ID', 'Label', 'Definition', 'PROMOT Cross-reference'] + ANNO_H1
+  csv << ['ID', 'LABEL', 'A IAO:0000115', 'A oboInOwl:hasDbXref']  + ANNO_H2
+  matched.each do |promot_iri, rec|
+    csv << [rec[:nmdo_iri], rec[:label], rec[:definition], promot_iri] + anno_cells(rec)
+  end
+end
+
+# ── 3. promot-annotations-missing.csv ─────────────────────────────────────────
+# One row per PROMOT class with no NMDO equivalent.
+# ID is the PROMOT IRI itself; includes Type and Parent Class for project lead review.
+missing_path = File.join(TEMPLATES_DIR, 'promot-annotations-missing.csv')
+warn "Writing #{missing_path}..."
+CSV.open(missing_path, 'w') do |csv|
+  csv << ['ID', 'Label', 'Definition', 'Type', 'Parent Class', 'PROMOT Cross-reference'] + ANNO_H1
+  csv << ['ID', 'LABEL', 'A IAO:0000115', 'TYPE', 'SC %', 'A oboInOwl:hasDbXref']        + ANNO_H2
+  missing.each do |promot_iri, rec|
+    csv << [
+      promot_iri,
+      rec[:label],
+      rec[:definition],
+      'owl:Class',
+      rec[:parents].first,
+      promot_iri,
+    ] + anno_cells(rec)
+  end
+end
+
+warn 'Done.'
