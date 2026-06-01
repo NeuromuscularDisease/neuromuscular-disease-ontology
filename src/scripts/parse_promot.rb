@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'set'
 require 'rdf'
 require 'rdf/rdfxml'
 require 'sparql'
@@ -143,7 +144,9 @@ end.freeze
 
 # ── SPARQL queries ─────────────────────────────────────────────────────────────
 
-# All named PROMOT classes (PROMOT_0xxxxx) with label, definition, and named parents.
+# All classes in PROMOT that carry restrictions on our 7 source properties,
+# plus their label, definition, and named parents.
+# Includes both PROMOT_0xxxxx (assessment tools) and WHO-ICF entities.
 CLASSES_Q = SPARQL.parse(<<~SPARQL)
   PREFIX owl:  <http://www.w3.org/2002/07/owl#>
   PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -152,7 +155,10 @@ CLASSES_Q = SPARQL.parse(<<~SPARQL)
   SELECT DISTINCT ?class ?label ?definition ?parent
   WHERE {
     ?class rdf:type owl:Class .
-    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/PROMOT_0"))
+    FILTER(
+      STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/PROMOT_0") ||
+      STRSTARTS(STR(?class), "http://id.who.int/icd/entity/")
+    )
     OPTIONAL {
       ?class rdfs:label ?label .
       FILTER(lang(?label) = "en" || lang(?label) = "")
@@ -169,7 +175,8 @@ CLASSES_Q = SPARQL.parse(<<~SPARQL)
   ORDER BY ?class
 SPARQL
 
-# All someValuesFrom restrictions on the 7 source properties for PROMOT classes.
+# All someValuesFrom restrictions on the 7 source properties.
+# Covers both PROMOT_0xxxxx assessment tools and WHO-ICF classes.
 RESTRICTIONS_Q = SPARQL.parse(<<~SPARQL)
   PREFIX owl:  <http://www.w3.org/2002/07/owl#>
   PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -181,7 +188,10 @@ RESTRICTIONS_Q = SPARQL.parse(<<~SPARQL)
     ?restriction owl:someValuesFrom ?filler .
     FILTER(!isBlank(?class))
     FILTER(!isBlank(?filler))
-    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/PROMOT_0"))
+    FILTER(
+      STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/PROMOT_0") ||
+      STRSTARTS(STR(?class), "http://id.who.int/icd/entity/")
+    )
     VALUES ?prop {
       <http://purl.obolibrary.org/obo/RO_0004029>
       <http://purl.obolibrary.org/obo/PROMOT_2000006>
@@ -210,6 +220,18 @@ NMDO_Q = SPARQL.parse(<<~SPARQL)
     FILTER(!isBlank(?class))
     ?class rdfs:label ?label .
     FILTER(lang(?label) = "en" || lang(?label) = "")
+  }
+SPARQL
+
+# SKOS mappings from NMDO classes to external IRIs (ICF, etc.).
+# Lets us find the NMDO class that corresponds to a given ICF entity IRI.
+NMDO_SKOS_Q = SPARQL.parse(<<~SPARQL)
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  SELECT DISTINCT ?nmdo_class ?external_iri
+  WHERE {
+    ?nmdo_class skos:exactMatch|skos:closeMatch|skos:narrowMatch ?external_iri .
+    FILTER(!isBlank(?nmdo_class))
+    FILTER(!isBlank(?external_iri))
   }
 SPARQL
 
@@ -249,21 +271,41 @@ promot.query(RESTRICTIONS_Q).each do |sol|
 end
 warn "  #{routed} annotations routed"
 
-# ── Build NMDO label index ─────────────────────────────────────────────────────
-warn 'Indexing NMDO labels...'
-nmdo_by_label = {}
+# ── Build NMDO IRI set, SKOS map, and label index ─────────────────────────────
+warn 'Indexing NMDO...'
+nmdo_iris         = Set.new  # direct IRI match
+nmdo_by_skos      = {}       # external IRI → NMDO class IRI (via skos:exactMatch etc.)
+nmdo_by_label     = {}       # English label → NMDO class IRI (fallback)
+
 nmdo.query(NMDO_Q).each do |sol|
-  key = sol[:label].to_s.strip.downcase
-  nmdo_by_label[key] = sol[:class].to_s
+  iri = sol[:class].to_s
+  nmdo_iris << iri
+  nmdo_by_label[sol[:label].to_s.strip.downcase] = iri
 end
-warn "  #{nmdo_by_label.size} NMDO labels indexed"
+
+nmdo.query(NMDO_SKOS_Q).each do |sol|
+  nmdo_by_skos[sol[:external_iri].to_s] = sol[:nmdo_class].to_s
+end
+
+warn "  #{nmdo_iris.size} NMDO classes, #{nmdo_by_skos.size} SKOS mappings, #{nmdo_by_label.size} labels indexed"
 
 # ── Split PROMOT classes: matched vs missing ───────────────────────────────────
+# Matching priority:
+#   1. Direct IRI — the subject IRI exists as-is in NMDO
+#   2. SKOS reverse — an NMDO class has skos:exactMatch/closeMatch/narrowMatch
+#                     pointing at this IRI (catches ICF entities)
+#   3. Label fallback — English rdfs:label matches case-insensitively
 matched = {}  # promot_iri => rec + :nmdo_iri
 missing = {}  # promot_iri => rec
 
 classes.each do |promot_iri, rec|
-  nmdo_iri = rec[:label] && nmdo_by_label[rec[:label].strip.downcase]
+  nmdo_iri = if nmdo_iris.include?(promot_iri)
+               promot_iri
+             elsif (skos_match = nmdo_by_skos[promot_iri])
+               skos_match
+             elsif rec[:label]
+               nmdo_by_label[rec[:label].strip.downcase]
+             end
   if nmdo_iri
     matched[promot_iri] = rec.merge(nmdo_iri: nmdo_iri)
   else
