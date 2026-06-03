@@ -83,8 +83,9 @@ data.each_with_index do |row, i|
     warn "    ✓ #{nmdo_lbl} (#{score})"
     # Build row in existing-file format: drop Type(3) and Parent(4) columns,
     # replace ID with the matched NMDO IRI, keep PROMOT IRI as cross-reference.
+    review_note = "PROMOT mapping: '#{label}' (LLM score: #{score}) | Candidates: #{alternatives}"
     matched_row = [nmdo_iri] + row.values_at(*EXISTING_COLS.select { |i| i < row.size })[1..] +
-                  [score.to_s, alternatives]
+                  [score.to_s, alternatives, review_note]
     matched << matched_row
   else
     warn "    ✗ best: #{nmdo_lbl.empty? ? '(none)' : nmdo_lbl} (#{score})"
@@ -97,11 +98,11 @@ end
 warn "Matched: #{matched.size} | Unmatched: #{unmatched.size}"
 
 # ── Extra column headers ───────────────────────────────────────────────────────
-# These go after the existing annotation columns.
-# The ROBOT row 2 value is empty — ROBOT ignores columns with no instruction,
-# so these are purely for human review.
-REVIEW_H1 = ['LLM Score', 'LLM Top Candidates'].freeze
-REVIEW_H2 = ['', ''].freeze
+# LLM Score and LLM Top Candidates are CSV-only review aids (ROBOT ignores them).
+# LLM Match Note is written to the OWL as rdfs:comment so clinicians can see
+# provenance and score directly in Protege / OLS — low scores flag review needed.
+REVIEW_H1 = ['LLM Score', 'LLM Top Candidates', 'LLM Match Note'].freeze
+REVIEW_H2 = ['', '', 'A rdfs:comment'].freeze
 
 # ── Write promot-annotations-llm-matched.csv ──────────────────────────────────
 # Uses existing-file column format (no TYPE or SC %) — these annotate existing
