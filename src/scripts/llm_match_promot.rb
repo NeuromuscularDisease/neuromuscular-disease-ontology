@@ -18,7 +18,8 @@ require 'net/http'
 require 'json'
 require 'uri'
 
-SEARCH_BASE   = 'https://simpathic.services/llm_search/search'.freeze
+BASE_NS     = 'https://w3id.org/nmdo/'.freeze
+SEARCH_BASE = 'https://simpathic.services/llm_search/search'.freeze
 TEMPLATES_DIR = File.expand_path('../templates', __dir__)
 MISSING_CSV   = File.join(TEMPLATES_DIR, 'promot-annotations-missing.csv')
 MIN_SCORE     = (ARGV[0] || '0.20').to_f
@@ -28,9 +29,16 @@ warn "LLM match threshold: #{MIN_SCORE}"
 warn "Reading #{MISSING_CSV}..."
 
 rows = CSV.read(MISSING_CSV)
-header1 = rows[0]
-header2 = rows[1]
-data    = rows[2..]
+# Missing file columns: ID(0) Label(1) Definition(2) Type(3) Parent(4) XRef(5) annotations(6+)
+# Matched file drops Type and Parent — annotating existing classes, not creating new ones.
+EXISTING_COLS = ([0, 1, 2, 5] + (6..999).to_a).freeze
+missing_h1 = rows[0]
+missing_h2 = rows[1]
+data        = rows[2..]
+
+# Headers for the matched file — same as promot-annotations-existing.csv format
+matched_h1 = missing_h1.values_at(*EXISTING_COLS.select { |i| i < missing_h1.size })
+matched_h2 = missing_h2.values_at(*EXISTING_COLS.select { |i| i < missing_h2.size })
 
 warn "  #{data.size} classes to process"
 
@@ -73,8 +81,10 @@ data.each_with_index do |row, i|
 
   if score >= MIN_SCORE
     warn "    ✓ #{nmdo_lbl} (#{score})"
-    # Replace ID with matched NMDO IRI; keep all annotation columns intact
-    matched_row = [nmdo_iri] + row[1..] + [score.to_s, alternatives]
+    # Build row in existing-file format: drop Type(3) and Parent(4) columns,
+    # replace ID with the matched NMDO IRI, keep PROMOT IRI as cross-reference.
+    matched_row = [nmdo_iri] + row.values_at(*EXISTING_COLS.select { |i| i < row.size })[1..] +
+                  [score.to_s, alternatives]
     matched << matched_row
   else
     warn "    ✗ best: #{nmdo_lbl.empty? ? '(none)' : nmdo_lbl} (#{score})"
@@ -94,24 +104,24 @@ REVIEW_H1 = ['LLM Score', 'LLM Top Candidates'].freeze
 REVIEW_H2 = ['', ''].freeze
 
 # ── Write promot-annotations-llm-matched.csv ──────────────────────────────────
-# Same structure as promot-annotations-existing.csv, but ID is the LLM-matched
-# NMDO IRI.  Includes review columns so the team can accept/reject easily.
+# Uses existing-file column format (no TYPE or SC %) — these annotate existing
+# NMDO classes, not create new ones. ID is the LLM-matched NMDO IRI.
 matched_path = File.join(TEMPLATES_DIR, 'promot-annotations-llm-matched.csv')
 warn "Writing #{matched_path}..."
 CSV.open(matched_path, 'w') do |csv|
-  csv << header1 + REVIEW_H1
-  csv << header2 + REVIEW_H2
+  csv << matched_h1 + REVIEW_H1
+  csv << matched_h2 + REVIEW_H2
   matched.each { |row| csv << row }
 end
 
 # ── Write promot-annotations-llm-unmatched.csv ────────────────────────────────
-# Same structure as promot-annotations-missing.csv; review columns show what
-# the best candidate was even though it didn't pass the threshold.
+# Keeps the missing-file format (with TYPE and SC %) — these may become new
+# NMDO classes. Review columns show the best LLM candidate even below threshold.
 unmatched_path = File.join(TEMPLATES_DIR, 'promot-annotations-llm-unmatched.csv')
 warn "Writing #{unmatched_path}..."
 CSV.open(unmatched_path, 'w') do |csv|
-  csv << header1 + REVIEW_H1
-  csv << header2 + REVIEW_H2
+  csv << missing_h1 + REVIEW_H1
+  csv << missing_h2 + REVIEW_H2
   unmatched.each { |row| csv << row }
 end
 

@@ -7,8 +7,11 @@ require 'rdf/rdfxml'
 require 'sparql'
 require 'csv'
 
-PROMOT_OWL = ARGV[0] or abort "Usage: #{$0} <promot.owl> <nmdo-full.owl>"
-NMDO_OWL   = ARGV[1] or abort "Usage: #{$0} <promot.owl> <nmdo-full.owl>"
+PROMOT_OWL   = ARGV[0] or abort "Usage: #{$0} <promot.owl> <nmdo-full.owl> [root-iri]"
+NMDO_OWL     = ARGV[1] or abort "Usage: #{$0} <promot.owl> <nmdo-full.owl> [root-iri]"
+# Optional: restrict to descendants of a given PROMOT/SNOMED class.
+# e.g. pass http://snomed.info/id/315306007 to get only "examination by method" subtree.
+PROMOT_ROOT  = ARGV[2]
 TEMPLATES_DIR = File.expand_path('../templates', __dir__)
 
 # ── Load ontologies ────────────────────────────────────────────────────────────
@@ -20,7 +23,7 @@ warn "Loading #{NMDO_OWL}..."
 nmdo = RDF::Graph.load(NMDO_OWL, format: :rdfxml)
 warn "  #{nmdo.count} triples"
 
-BASE_NS = 'urn:local:nmdo_annotations:'.freeze
+BASE_NS = 'https://w3id.org/nmdo/'.freeze
 
 # ── Routing: source ObjectProperty → target annotation key ───────────────────
 # :assesses is a special case: filler namespace determines the sub-key.
@@ -138,8 +141,11 @@ ANNO_HUMAN = {
 ANNO_H1 = ANNO_KEYS.flat_map { |k| ["#{ANNO_HUMAN[k]} (URI)", "#{ANNO_HUMAN[k]} (label)"] }.freeze
 
 # Header row 2 fragments (ROBOT template instructions)
+# Use CURIE form (nmdo:key) rather than full IRI in angle brackets — ROBOT
+# handles CURIE lookups more reliably when a prefix is declared at runtime.
+NMDO_PREFIX = 'nmdo'.freeze
 ANNO_H2 = ANNO_KEYS.flat_map do |k|
-  ["A <#{BASE_NS}#{k}>^^xsd:anyURI SPLIT=|", "A <#{BASE_NS}#{k}_label> SPLIT=|"]
+  ["A #{NMDO_PREFIX}:#{k} SPLIT=|", "A #{NMDO_PREFIX}:#{k}_label SPLIT=|"]
 end.freeze
 
 # ── SPARQL queries ─────────────────────────────────────────────────────────────
@@ -235,12 +241,28 @@ NMDO_SKOS_Q = SPARQL.parse(<<~SPARQL)
   }
 SPARQL
 
+# ── Optionally collect descendants of a root class ────────────────────────────
+allowed_iris = nil
+if PROMOT_ROOT
+  warn "Collecting descendants of #{PROMOT_ROOT}..."
+  desc_q = SPARQL.parse(<<~SPARQL)
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT DISTINCT ?class WHERE {
+      ?class rdfs:subClassOf+ <#{PROMOT_ROOT}> .
+    }
+  SPARQL
+  allowed_iris = Set.new
+  promot.query(desc_q).each { |s| allowed_iris << s[:class].to_s }
+  warn "  #{allowed_iris.size} descendants found"
+end
+
 # ── Build PROMOT class index ───────────────────────────────────────────────────
 warn 'Querying PROMOT classes...'
 classes = {}
 
 promot.query(CLASSES_Q).each do |sol|
   iri = sol[:class].to_s
+  next if allowed_iris && !allowed_iris.include?(iri)
   rec = classes[iri] ||= {
     label:      nil,
     definition: nil,
@@ -330,7 +352,7 @@ CSV.open(anno_path, 'w') do |csv|
   csv << ['ID', 'Label', 'Definition', 'Entity Type']
   csv << ['ID', 'LABEL', 'A IAO:0000115', 'TYPE']
   ANNOTATION_PROP_DEFS.each do |slug, label, defn|
-    csv << ["<#{BASE_NS}#{slug}>", label, defn, 'owl:AnnotationProperty']
+    csv << ["#{BASE_NS}#{slug}", label, defn, 'owl:AnnotationProperty']
   end
 end
 
