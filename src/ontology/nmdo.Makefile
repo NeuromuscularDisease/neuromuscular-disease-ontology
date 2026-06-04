@@ -80,8 +80,6 @@ endif # MIR=true
 ###### END CUSTOM IMPORTS ###################
 
 
-
-
 ###### BEGIN TEMPLATE MANAGEMENT ###################
 
 TEMPLATE_NAMES := nmdo
@@ -92,10 +90,27 @@ TEMPLATE_FILES := $(foreach x,$(TEMPLATE_NAMES),$(TEMPLATEDIR)/$(x).tsv)
 sort-templates: $(SCRIPTSDIR)/sort-templates.py $(TEMPLATE_FILES)
 	$(foreach x,$(TEMPLATE_FILES),python $(SCRIPTSDIR)/sort-templates.py $(x);)
 
-
 ###### END TEMPLATE MANAGEMENT ###################
 
 
+###### BEGIN PROMOT INTEGRATION ###################
+
+PROMOTDIR = promot
+
+$(PROMOTDIR):
+	mkdir -p $@
+
+# This goal creates a version of the NMDO that has the annotations extracted from the PROMOT ontology merged in for review purposes.
+.PHONY: promot_import
+promot_import: $(PROMOTDIR)/promot_import.owl
+
+$(PROMOTDIR)/promot_import.owl: ../../nmdo-full.owl $(TEMPLATEDIR)/annotations-robot-template.csv $(TEMPLATEDIR)/promot-annotations-llm-matched.csv
+	$(ROBOT) template -i $< --merge-before \
+        --template $(TEMPLATEDIR)/annotations-robot-template.csv \
+        --template $(TEMPLATEDIR)/promot-annotations-llm-matched.csv \
+		$(ANNOTATE_CONVERT_FILE)
+
+###### END PROMOT INTEGRATION ###################
 
 
 
