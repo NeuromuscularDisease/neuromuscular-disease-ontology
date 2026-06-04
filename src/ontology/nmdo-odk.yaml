@@ -16,6 +16,7 @@ export_formats:
   - obo
 #  - json
 use_templates: TRUE
+use_context: TRUE
 import_group:
   use_base_merging: TRUE
   mirror_max_time_download: 500
