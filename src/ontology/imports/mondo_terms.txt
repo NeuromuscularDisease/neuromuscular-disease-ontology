@@ -948,3 +948,18 @@ MONDO:0700058  # Morton neuroma
 MONDO:0700303  # Erb palsy
 MONDO:0800207  # neuropathy, small fiber
 MONDO:0021125  # disease characteristic
+MONDO:0100633  # toxic polyneuropathy
+MONDO:0100634  # traumatic neuropathy
+MONDO:0100635  # radiation-induced neuropathy
+MONDO:0100636  # corticosteroid myopathy
+MONDO:0100637  # drug-induced myopathy
+MONDO:0100638  # endocrine myopathy
+MONDO:0100639  # vasculitic neuropathy
+MONDO:0100640  # chronic idiopathic neuropathy
+MONDO:0100641  # chemotherapy-induced neuropathy
+MONDO:0100642  # infectious neuropathy
+MONDO:0100643  # vitamin deficiency related neuropathy
+MONDO:0100644  # paraproteinemia-associated neuropathy
+MONDO:0100645  # neuropathy in cryoglobulinemia
+MONDO:0100646  # neuropathy in endocrine disorder
+MONDO:0100647  # sarcoid neuropathy
