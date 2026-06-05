@@ -42,7 +42,7 @@ MONDO:0008026
 MONDO:0008029
 MONDO:0008045
 MONDO:0008046
-MONDO:0008048
+MONDO:0008048  # autosomal dominant centronuclear myopathy
 MONDO:0008050
 MONDO:0008051
 MONDO:0008054
@@ -85,7 +85,7 @@ MONDO:0008919
 MONDO:0008922
 MONDO:0008948
 MONDO:0008960
-MONDO:0008961
+MONDO:0008961  # Charcot-Marie-Tooth disease type 4A
 MONDO:0008963
 MONDO:0008967
 MONDO:0009053
@@ -271,13 +271,13 @@ MONDO:0011902
 MONDO:0011903
 MONDO:0011909
 MONDO:0011910
-MONDO:0011916
+MONDO:0011916  # Charcot-Marie-Tooth disease axonal type 2K
 MONDO:0011925
 MONDO:0011961
 MONDO:0011968
 MONDO:0011998
 MONDO:0012012
-MONDO:0012014
+MONDO:0012014  # Charcot-Marie-Tooth disease recessive intermediate A
 MONDO:0012034
 MONDO:0012092
 MONDO:0012096
@@ -293,7 +293,7 @@ MONDO:0012191
 MONDO:0012193
 MONDO:0012198
 MONDO:0012215
-MONDO:0012231
+MONDO:0012231  # Charcot-Marie-Tooth disease type 2A2
 MONDO:0012248
 MONDO:0012250
 MONDO:0012277
@@ -963,3 +963,17 @@ MONDO:0100644  # paraproteinemia-associated neuropathy
 MONDO:0100645  # neuropathy in cryoglobulinemia
 MONDO:0100646  # neuropathy in endocrine disorder
 MONDO:0100647  # sarcoid neuropathy
+MONDO:0010041  # Charlevoix-Saguenay spastic ataxia
+MONDO:0030689  # Charcot-Marie-Tooth disease, demyelinating, IIA 1H
+MONDO:0030677  # Charcot-Marie-Tooth disease, demyelinating, IIA 1I
+MONDO:0859311  # Charcot-Marie-Tooth disease, demyelinating, type 1J
+MONDO:0011898  # Charcot-Marie-Tooth disease, axonal, with vocal cord paresis, autosomal recessive
+MONDO:0014906  # Charcot-Marie-Tooth disease, axonal, autosomal recessive, type 2a2b
+MONDO:0014836  # Charcot-Marie-Tooth disease axonal type 2CC
+MONDO:0032728  # Charcot-Marie-Tooth disease, axonal, type 2EE
+MONDO:0030433  # Charcot-Marie-Tooth disease, axonal, type 2FF
+MONDO:0030458  # Charcot-Marie-Tooth disease, axonal, Type 2HH
+MONDO:0031068  # Charcot-Marie-Tooth disease, axonal, IIa 2II
+MONDO:0976227  # Charcot-Marie-tooth disease, axonal, type 2JJ
+MONDO:0030055  # neuronopathy, distal hereditary motor, autosomal recessive 8
+MONDO:0012747  # glycogen storage disease due to aldolase A deficiency
