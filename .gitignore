@@ -5,6 +5,8 @@
 semantic.cache
 bin/
 
+promot_V0.71.owl
+
 *.tmp
 *.tmp.obo
 *.tmp.owl
