@@ -947,3 +947,4 @@ MONDO:0023757  # meralgia paresthetica
 MONDO:0700058  # Morton neuroma
 MONDO:0700303  # Erb palsy
 MONDO:0800207  # neuropathy, small fiber
+MONDO:0021125  # disease characteristic

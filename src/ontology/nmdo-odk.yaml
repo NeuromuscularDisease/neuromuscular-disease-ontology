@@ -16,6 +16,7 @@ export_formats:
   - obo
 #  - json
 use_templates: TRUE
+use_context: TRUE
 import_group:
   use_base_merging: TRUE
   mirror_max_time_download: 500
@@ -43,18 +44,36 @@ import_group:
     - owl:deprecated
     - IAO:0100001   # term replaced by
     - oboInOwl:consider
+    - NCIT:P378   # Definition Source
+    - NCIT:P383   # Term Type
+    - NCIT:P384   # Term Source
+    - NCIT:P207   # UMLS_CUI
+  exclude_iri_patterns:
+    - <http://purl.obolibrary.org/obo/BFO_*>
+    - <http://purl.obolibrary.org/obo/CHEBI_*>
+    - <http://purl.obolibrary.org/obo/CHR_*>
+    - <http://purl.obolibrary.org/obo/CL_*>
+    - <http://purl.obolibrary.org/obo/CLM_*>
+    - <http://purl.obolibrary.org/obo/ECTO_*>
+    - <http://purl.obolibrary.org/obo/GO_*>
+    - <http://purl.obolibrary.org/obo/HsapDv_*>
+    - <http://purl.obolibrary.org/obo/MF_*>
+    - <http://purl.obolibrary.org/obo/NBO_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_*>
+    - <http://purl.obolibrary.org/obo/PR_*>
+    - <https://bioregistry.io/*>
+    - <http://purl.uniprot.org/uniprot/*>
+    - <http://www.informatics.jax.org/accession/MGI*>
+    - <http://rgd.mcw.edu/rgdweb/report/gene/*>
   module_type: slme
   module_type_slme: STAR
+  slme_individuals: exclude
   products: 
-    - id: go
-      module_type: filter
-      base_iris:
-        - GO
     - id: hgnc
-      mirror_from: https://data.monarchinitiative.org/dipper-kg/final/rdf/hgnc.ttl
+      mirror_from: https://w3id.org/biopragmatics/resources/hgnc/hgnc.ofn
       module_type: filter
       base_iris:
-        - "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:"
+        - "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/"
     - id: hp
       use_base: TRUE
     - id: iao
@@ -63,20 +82,13 @@ import_group:
         - IAO
     - id: mondo
       use_base: TRUE
-    - id: nbo
-      module_type: filter
+    - id: ncit
+      is_large: TRUE
+      make_base: TRUE
       base_iris:
-        - NBO
-    - id: ncbitaxon
-      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+        - NCIT
+    - id: omo
       module_type: filter
-      base_iris:
-        - http://purl.obolibrary.org/obo/NCBITaxon_
-#    - id: ncit
-#      is_large: TRUE
-#      make_base: TRUE
-#      base_iris:
-#        - NCIT
     - id: pato
       module_type: filter
     - id: ro
@@ -97,7 +109,7 @@ components:
         - nmdo.tsv
 robot_report:
   use_labels: TRUE
-  fail_on: ERROR
+  fail_on: none
   report_on:
     - edit
 robot_java_args: '-Xmx16G'

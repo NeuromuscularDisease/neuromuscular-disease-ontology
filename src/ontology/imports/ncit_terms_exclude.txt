@@ -1,0 +1,4 @@
+NCIT:C20189     # Property or Attribute
+NCIT:C70766     # Quantitative Concept
+NCIT:C43431     # Activity
+NCIT:C16203     # Clinical or Research Activity

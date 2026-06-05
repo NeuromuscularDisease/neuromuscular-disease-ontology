@@ -1,0 +1,7 @@
+OMO:0003000   # abbreviation
+OMO:0003004   # plural form
+OMO:0003005   # UK spelling synonym
+OMO:0003008   # previous name
+OMO:0003011   # latin term
+OMO:0003015   # previous gene symbol
+OMO:0003016   # gene symbol synonym
