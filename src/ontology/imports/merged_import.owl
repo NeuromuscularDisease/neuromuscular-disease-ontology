@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/nmdo/imports/merged_import.owl>
-<https://w3id.org/nmdo/releases/2026-06-09/imports/merged_import.owl>
-Annotation(owl:versionInfo "2026-06-09")
+<https://w3id.org/nmdo/releases/2026-06-12/imports/merged_import.owl>
+Annotation(owl:versionInfo "2026-06-12")
 
 Declaration(Class(<http://identifiers.org/hgnc/1020>))
 Declaration(Class(<http://identifiers.org/hgnc/10379>))
@@ -4029,6 +4029,7 @@ Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/uberon/core#subdivisi
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000111>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000116>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000231>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0100001>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/NCIT_P207>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/NCIT_P378>))
@@ -17230,7 +17231,7 @@ AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.ob
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/HP_0430071> "Abnormal circulating organic compound concentration")
 SubClassOf(<http://purl.obolibrary.org/obo/HP_0430071> <http://purl.obolibrary.org/obo/HP_0032180>)
 
-# Class: <http://purl.obolibrary.org/obo/IAO_0000027> (data entity)
+# Class: <http://purl.obolibrary.org/obo/IAO_0000027> (data item)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000111> <http://purl.obolibrary.org/obo/IAO_0000027> "data entity"@en)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000111> <http://purl.obolibrary.org/obo/IAO_0000027> "data item"@en)
@@ -43947,6 +43948,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "PMI
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0011961> (obsolete hereditary sensory and autonomic neuropathy type 1B)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0011961> <http://purl.obolibrary.org/obo/MONDO_TermsMerged>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0100001> <http://purl.obolibrary.org/obo/MONDO_0011961> <http://purl.obolibrary.org/obo/MONDO_0044720>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:GARD") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0011961> "GARD:0016958")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:MEDGEN") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0011961> "MEDGEN:330880")
@@ -51052,6 +51054,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0015359> (obsolete autosomal dominant hereditary demyelinating motor and sensory neuropathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0015359> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0015359> "Orphanet:140453")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0015359> "AD demyelinating HMSN")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0015359> "MONDO:0015359")
@@ -51061,6 +51064,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0015360> (obsolete autosomal dominant hereditary axonal motor and sensory neuropathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0015360> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0015360> "Orphanet:140456")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0015360> "MONDO:0015360")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0015360> "obsolete autosomal dominant hereditary axonal motor and sensory neuropathy")
@@ -51069,6 +51073,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0015361> (obsolete autosomal recessive hereditary demyelinating motor and sensory neuropathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0015361> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0015361> "Orphanet:140459")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0015361> "AR demyelinating HMSN")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0015361> "MONDO:0015361")
@@ -51166,6 +51171,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MON
 # Class: <http://purl.obolibrary.org/obo/MONDO_0015365> (obsolete autosomal dominant hereditary sensory and autonomic neuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_dominant") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0015365> "OBSOLETE. Autosomal dominant form of hereditary sensory and autonomic neuropathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0015365> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0015365> "Orphanet:140474")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_dominant") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0015365> "hereditary sensory and autonomic neuropathy, autosomal dominant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0015365> "MONDO:0015365")
@@ -51176,6 +51182,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 # Class: <http://purl.obolibrary.org/obo/MONDO_0015366> (obsolete autosomal recessive hereditary sensory and autonomic neuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_recessive") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0015366> "OBSOLETE. Autosomal recessive form of hereditary sensory and autonomic neuropathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0015366> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0015366> "Orphanet:140477")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_recessive") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0015366> "hereditary sensory and autonomic neuropathy, autosomal recessive")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0015366> "MONDO:0015366")
@@ -51920,6 +51927,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MON
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0015765> (obsolete congenital myopathy with cores)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0015765> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0015765> "Orphanet:172976")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0015765> "MONDO:0015765")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0015765> "obsolete congenital myopathy with cores")
@@ -52574,6 +52582,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0016102> <http://purl.obolibrar
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016104> (obsolete infectious disease with peripheral neuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C27589") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016104> "OBSOLETE. An infectious process affecting the peripheral nerves.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016104> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016104> <http://purl.obolibrary.org/obo/MONDO_0005550>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016104> "NCIT:C27589")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016104> "Orphanet:206613")
@@ -52672,6 +52681,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MON
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016109> (obsolete autosomal recessive distal myopathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_recessive") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016109> "OBSOLETE. Autosomal recessive form of distal myopathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016109> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016109> "Orphanet:206653")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_recessive") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016109> "distal myopathy, autosomal recessive")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016109> "MONDO:0016109")
@@ -52682,6 +52692,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016110> (obsolete non-dystrophic myopathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NCIT:C122787") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016110> "OBSOLETE. A group of rare skeletal muscle ion-channel disorders caused by genetic mutations in the sodium and chloride channel genes. It is characterized by altered membrane excitability resulting in skeletal muscle stiffness. This group of myotonias is distinct from myotonic dystrophy because of the absence of systemic features or progressive weakness.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGroupingPhenotype") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016110> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:NANDO") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0002-0170-9172") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0003-0011-764X") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016110> "NANDO:1200496")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016110> "NCIT:C122787")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016110> "Orphanet:206656")
@@ -52738,6 +52749,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "htt
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016114> (obsolete bulbospinal muscular atrophy of childhood)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016114> "OBSOLETE. A bulbospinal muscular atrophy that occurs during childhood.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016114> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016114> "Orphanet:206704")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/childhood") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016114> "bulbospinal muscular atrophy of childhood")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016114> "childhood bulbospinal muscular atrophy")
@@ -52751,6 +52763,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016115> (obsolete bulbospinal muscular atrophy of adulthood)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016115> "OBSOLETE. A bulbospinal muscular atrophy that occurs in an adult.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016115> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016115> "Orphanet:206707")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016115> "adult bulbospinal muscular atrophy")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/adult") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016115> "bulbospinal muscular atrophy of adults")
@@ -52761,6 +52774,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016116> (obsolete generalized bulbospinal muscular atrophy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016116> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016116> "Orphanet:206710")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016116> "MONDO:0016116")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016116> "obsolete generalized bulbospinal muscular atrophy")
@@ -52769,6 +52783,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016117> (obsolete muscular lipidosis)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016117> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:i2s") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:relatedTo") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016117> "ICD9:359.89")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016117> "Orphanet:206953")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016117> "lipid storage myopathy")
@@ -52779,6 +52794,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016118> (obsolete muscular glycogenosis)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016118> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:NANDO") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0002-0170-9172") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0003-0011-764X") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016118> "NANDO:1200823")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016118> "Orphanet:206959")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016118> "glycogen storage myopathy")
@@ -52808,6 +52824,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016121> (obsolete congenital myotonia)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016121> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016121> "Orphanet:206973")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orphanet:206973") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0001-5208-3432") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016121> "icd11.foundation:1916703439")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016121> "MONDO:0016121")
@@ -52841,6 +52858,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "htt
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016123> (obsolete muscular tumor)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016123> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016123> <http://purl.obolibrary.org/obo/MONDO_0005864>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016123> "Orphanet:206982")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016123> "MONDO:0016123")
@@ -52863,6 +52881,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016125> (obsolete infectious, fungal or parasitic myopathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016125> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016125> "Orphanet:206988")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016125> "MONDO:0016125")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016125> "obsolete infectious, fungal or parasitic myopathy")
@@ -52955,6 +52974,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016132> (obsolete rare hereditary disease with peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016132> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016132> "Orphanet:207015")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016132> "MONDO:0016132")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016132> "obsolete rare hereditary disease with peripheral neuropathy")
@@ -52963,6 +52983,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016133> (obsolete rare hereditary metabolic disease with peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016133> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016133> "Orphanet:207018")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016133> "MONDO:0016133")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016133> "obsolete rare hereditary metabolic disease with peripheral neuropathy")
@@ -52971,6 +52992,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016134> (obsolete rare hereditary systemic disease with peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016134> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016134> "Orphanet:207021")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016134> "MONDO:0016134")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016134> "obsolete rare hereditary systemic disease with peripheral neuropathy")
@@ -52979,6 +53001,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016135> (obsolete rare hereditary neurologic disease with peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016135> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016135> "Orphanet:207025")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016135> "MONDO:0016135")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016135> "obsolete rare hereditary neurologic disease with peripheral neuropathy")
@@ -52987,6 +53010,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016136> (obsolete cerebellar ataxia with peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016136> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016136> <http://purl.obolibrary.org/obo/MONDO_0000437>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016136> "Orphanet:207028")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016136> "MONDO:0016136")
@@ -52997,6 +53021,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016137> (obsolete acute and subacute inflammatory demyelinating polyneuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016137> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016137> <http://purl.obolibrary.org/obo/MONDO_0015923>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016137> "Orphanet:207038")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016137> "acute and subacute inflammatory demyelinating polyradiculoneuropathy")
@@ -53211,6 +53236,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016169> (obsolete chronic acquired demyelinating polyneuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/chronic") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016169> "OBSOLETE. Chronic form of acquired peripheral neuropathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016169> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016169> "Orphanet:208974")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/mondo#ABBREVIATION>) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016169> "CADP")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:design_pattern") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/chronic") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016169> "acquired peripheral neuropathy, chronic")
@@ -53223,6 +53249,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016170> (obsolete chronic polyradiculoneuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/chronic") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016170> "OBSOLETE. Chronic form of polyradiculoneuropathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016170> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016170> "Orphanet:208978")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/chronic") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016170> "polyradiculoneuropathy, chronic")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016170> "MONDO:0016170")
@@ -53241,6 +53268,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "htt
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016172> (obsolete acquired sensory ganglionopathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/acquired") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016172> "OBSOLETE. An instance of sensory ganglionopathy that is acquired during the lifetime of the individual.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016172> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016172> "Orphanet:208984")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/acquired") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016172> "acquired sensory ganglionopathy")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016172> "acquired sensory neuronopathy")
@@ -53297,6 +53325,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016177> (obsolete systemic inflammatory disease associated with an acquired peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016177> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016177> <http://purl.obolibrary.org/obo/MONDO_0021166>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016177> "Orphanet:209007")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016177> "MONDO:0016177")
@@ -53307,6 +53336,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016178> (obsolete peripheral neuropathy associated with monoclonal gammopathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016178> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016178> "Orphanet:209010")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016178> "MONDO:0016178")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016178> "obsolete peripheral neuropathy associated with monoclonal gammopathy")
@@ -53315,6 +53345,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016179> (obsolete acquired amyloid peripheral neuropathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016179> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016179> "Orphanet:209013")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016179> "MONDO:0016179")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016179> "obsolete acquired amyloid peripheral neuropathy")
@@ -53323,6 +53354,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016180> (obsolete hematological disease associated with an acquired peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016180> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016180> <http://purl.obolibrary.org/obo/MONDO_0005570>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016180> "Orphanet:209016")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016180> "MONDO:0016180")
@@ -53333,6 +53365,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016181> (obsolete solid tumor associated with an acquired peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016181> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016181> <http://purl.obolibrary.org/obo/MONDO_0005070>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016181> "Orphanet:209019")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016181> "MONDO:0016181")
@@ -53548,6 +53581,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016201> (obsolete qualitative or quantitative defects of myotilin)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016201> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016201> "Orphanet:209224")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016201> "MONDO:0016201")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016201> "obsolete qualitative or quantitative defects of myotilin")
@@ -53601,6 +53635,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "NCI
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016224> (obsolete autosomal dominant proximal spinal muscular atrophy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_dominant") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016224> "OBSOLETE. Autosomal dominant form of proximal spinal muscular atrophy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016224> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016224> "Orphanet:211037")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_dominant") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016224> "proximal spinal muscular atrophy, autosomal dominant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016224> "MONDO:0016224")
@@ -53945,6 +53980,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0016374> <http://purl.obolibrar
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016375> (obsolete acquired peripheral movement disorder)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016375> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016375> "Orphanet:221114")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016375> "MONDO:0016375")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016375> "obsolete acquired peripheral movement disorder")
@@ -54013,6 +54049,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "DOI
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016403> (obsolete mitochondrial disease with peripheral neuropathy)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016403> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016403> <http://purl.obolibrary.org/obo/MONDO_0004069>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016403> "Orphanet:225703")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016403> "MONDO:0016403")
@@ -54133,6 +54170,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016493> (obsolete variant of Guillain-Barre syndrome)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016493> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016493> "Orphanet:231413")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016493> "variant of GBS")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016493> "MONDO:0016493")
@@ -54142,6 +54180,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016494> (obsolete regional variant of Guillain-Barre syndrome)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016494> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016494> "Orphanet:231416")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016494> "regional variant of GBS")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016494> "MONDO:0016494")
@@ -54151,6 +54190,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016495> (obsolete functional variant of Guillain-Barre syndrome)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016495> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016495> "Orphanet:231419")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016495> "functional variant of GBS")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016495> "MONDO:0016495")
@@ -54292,6 +54332,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0016553> ObjectSomeValuesFrom(<
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016578> (obsolete mitochondrial oxidative phosphorylation disorder due to nuclear DNA anomalies)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Orphanet:2443") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016578> "OBSOLETE. Mitochondrial oxidative phosphorylation disorder due to nuclear DNA anomalies is a group of clinically heterogeneous diseases, commonly defined by lack of cellular energy due to defects of oxidative phosphorylation (OXPHOS), resulting from pathogenic mutations in the nuclear DNA. Mitochondrial oxidative phosphorylation disorder due to nuclear DNA anomalies includes diseases classified according to defects in: genes encoding structural components of OXPHOS complexes (such as Leigh syndrome, coenzyme Q10 deficiency); genes encoding assembly factors of OXPHOS complexes (such as GRACILE syndrome); genes altering the stability of mitochondrial DNA (such as autosomal dominant progressive external ophthalmoplegia, mitochondrial DNA depletion syndrome); mitochondrial protein synthesis.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016578> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016578> <http://purl.obolibrary.org/obo/MONDO_0016387>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016578> "Orphanet:2443")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016578> "OXPHOS disease due to nDNA anomalies")
@@ -54553,6 +54594,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MON
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016791> (obsolete mitochondrial oxidative phosphorylation disorder due to mitochondrial DNA anomalies)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016791> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016791> <http://purl.obolibrary.org/obo/MONDO_0016387>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016791> "Orphanet:254758")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016791> "OXPHOS disease due to mitochondrial DNA anomalies")
@@ -54566,6 +54608,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016792> (obsolete mitochondrial oxidative phosphorylation disorder due to a large-scale single deletion of mitochondrial DNA)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016792> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016792> <http://purl.obolibrary.org/obo/MONDO_0016387>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016792> "Orphanet:254767")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016792> "OXPHOS disease due to a large-scale single deletion of mitochondrial DNA")
@@ -54579,6 +54622,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016793> (obsolete mitochondrial oxidative phosphorylation disorder due to a point mutation of mitochondrial DNA)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016793> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016793> <http://purl.obolibrary.org/obo/MONDO_0016387>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:NANDO") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0002-0170-9172") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0003-0011-764X") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016793> "NANDO:2200524")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016793> "Orphanet:254776")
@@ -54593,6 +54637,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016794> (obsolete maternally-inherited mitochondrial myopathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016794> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016794> "Orphanet:254788")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016794> "MONDO:0016794")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0016794> "obsolete maternally-inherited mitochondrial myopathy")
@@ -54601,6 +54646,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016795> (obsolete mitochondrial oxidative phosphorylation disorder due to a duplication of mitochondrial DNA)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016795> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016795> <http://purl.obolibrary.org/obo/MONDO_0016387>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalentObsolete") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016795> "Orphanet:254793")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016795> "OXPHOS disease due to a duplication of mitochondrial DNA")
@@ -54632,6 +54678,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016797> (obsolete multiple mitochondrial DNA deletion syndrome)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "PMID:24266892") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016797> "OBSOLETE. A mitochondrial oxidative phosphorylation disorder in which mitochondrial DNA (mtDNA) level is lower than normal.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016797> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016797> "Orphanet:254807")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orphanet:254807") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0001-5208-3432") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016797> "icd11.foundation:194083556")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016797> "multiple mtDNA deletion syndrome")
@@ -54658,6 +54705,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016799> (obsolete mitochondrial oxidative phosphorylation disorder with no known mechanism)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016799> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0016799> <http://purl.obolibrary.org/obo/MONDO_0016387>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016799> "Orphanet:254822")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016799> "OXPHOS disease with no known mechanism")
@@ -54714,6 +54762,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016803> (obsolete unspecified inborn mitochondrial disorder)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016803> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016803> "Orphanet:254837")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016803> "unspecified mitochondrial disorder")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016803> "MONDO:0016803")
@@ -54847,6 +54896,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0016814> ObjectSomeValuesFrom(<
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016815> (obsolete Leigh syndrome with leukodystrophy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016815> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalentObsolete") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016815> "Orphanet:255241")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016815> "Leigh disease with leukodystrophy")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016815> "infantile subacute necrotizing encephalopathy with leukodystrophy")
@@ -54857,6 +54907,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016816> (obsolete Leigh syndrome with nephrotic syndrome)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016816> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalentObsolete") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016816> "Orphanet:255249")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016816> "Leigh disease with nephrotic syndrome")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016816> "infantile subacute necrotizing encephalopathy with nephrotic syndrome")
@@ -55012,6 +55063,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0016879> <http://purl.obolibrar
 # Class: <http://purl.obolibrary.org/obo/MONDO_0016899> (obsolete Duchenne and Becker muscular dystrophy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Orphanet:262") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0016899> "OBSOLETE. Duchenne and Becker muscular dystrophies (DMD and BMD) are neuromuscular diseases characterized by progressive muscle wasting and weakness due to degeneration of skeletal, smooth and cardiac muscle.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0016899> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0016899> "Orphanet:262")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0016899> "severe dystrophinopathy, Duchenne and Becker type")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0016899> "MONDO:0016899")
@@ -55644,6 +55696,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0017336> (obsolete fatal infantile hypertrophic cardiomyopathy due to mitochondrial complex I deficiency)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeHistoricalDisease") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0017336> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0017336> <http://purl.obolibrary.org/obo/MONDO_0100133>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalentObsolete") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0017336> "Orphanet:289527")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0017336> "fatal infantile HCM due to mitochondrial complex I deficiency")
@@ -56174,6 +56227,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 # Class: <http://purl.obolibrary.org/obo/MONDO_0017629> (obsolete sodium channelopathy-related small fiber neuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Orphanet:306577") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0017629> "OBSOLETE. A rare, genetic, peripheral neuropathy disorder due to gain-of-function mutations in voltage-gated sodium channels present in the small peripheral nerve fibers characterized by neuropathic pain of varying intensity (often beginning in the distal extermities and with a burning quality) associated with autonomic dysfunction (e.g. orthostatic dizziness, palpitations, dry eyes and mouth), abnormal quantitative sensory testing, and reduction in intraepidermal nerve ﬁber density. Large fiber functions (i.e. normal strength, tendon reflexes, and vibration sense) and nerve conduction studies are typically normal.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0017629> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0017629> "Orphanet:306577")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0017629> "MONDO:0017629")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0017629> "obsolete sodium channelopathy-related small fiber neuropathy")
@@ -56477,6 +56531,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0017718> (obsolete mitochondrial disorder due to a defect in assembly or maturation of the respiratory chain complexes)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0017718> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0017718> <http://purl.obolibrary.org/obo/MONDO_0004069>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:NANDO") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0002-0170-9172") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0003-0011-764X") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0017718> "NANDO:2200522")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0017718> "Orphanet:309136")
@@ -57346,6 +57401,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018132> (obsolete congenital muscular alpha-dystroglycanopathy with brain and eye anomalies)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Orphanet:352687") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0018132> "OBSOLETE. Congenital muscular alpha-dystroglycanopathy with brain and eye anomalies (MDDGA) is a cobblestone lissencephaly characterized by and considered to be pathognomonic of a continuum of recessive autosomal disorders with brain, ocular and muscular involvement. MDDGA includes Walker-Warburg syndrome, muscle-eye-brain disease, Fukuyama muscular and cerebral dystrophy and muscle eye brain disease with bilateral multicystic leukodystrophy.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018132> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0018132> <http://purl.obolibrary.org/obo/MONDO_0018276>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018132> "DOID:0111229")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018132> "Orphanet:352687")
@@ -57381,6 +57437,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018144> (obsolete congenital myasthenic syndromes with glycosylation defect)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018144> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018144> "Orphanet:353327")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018144> "MONDO:0018144")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0018144> "obsolete congenital myasthenic syndromes with glycosylation defect")
@@ -57453,6 +57510,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0018155> <http://purl.obolibrar
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018157> (obsolete mitochondrial disorder due to a defect in mitochondrial protein synthesis)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018157> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0018157> <http://purl.obolibrary.org/obo/MONDO_0004069>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018157> "Orphanet:35696")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasSynonymType> <http://purl.obolibrary.org/obo/mondo#ABBREVIATION>) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018157> "COXPD")
@@ -57655,6 +57713,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "DOI
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018277> (obsolete congenital muscular dystrophy with cerebellar involvement)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGroupingPhenotype") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018277> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018277> "Orphanet:370959")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018277> "CMD with cerebellar involvement")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018277> "CMD-CRB")
@@ -57920,6 +57979,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0018343> ObjectSomeValuesFrom(<
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018344> (obsolete periodic paralysis with transient compartment-like syndrome)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGroupingPhenotype") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018344> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018344> "Orphanet:397755")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018344> "MONDO:0018344")
 AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MONDO_0018344> "Reason of obsoletion: out of scope - MONDO:excludeGroupingPhenotype. Term to consider: -none")
@@ -58073,6 +58133,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "htt
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018451> (obsolete X-linked distal hereditary motor neuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/x_linked") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0018451> "OBSOLETE. X-linked form of distal hereditary motor neuropathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018451> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018451> "Orphanet:404538")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018451> "X-linked dHMN")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018451> "X-linked distal spinal muscular atrophy")
@@ -58321,6 +58382,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "htt
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018549> (obsolete late-onset scapuloperoneal muscular dystrophy with hyaline bodies)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018549> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0018549> <http://purl.obolibrary.org/obo/MONDO_0016106>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018549> "Orphanet:431263")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018549> "late-onset SPMD with hyaline bodies")
@@ -58333,6 +58395,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018550> (obsolete spastic paraplegia-optic atrophy-neuropathy and spastic paraplegia-optic atrophy-neuropathy-related disorder)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018550> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018550> "Orphanet:431320")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018550> "SPOAN and SPOAN-related disorder")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018550> "MONDO:0018550")
@@ -58557,6 +58620,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018598> (obsolete neonatal adrenoleukodystrophy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Orphanet:44") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0018598> "OBSOLETE. Neonatal adrenoleukodystrophy (NALD) is the variant of intermediate severity of the PBD-Zellweger syndrome spectrum (PBD-ZSS), charcterized by hypotonia, leukodystrophy, and vision and sensorineural hearing deficiencies. Phenotypic overlap is seen between NALD and infantile Refsum disease (IRD).")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018598> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0018598> <http://purl.obolibrary.org/obo/MONDO_0019609>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018598> "ICD10CM:E71.511")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:NANDO") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0002-0170-9172") Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "https://orcid.org/0000-0003-0011-764X") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018598> "NANDO:1200761")
@@ -58731,6 +58795,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0018698> <http://purl.obolibrar
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018701> (obsolete congenital nemaline myopathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018701> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018701> "Orphanet:457074")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018701> "MONDO:0018701")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0018701> "obsolete congenital nemaline myopathy")
@@ -58773,6 +58838,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0018738> ObjectSomeValuesFrom(<
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018743> (obsolete immune-mediated acquired neuromuscular junction disease)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018743> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018743> "Orphanet:464764")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018743> "MONDO:0018743")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0018743> "obsolete immune-mediated acquired neuromuscular junction disease")
@@ -58835,6 +58901,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018775> (obsolete axonal hereditary motor and sensory neuropathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018775> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018775> "Orphanet:476109")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0018775> "axonal HMSN")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018775> "MONDO:0018775")
@@ -58881,6 +58948,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "DOI
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0018779> (obsolete hypercontractile muscle stiffness syndrome)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0018779> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0018779> "Orphanet:476403")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0018779> "MONDO:0018779")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0018779> "obsolete hypercontractile muscle stiffness syndrome")
@@ -61891,6 +61959,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "DOI
 # Class: <http://purl.obolibrary.org/obo/MONDO_0019601> (obsolete autosomal recessive axonal hereditary motor and sensory neuropathy)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/autosomal_recessive") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0019601> "OBSOLETE. Autosomal recessive form of axonal hereditary motor and sensory neuropathy.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGroupingHeritability") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0019601> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0019601> <http://purl.obolibrary.org/obo/MONDO_0005244>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0019601> "Orphanet:91024")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0019601> "AR-CMT2")
@@ -63102,6 +63171,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "DOI
 # Class: <http://purl.obolibrary.org/obo/MONDO_0020125> (obsolete acquired neuromuscular junction disease)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/acquired") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MONDO_0020125> "OBSOLETE. An instance of neuromuscular junction disease that is acquired during the lifetime of the individual.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0020125> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0020125> "Orphanet:98494")
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MONDO:patterns/acquired") <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0020125> "acquired neuromuscular junction disease")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0020125> "MONDO:0020125")
@@ -63332,6 +63402,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#exactMatch> <http://pur
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0020265> (obsolete mitochondrial disease with eye involvement)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0020265> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#consider> <http://purl.obolibrary.org/obo/MONDO_0020265> <http://purl.obolibrary.org/obo/MONDO_0004069>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalentObsolete") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0020265> "Orphanet:98695")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0020265> "MONDO:0020265")
@@ -63410,6 +63481,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Wik
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0020343> (obsolete alpha-crystallinopathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0020343> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0020343> "Orphanet:98910")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0020343> "CRYAB-related myofobrillar myopathy")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0020343> "MONDO:0020343")
@@ -69867,6 +69939,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/MONDO_0037940> <http://purl.obolibrar
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0038268> (obsolete autoimmune neurological channelopathy)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0038268> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0038268> "Orphanet:98750")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0038268> "MONDO:0038268")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MONDO_0038268> "obsolete autoimmune neurological channelopathy")
@@ -70336,6 +70409,7 @@ SubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "Orp
 
 # Class: <http://purl.obolibrary.org/obo/MONDO_0044655> (obsolete c12orf65-related combined oxidative phosphorylation defect)
 
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:excludeGrouping") <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/MONDO_0044655> <http://purl.obolibrary.org/obo/OMO_0001000>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> "MONDO:obsoleteEquivalent") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MONDO_0044655> "Orphanet:497623")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MONDO_0044655> "C12ORF65-related COXPD")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MONDO_0044655> "MONDO:0044655")

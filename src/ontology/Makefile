@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                212240dd38b9a24cd5b29fad5bd52d85c2917e655e0468f2d0b3cf4a39570d2f
+CONFIG_HASH=                7cfe5e40fb0f1222995bddd90e308058338930a9eda6cdbc322a26891b4ae593
 
 
 # ----------------------------------------
@@ -379,7 +379,7 @@ $(IMPORTSEED): $(PRESEED) | $(TMPDIR)
 
 T_IMPORTSEED = --term-file $(IMPORTSEED)
 
-ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
+ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0000231 IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
 
 # ----------------------------------------
 # Import modules

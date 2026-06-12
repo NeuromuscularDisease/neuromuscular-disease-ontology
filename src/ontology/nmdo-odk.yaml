@@ -41,6 +41,7 @@ import_group:
     - skos:narrowMatch
     - skos:relatedMatch
     - owl:deprecated
+    - IAO:0000231   # has obsolescence reason
     - IAO:0100001   # term replaced by
     - oboInOwl:consider
     - NCIT:P378   # Definition Source
