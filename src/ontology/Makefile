@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                7cfe5e40fb0f1222995bddd90e308058338930a9eda6cdbc322a26891b4ae593
+CONFIG_HASH=                cbbdb2986388a77c11d301e1d0ca798ff9dfc25da471d80d4cd9dd82422f2bbc
 
 
 # ----------------------------------------
@@ -412,6 +412,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.uniprot.org/uniprot/*>" \
 		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
 		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
+		 remove --select "<http://identifiers.org/ncbigene/*>" \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \
