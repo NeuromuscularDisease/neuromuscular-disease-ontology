@@ -7,13 +7,13 @@
 
 ifeq ($(IMP),true)
 
+# Add "mondo_terms_nmd_branch.txt" to the ALL_TERMS list to use in the merged_import.owl command
 ALL_TERMS = $(foreach imp, $(IMPORTS), $(IMPORTDIR)/$(imp)_terms.txt) $(IMPORTDIR)/mondo_terms_nmd_branch.txt
 
 ## Overwrite merged_import
 # Changes from original command in Makefile:
 #    - Added "remove --term IAO:0000102 ..." line to remove the 'data about an ontology part' class and all descendents
 #	 - Added "remove --term MONDO:0021178 ..." line to remove the Mondo 'injury' branch
-#	 - Added "--term-file $(IMPORTDIR)/mondo_terms_nmd_branch.txt" to the extract command and filename to dependency list
 #    - Added "collapse ..." line to remove unnecessary intermediate classes
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 				$(IMPORTSEED) | all_robot_plugins
