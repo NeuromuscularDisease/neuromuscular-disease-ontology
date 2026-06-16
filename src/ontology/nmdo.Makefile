@@ -10,6 +10,7 @@ ifeq ($(IMP),true)
 ## Overwrite merged_import
 # Changes from original command in Makefile:
 #    - Added "remove --term IAO:0000102 ..." line to remove the 'data about an ontology part' class and all descendents
+#	 - Added "remove --term MONDO:0021178 ..." line to remove the Mondo 'injury' branch
 #    - Added "collapse ..." line to remove unnecessary intermediate classes
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 				$(IMPORTSEED) | all_robot_plugins
@@ -32,6 +33,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
 		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
 		 remove --term IAO:0000102 --select "self descendants" --signature true \
+		 remove --term MONDO:0021178 --select "self descendants" --signature true \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \
