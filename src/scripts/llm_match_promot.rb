@@ -5,9 +5,12 @@
 # calls the NMDO semantic search API to find best-guess NMDO matches for
 # each unmatched PROMOT class.
 #
-# Outputs two ROBOT template files:
-#   promot-annotations-llm-matched.csv   — top match >= MIN_SCORE
+# Outputs three files:
+#   promot-annotations-llm-matched.csv   — one row per NMDO IRI (merged when
+#                                          multiple PROMOT classes hit the same IRI)
 #   promot-annotations-llm-unmatched.csv — no confident match found
+#   promot-annotations-llm-conflicts.csv — NMDO IRIs claimed by >1 PROMOT class
+#                                          (curator flag: NMDO may need splitting)
 #
 # Usage:
 #   ruby llm_match_promot.rb [min_score]
@@ -104,15 +107,79 @@ warn "Matched: #{matched.size} | Unmatched: #{unmatched.size}"
 REVIEW_H1 = ['LLM Score', 'LLM Top Candidates', 'LLM Match Note'].freeze
 REVIEW_H2 = ['', '', 'A rdfs:comment'].freeze
 
+# ── Deduplicate: merge rows that share the same NMDO IRI ──────────────────────
+# Column layout within each matched_row (0-indexed):
+#   0                   = NMDO IRI (ID)
+#   1                   = Label
+#   2                   = Definition
+#   3                   = PROMOT XRef (oboInOwl:hasDbXref)
+#   4..matched_h1.size-1 = annotation columns (14 URI/label pairs)
+#   matched_h1.size     = LLM Score
+#   matched_h1.size+1   = LLM Top Candidates
+#   matched_h1.size+2   = LLM Match Note
+SCORE_COL = matched_h1.size
+ALT_COL   = matched_h1.size + 1
+NOTE_COL  = matched_h1.size + 2
+XREF_COL  = 3
+ANNO_RANGE = (4...matched_h1.size).freeze
+
+matched_by_nmdo = matched.group_by { |row| row[0] }
+
+# Rows where >1 PROMOT class claimed the same NMDO IRI.
+conflicts = matched_by_nmdo.select { |_, rows| rows.size > 1 }
+warn "Conflicts (>1 PROMOT class → same NMDO IRI): #{conflicts.size}"
+
+# Produce one merged row per NMDO IRI.
+merged_matched = matched_by_nmdo.map do |nmdo_iri, rows|
+  next rows.first if rows.size == 1
+
+  # Highest-scoring row provides Label and Definition for the merged row.
+  best = rows.max_by { |r| r[SCORE_COL].to_f }
+
+  # Union of all PROMOT cross-references (pipe-separated).
+  merged_xref = rows.map { |r| r[XREF_COL] }.join('|')
+
+  # Union of all annotation values per column, deduplicated.
+  merged_annos = ANNO_RANGE.map do |col|
+    vals = rows.flat_map { |r| (r[col] || '').split('|') }.uniq.reject(&:empty?)
+    vals.join('|')
+  end
+
+  # Review columns: keep best score; concatenate alternatives and notes.
+  merged_alts  = rows.map { |r| r[ALT_COL] }.join(' || ')
+  merged_notes = rows.map { |r| r[NOTE_COL] }.join(' | ')
+
+  [nmdo_iri] + best[1..2] + [merged_xref] + merged_annos + [best[SCORE_COL], merged_alts, merged_notes]
+end
+
 # ── Write promot-annotations-llm-matched.csv ──────────────────────────────────
-# Uses existing-file column format (no TYPE or SC %) — these annotate existing
-# NMDO classes, not create new ones. ID is the LLM-matched NMDO IRI.
+# One row per NMDO IRI; annotations merged when multiple PROMOT classes matched.
 matched_path = File.join(TEMPLATES_DIR, 'promot-annotations-llm-matched.csv')
-warn "Writing #{matched_path}..."
+warn "Writing #{matched_path} (#{merged_matched.size} rows after deduplication)..."
 CSV.open(matched_path, 'w') do |csv|
   csv << matched_h1 + REVIEW_H1
   csv << matched_h2 + REVIEW_H2
-  matched.each { |row| csv << row }
+  merged_matched.each { |row| csv << row }
+end
+
+# ── Write promot-annotations-llm-conflicts.csv ────────────────────────────────
+# One row per NMDO IRI that was claimed by more than one PROMOT class.
+# Curator action: decide whether NMDO needs to be split into finer-grained classes.
+conflicts_path = File.join(TEMPLATES_DIR, 'promot-annotations-llm-conflicts.csv')
+warn "Writing #{conflicts_path}..."
+CSV.open(conflicts_path, 'w') do |csv|
+  csv << ['NMDO IRI', 'PROMOT Count', 'PROMOT IRIs', 'PROMOT Labels', 'LLM Scores', 'Review Note']
+  conflicts.each do |nmdo_iri, rows|
+    rows_by_score = rows.sort_by { |r| -r[SCORE_COL].to_f }
+    csv << [
+      nmdo_iri,
+      rows.size,
+      rows_by_score.map { |r| r[XREF_COL] }.join(' | '),
+      rows_by_score.map { |r| r[1] }.join(' | '),
+      rows_by_score.map { |r| r[SCORE_COL] }.join(' | '),
+      "#{rows.size} PROMOT classes mapped to same NMDO IRI — verify whether NMDO needs splitting"
+    ]
+  end
 end
 
 # ── Write promot-annotations-llm-unmatched.csv ────────────────────────────────

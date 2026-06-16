@@ -5,6 +5,36 @@ Maintained for clinical research audit purposes.
 
 ---
 
+## 2026-06-12 — Session 3: Duplicate ID fix in llm_match_promot.rb
+
+**Lead:** Mark Wilkinson
+
+### Problem identified
+
+`promot-annotations-llm-matched.csv` contained duplicate values in the `ID` column — multiple PROMOT classes had been independently matched to the same NMDO IRI by the LLM, producing multiple rows with conflicting Label, Definition, and annotation data. ROBOT template format requires unique IDs, so earlier rows would be silently overwritten.
+
+### Changes made
+
+- **`llm_match_promot.rb`** — added post-match deduplication:
+  - After all LLM calls complete, groups matched rows by their NMDO IRI
+  - Rows that share a NMDO IRI are merged into one: annotations (all pipe-separated columns) are unioned and deduplicated; PROMOT cross-references are pipe-joined; Label/Definition come from the highest-scoring match
+  - Writes a new **`promot-annotations-llm-conflicts.csv`** listing every NMDO IRI claimed by >1 PROMOT class — one row per conflict, with all PROMOT IRIs, labels, and scores — so curators can decide whether NMDO needs to be split into finer-grained classes
+
+### Output files
+
+| File | Status |
+| --- | --- |
+| `promot-annotations-llm-matched.csv` | Now guaranteed unique IDs; annotations merged across all PROMOT sources |
+| `promot-annotations-llm-conflicts.csv` | **New** — curator flag for NMDO splitting decisions |
+| `promot-annotations-llm-unmatched.csv` | Unchanged |
+
+### Action required
+
+Re-run `ruby llm_match_promot.rb` (from `src/scripts/`) to regenerate the matched and conflicts files.
+`parse_promot.rb` does not need re-running unless PROMOT or NMDO OWL files have changed.
+
+---
+
 ## 2026-06-03 / 2026-06-04 — Session 2: ROBOT pipeline, LLM matching, scoped batch approach
 
 **Lead:** Mark Wilkinson  
