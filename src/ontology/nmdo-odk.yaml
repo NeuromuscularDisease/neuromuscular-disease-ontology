@@ -42,6 +42,7 @@ import_group:
     - skos:narrowMatch
     - skos:relatedMatch
     - owl:deprecated
+    - IAO:0000231   # has obsolescence reason
     - IAO:0100001   # term replaced by
     - oboInOwl:consider
     - NCIT:P378   # Definition Source
@@ -57,6 +58,7 @@ import_group:
     - <http://purl.obolibrary.org/obo/ECTO_*>
     - <http://purl.obolibrary.org/obo/GO_*>
     - <http://purl.obolibrary.org/obo/HsapDv_*>
+    - <http://purl.obolibrary.org/obo/MAXO_*>
     - <http://purl.obolibrary.org/obo/MF_*>
     - <http://purl.obolibrary.org/obo/NBO_*>
     - <http://purl.obolibrary.org/obo/NCBITaxon_*>
@@ -65,6 +67,7 @@ import_group:
     - <http://purl.uniprot.org/uniprot/*>
     - <http://www.informatics.jax.org/accession/MGI*>
     - <http://rgd.mcw.edu/rgdweb/report/gene/*>
+    - <http://identifiers.org/ncbigene/*>
   module_type: slme
   module_type_slme: STAR
   slme_individuals: exclude

@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                b01d923cd85126087763f86cc8ada785f4bf7fdcdd7711eef1cf0ae208efb785
+CONFIG_HASH=                cbbdb2986388a77c11d301e1d0ca798ff9dfc25da471d80d4cd9dd82422f2bbc
 
 
 # ----------------------------------------
@@ -380,7 +380,7 @@ $(IMPORTSEED): $(PRESEED) | $(TMPDIR)
 
 T_IMPORTSEED = --term-file $(IMPORTSEED)
 
-ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
+ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0000231 IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
 
 # ----------------------------------------
 # Import modules
@@ -404,6 +404,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/MAXO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \
@@ -412,6 +413,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.uniprot.org/uniprot/*>" \
 		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
 		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
+		 remove --select "<http://identifiers.org/ncbigene/*>" \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \

@@ -7,9 +7,13 @@
 
 ifeq ($(IMP),true)
 
+# Add "mondo_terms_nmd_branch.txt" to the ALL_TERMS list to use in the merged_import.owl command
+ALL_TERMS = $(foreach imp, $(IMPORTS), $(IMPORTDIR)/$(imp)_terms.txt) $(IMPORTDIR)/mondo_terms_nmd_branch.txt
+
 ## Overwrite merged_import
 # Changes from original command in Makefile:
 #    - Added "remove --term IAO:0000102 ..." line to remove the 'data about an ontology part' class and all descendents
+#	 - Added "remove --term MONDO:0021178 ..." line to remove the Mondo 'injury' branch
 #    - Added "collapse ..." line to remove unnecessary intermediate classes
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 				$(IMPORTSEED) | all_robot_plugins
@@ -22,6 +26,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/MAXO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \
@@ -30,7 +35,9 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.uniprot.org/uniprot/*>" \
 		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
 		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
+		 remove --select "<http://identifiers.org/ncbigene/*>" \
 		 remove --term IAO:0000102 --select "self descendants" --signature true \
+		 remove --term MONDO:0021178 --select "self descendants" --signature true \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \
@@ -46,6 +53,11 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 
 endif # IMP=true
 
+
+# Get all descendants of "neuromuscular disease" (MONDO:0019056) and write to an import term file
+$(IMPORTDIR)/mondo_terms_nmd_branch.txt: $(MIRRORDIR)/mondo.owl
+	runoak -i sqlite:obo:mondo descendants MONDO:0019056 -p i -o $@ && \
+	sed -i 's/!/\#/g' $@
 
 
 ifeq ($(MIR),true)

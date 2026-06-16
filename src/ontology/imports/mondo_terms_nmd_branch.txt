@@ -1,0 +1,964 @@
+MONDO:0000660 # akinetopsia
+MONDO:0000727 # scapuloperoneal myopathy
+MONDO:0001459 # radial neuropathy
+MONDO:0001728 # active vestibular Meniere disease
+MONDO:0001904 # polyneuropathy due to drug
+MONDO:0002960 # polyradiculopathy
+MONDO:0003335 # chronic polyneuropathy
+MONDO:0005244 # peripheral neuropathy
+MONDO:0006940 # radial nerve lesion
+MONDO:0007275 # carpal tunnel syndrome
+MONDO:0007308 # Charcot-Marie-Tooth disease type 2A1
+MONDO:0008031 # facioscapulohumeral muscular dystrophy 2
+MONDO:0008056 # myotonic dystrophy type 1
+MONDO:0008069 # necrotizing encephalomyelopathy, subacute, of Leigh, adult
+MONDO:0008452 # spinal muscular atrophy, facioscapulohumeral type
+MONDO:0008780 # amyotrophic lateral sclerosis type 2, juvenile
+MONDO:0008948 # cerebrotendinous xanthomatosis
+MONDO:0009353 # homocystinuria due to methylene tetrahydrofolate reductase deficiency
+MONDO:0009568 # mast syndrome
+MONDO:0009672 # spinal muscular atrophy, type III
+MONDO:0009675 # autosomal recessive limb-girdle muscular dystrophy type 2A
+MONDO:0009723 # Leigh syndrome
+MONDO:0010046 # hereditary spastic paraplegia 23
+MONDO:0010091 # Cold-induced sweating syndrome 1
+MONDO:0010418 # hereditary spastic paraplegia 34
+MONDO:0010459 # amyotrophic lateral sclerosis type 15
+MONDO:0010679 # Duchenne muscular dystrophy
+MONDO:0010870 # tibial muscular dystrophy
+MONDO:0010877 # Charcot-Marie-Tooth disease type 5
+MONDO:0011085 # Charcot-Marie-Tooth disease type 4D
+MONDO:0011271 # rigid spine muscular dystrophy 1
+MONDO:0011339 # hereditary spastic paraplegia 8
+MONDO:0011527 # Charcot-Marie-Tooth disease type 4E
+MONDO:0011797 # infantile-onset ascending hereditary spastic paralysis
+MONDO:0011866 # pontocerebellar hypoplasia type 1A
+MONDO:0011879 # neuronopathy, distal hereditary motor, type 7B
+MONDO:0011890 # Charcot-Marie-Tooth disease type 1D
+MONDO:0012014 # Charcot-Marie-Tooth disease recessive intermediate A
+MONDO:0012130 # myofibrillar myopathy 2
+MONDO:0012173 # long chain 3-hydroxyacyl-CoA dehydrogenase deficiency
+MONDO:0012193 # autosomal dominant limb-girdle muscular dystrophy type 1G
+MONDO:0012270 # Tukel syndrome
+MONDO:0012453 # hereditary spastic paraplegia 31
+MONDO:0013072 # Emery-Dreifuss muscular dystrophy 5, autosomal dominant
+MONDO:0013264 # amyotrophic lateral sclerosis type 12
+MONDO:0013297 # autosomal dominant limb-girdle muscular dystrophy type 1H
+MONDO:0013644 # Charcot-Marie-Tooth disease axonal type 2O
+MONDO:0013938 # peroxisome biogenesis disorder 7A (Zellweger)
+MONDO:0014018 # hereditary spastic paraplegia 54
+MONDO:0014295 # hereditary spastic paraplegia 57
+MONDO:0014562 # neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome
+MONDO:0014586 # congenital myasthenic syndrome 4B
+MONDO:0014745 # congenital myasthenic syndrome 19
+MONDO:0014754 # primary coenzyme Q10 deficiency 8
+MONDO:0014896 # congenital muscular dystrophy-respiratory failure-skin abnormalities-joint hyperlaxity syndrome
+MONDO:0014983 # congenital myasthenic syndrome 21
+MONDO:0015007 # spastic paraplegia, intellectual disability, nystagmus, and obesity
+MONDO:0015339 # adrenomyeloneuropathy
+MONDO:0015351 # neuropathy with hearing impairment
+MONDO:0015362 # neuronopathy, distal hereditary motor, autosomal dominant
+MONDO:0016108 # autosomal dominant distal myopathy
+MONDO:0016113 # bulbospinal muscular atrophy
+MONDO:0016176 # axonal polyneuropathy associated with IgG/IgM/IgA monoclonal gammopathy
+MONDO:0017275 # spastic paraplegia-facial-cutaneous lesions syndrome
+MONDO:0017723 # Sandhoff disease, adult form
+MONDO:0017725 # Tay-Sachs disease, b variant, juvenile form
+MONDO:0017892 # autosomal recessive myogenic arthrogryposis multiplex congenita
+MONDO:0018939 # muscle-eye-brain disease
+MONDO:0019399 # Isaac syndrome
+MONDO:0019548 # autosomal dominant intermediate Charcot-Marie-Tooth disease
+MONDO:0020481 # myotonia fluctuans
+MONDO:0020793 # oculopharyngodistal myopathy 1
+MONDO:0024432 # nerve plexus disorder
+MONDO:0024545 # Miyoshi muscular dystrophy 1
+MONDO:0025193 # oculopharyngodistal myopathy
+MONDO:0029135 # muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 8
+MONDO:0030458 # Charcot-Marie-Tooth disease, axonal, Type 2HH
+MONDO:0030482 # spastic paraplegia 84, autosomal recessive
+MONDO:0030677 # Charcot-Marie-Tooth disease, demyelinating, IIA 1I
+MONDO:0030696 # mitochondrial DNA depletion syndrome 20 (mngie type)
+MONDO:0030875 # frontotemporal dementia and/or amyotrophic lateral sclerosis 5
+MONDO:0031068 # Charcot-Marie-Tooth disease, axonal, IIa 2II
+MONDO:0033838 # radiation-induced plexopathy
+MONDO:0035432 # POMGNT2-related limb-girdle muscular dystrophy R24
+MONDO:0035650 # late-onset Steinert myotonic dystrophy
+MONDO:0044625 # autosomal dominant charcot-marie-tooth disease type 2 due to DGAT2 mutation
+MONDO:0100260 # peroxisome biogenesis disorder due to PEX2 defect
+MONDO:0100635 # radiation-induced neuropathy
+MONDO:0100640 # chronic idiopathic neuropathy
+MONDO:0100645 # neuropathy in cryoglobulinemia
+MONDO:0100646 # neuropathy in endocrine disorder
+MONDO:0700285 # DMD-related muscular dystrophy
+MONDO:0700307 # spastic paraplegia 30A, autosomal dominant
+MONDO:0957875 # neuronopathy, distal hereditary motor, autosomal dominant 11
+MONDO:0958195 # oculopharyngeal muscular dystrophy 2
+MONDO:0958234 # Bethlem myopathy 1C
+MONDO:0971171 # muscular dystrophy, limb-girdle, autosomal recessive 29
+MONDO:0975918 # asymptomatic hyperckemia-myalgia-rhabdomyolysis syndrome
+MONDO:0980971 # charcot-marie-tooth disease, axonal, type 2MM
+MONDO:1040021 # congenital myasthenic syndrome 4
+MONDO:0000339 # spinal polio
+MONDO:0000958 # neuroretinitis
+MONDO:0001397 # mononeuropathy
+MONDO:0001543 # lesion of sciatic nerve
+MONDO:0003231 # acute nonparalytic poliomyelitis
+MONDO:0003334 # demyelinating polyneuropathy
+MONDO:0004183 # axonal neuropathy
+MONDO:0004279 # glossopharyngeal motor neuropathy
+MONDO:0004495 # myotonic cataract
+MONDO:0005145 # sporadic amyotrophic lateral sclerosis
+MONDO:0006888 # paraneoplastic polyneuropathy
+MONDO:0007294 # central core myopathy
+MONDO:0008076 # amyotrophic neuralgia
+MONDO:0008408 # scapuloperoneal spinal muscular atrophy, autosomal dominant
+MONDO:0008438 # hereditary spastic paraplegia 4
+MONDO:0008440 # spastic paraplegia-nephritis-deafness syndrome
+MONDO:0008953 # peroxisome biogenesis disorder 1A (Zellweger)
+MONDO:0008963 # Chediak-Higashi syndrome
+MONDO:0009499 # Krabbe disease
+MONDO:0009687 # myasthenia, congenital, refractory to acetylcholinesterase inhibitors
+MONDO:0009710 # Thomsen and Becker disease
+MONDO:0009749 # giant axonal neuropathy 1
+MONDO:0010006 # Sandhoff disease
+MONDO:0010056 # spinal muscular atrophy, type IV
+MONDO:0010190 # pontocerebellar hypoplasia type 2A
+MONDO:0010675 # muscular dystrophy, cardiac type
+MONDO:0010677 # muscular dystrophy, Mabry type
+MONDO:0011113 # Charcot-Marie-Tooth disease type 4C
+MONDO:0011281 # congenital myasthenic syndrome 5
+MONDO:0011423 # autosomal recessive limb-girdle muscular dystrophy type 2E
+MONDO:0011600 # congenital myasthenic syndrome 4A
+MONDO:0011675 # Charcot-Marie-Tooth Disease, axonal, type 2GG
+MONDO:0011721 # distal myopathy with anterior tibial onset
+MONDO:0011862 # hereditary spastic paraplegia 24
+MONDO:0012215 # myofibrillar myopathy 3
+MONDO:0012277 # myofibrillar myopathy 4
+MONDO:0012640 # Charcot-Marie-Tooth disease type 4J
+MONDO:0013155 # muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B3
+MONDO:0013156 # muscular dystrophy-dystroglycanopathy (congenital without intellectual disability), type B4
+MONDO:0013158 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A6
+MONDO:0013159 # muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B1
+MONDO:0013212 # Charcot-Marie-Tooth disease axonal type 2N
+MONDO:0013222 # Miyoshi muscular dystrophy 3
+MONDO:0013234 # hypokalemic periodic paralysis, type 2
+MONDO:0013390 # autosomal recessive limb-girdle muscular dystrophy type 2Q
+MONDO:0013634 # neuropathy, hereditary sensory, type 2C
+MONDO:0013677 # Emery-Dreifuss muscular dystrophy 7, autosomal dominant
+MONDO:0013883 # congenital myasthenic syndrome 13
+MONDO:0013936 # peroxisome biogenesis disorder 6A (Zellweger)
+MONDO:0013942 # peroxisome biogenesis disorder 8A (Zellweger)
+MONDO:0013950 # peroxisome biogenesis disorder 11B
+MONDO:0014021 # familial episodic pain syndrome with predominantly upper body involvement
+MONDO:0014025 # lower motor neuron syndrome with late-adult onset
+MONDO:0014074 # Charcot-Marie-Tooth disease dominant intermediate F
+MONDO:0014140 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A14
+MONDO:0014208 # Charcot-Marie-Tooth disease type 2R
+MONDO:0014282 # hereditary spastic paraplegia 72
+MONDO:0014286 # neuropathy, hereditary sensory, type 1F
+MONDO:0014489 # limb-girdle muscular dystrophy due to POMK deficiency
+MONDO:0014557 # ataxia - oculomotor apraxia type 4
+MONDO:0014662 # congenital insensitivity to pain-hypohidrosis syndrome
+MONDO:0014900 # autosomal recessive limb-girdle muscular dystrophy type 2Y
+MONDO:0014945 # myopathy, distal, with rimmed vacuoles
+MONDO:0015358 # hereditary motor and sensory neuropathy
+MONDO:0015526 # cold-induced sweating syndrome
+MONDO:0017728 # Tay-Sachs disease, B1 variant
+MONDO:0017913 # pure or complex hereditary spastic paraplegia
+MONDO:0018370 # KLHL9-related early-onset distal myopathy
+MONDO:0018418 # autosomal recessive spastic paraplegia type 66
+MONDO:0018419 # autosomal recessive spastic paraplegia type 67
+MONDO:0018450 # spinal muscular atrophy with respiratory distress type 2
+MONDO:0018567 # autosomal dominant Charcot-Marie-Tooth disease type 2 due to TFG mutation
+MONDO:0018576 # non-progressive predominantly posterior cavitating leukoencephalopathy with peripheral neuropathy
+MONDO:0018644 # autosomal dominant complex spastic paraplegia type 9B
+MONDO:0018957 # pudendal neuralgia
+MONDO:0019109 # CANOMAD syndrome
+MONDO:0019234 # peroxisome biogenesis disorder
+MONDO:0019398 # desmin-related myopathy with Mallory body-like inclusions
+MONDO:0019609 # Zellweger spectrum disorders
+MONDO:0019951 # rigid spine syndrome
+MONDO:0020128 # motor neuron disorder
+MONDO:0021718 # polyneuritis
+MONDO:0029133 # muscular dystrophy, limb-girdle, autosomal dominant 4
+MONDO:0031019 # spastic paraplegia 87, autosomal recessive
+MONDO:0032596 # myasthenic syndrome, congenital, 23, presynaptic
+MONDO:0032675 # myasthenic syndrome, congenital, 25, presynaptic
+MONDO:0035892 # Mills syndrome
+MONDO:0043320 # piriformis syndrome
+MONDO:0044622 # EMILIN-1-related connective tissue disease
+MONDO:0044640 # Charcot-Marie-Tooth disease type 2T
+MONDO:0044737 # autosomal recessive complex spastic paraplegia due to kennedy pathway dysfunction
+MONDO:0100150 # RYR1-related myopathy
+MONDO:0100269 # peroxisome biogenesis disorder due to PEX16 defect
+MONDO:0100634 # traumatic neuropathy
+MONDO:0700309 # spastic paraplegia 18b, autosomal recessive
+MONDO:0800207 # neuropathy, small fiber
+MONDO:0957788 # spastic paraplegia 18a, autosomal dominant
+MONDO:0957813 # spastic paraplegia 91, autosomal dominant, with or without cerebellar ataxia
+MONDO:0971008 # amyloidosis, hereditary systemic 3
+MONDO:8000018 # benign paroxysmal positional vertigo
+MONDO:0000173 # muscular dystrophy-dystroglycanopathy, type C
+MONDO:0001299 # diabetic autonomic neuropathy
+MONDO:0001347 # facioscapulohumeral muscular dystrophy
+MONDO:0001516 # spinal muscular atrophy
+MONDO:0003615 # nerve compression syndrome
+MONDO:0003700 # brachial plexus neoplasm
+MONDO:0004569 # brachial plexus neuropathy from injury
+MONDO:0005144 # familial amyotrophic lateral sclerosis
+MONDO:0006008 # vestibular neuronitis
+MONDO:0006744 # endolymphatic hydrops
+MONDO:0006915 # polyradiculoneuropathy
+MONDO:0007097 # Finnish type amyloidosis
+MONDO:0007100 # familial amyloid neuropathy
+MONDO:0008195 # paramyotonia congenita of Von Eulenburg
+MONDO:0008222 # Andersen-Tawil syndrome
+MONDO:0008442 # spastic paraplegia-neuropathy-poikiloderma syndrome
+MONDO:0008443 # spastic paraplegia-precocious puberty syndrome
+MONDO:0008451 # neuronopathy, distal hereditary motor, autosomal dominant 1
+MONDO:0008453 # adult-onset proximal spinal muscular atrophy, autosomal dominant
+MONDO:0008718 # Morvan syndrome
+MONDO:0008890 # progressive bulbar palsy
+MONDO:0008961 # Charcot-Marie-Tooth disease type 4A
+MONDO:0009591 # metachromatic leukodystrophy, juvenile form
+MONDO:0009673 # spinal muscular atrophy, type II
+MONDO:0010188 # familial isolated deficiency of vitamin E
+MONDO:0010551 # Charcot-Marie-Tooth disease X-linked recessive 3
+MONDO:0010699 # Charcot-Marie-Tooth disease X-linked recessive 5
+MONDO:0010717 # pyruvate dehydrogenase E1-alpha deficiency
+MONDO:0010869 # motor neuron disease with dementia and ophthalmoplegia
+MONDO:0010995 # Charcot-Marie-Tooth disease type 1C
+MONDO:0011223 # amyotrophic lateral sclerosis type 4
+MONDO:0011362 # myopathy, myofibrillar, 9, with early respiratory failure
+MONDO:0011569 # Charcot-Marie-Tooth disease type 2B1
+MONDO:0011632 # amyotrophic lateral sclerosis type 21
+MONDO:0011771 # neuronopathy, distal hereditary motor, autosomal recessive 3
+MONDO:0011898 # Charcot-Marie-Tooth disease, axonal, with vocal cord paresis, autosomal recessive
+MONDO:0011916 # Charcot-Marie-Tooth disease axonal type 2K
+MONDO:0011952 # amyotrophic lateral sclerosis type 7
+MONDO:0011998 # autosomal dominant slowed nerve conduction velocity
+MONDO:0012080 # neuronopathy, distal hereditary motor, type 2B
+MONDO:0012138 # muscular dystrophy-dystroglycanopathy type B6
+MONDO:0012156 # myasthenic syndrome, congenital, 1B, fast-channel
+MONDO:0012334 # hereditary spastic paraplegia 29
+MONDO:0012608 # neuronopathy, distal hereditary motor, autosomal recessive 4
+MONDO:0012652 # autosomal recessive limb-girdle muscular dystrophy type 2L
+MONDO:0013071 # Emery-Dreifuss muscular dystrophy 4, autosomal dominant
+MONDO:0013154 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A2
+MONDO:0013165 # hereditary spastic paraplegia 45
+MONDO:0013221 # Miyoshi muscular dystrophy 2
+MONDO:0013338 # Charcot-Marie-Tooth disease recessive intermediate B
+MONDO:0013401 # hereditary spastic paraplegia 51
+MONDO:0013835 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 7
+MONDO:0013837 # deafness-encephaloneuropathy-obesity-valvulopathy syndrome
+MONDO:0013840 # encephalopathy-hypertrophic cardiomyopathy-renal tubular disease syndrome
+MONDO:0013952 # peroxisome biogenesis disorder 13A (Zellweger)
+MONDO:0014016 # hereditary spastic paraplegia 49
+MONDO:0014022 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a, 10
+MONDO:0014117 # Charcot-Marie-Tooth disease type 4B3
+MONDO:0014142 # autosomal recessive limb-girdle muscular dystrophy type 2T
+MONDO:0014568 # hereditary spastic paraplegia 73
+MONDO:0014581 # congenital myasthenic syndrome 2A
+MONDO:0014683 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A9
+MONDO:0014906 # Charcot-Marie-Tooth disease, axonal, autosomal recessive, type 2a2b;
+MONDO:0014922 # myofibrillar myopathy 7
+MONDO:0014975 # autosomal recessive spastic paraplegia type 78
+MONDO:0015307 # Madras motor neuron disease
+MONDO:0015353 # neuronopathy, distal hereditary motor, type 5A
+MONDO:0016090 # late-infantile/juvenile Krabbe disease
+MONDO:0016097 # symptomatic form of muscular dystrophy of Duchenne and Becker in female carriers
+MONDO:0016431 # autosomal dominant Charcot-Marie-Tooth disease type 2M
+MONDO:0016454 # Charcot-Marie-Tooth disease type 2B5
+MONDO:0017726 # Tay-Sachs disease, B variant, adult form
+MONDO:0018133 # attenuated Chédiak-Higashi syndrome
+MONDO:0018276 # muscular dystrophy-dystroglycanopathy
+MONDO:0018493 # malignant hyperthermia of anesthesia
+MONDO:0018587 # non-recovering obstetric brachial plexus lesion
+MONDO:0018687 # progressive muscular atrophy
+MONDO:0018759 # childhood-onset progressive contractures-limb-girdle weakness-muscle dystrophy syndrome
+MONDO:0018873 # anterior cutaneous nerve entrapment syndrome
+MONDO:0018894 # distal hereditary motor neuropathy
+MONDO:0019083 # Leigh syndrome with cardiomyopathy
+MONDO:0021018 # autosomal dominant limb-girdle muscular dystrophy type 1D (DNAJB6)
+MONDO:0023595 # congenital myotonic dystrophy
+MONDO:0024257 # hereditary motor neuron disease
+MONDO:0024309 # neuropathy, hereditary sensory and autonomic, type 2A
+MONDO:0024530 # Bethlem myopathy 1A
+MONDO:0030673 # spastic paraplegia 86, autosomal recessive
+MONDO:0032905 # spastic paraplegia 81, autosomal recessive
+MONDO:0044657 # MME-related autosomal dominant Charcot Marie Tooth disease type 2
+MONDO:0100546 # hereditary neuromuscular disease
+MONDO:0100639 # vasculitic neuropathy
+MONDO:0100647 # sarcoid neuropathy
+MONDO:0859255 # peripheral motor neuropathy, childhood-onset, biotin-responsive
+MONDO:0957114 # neurological muscular channelopathy due to a genetic potassium channel defect
+MONDO:0957270 # muscular dystrophy, limb-girdle, autosomal recessive 28
+MONDO:0957876 # neuronopathy, distal hereditary motor, autosomal recessive 10
+MONDO:0958332 # neuromuscular disorder, congenital, with dysmorphic facies
+MONDO:0971150 # neuronopathy, distal hereditary motor, autosomal recessive 11, with spasticity
+MONDO:0975746 # spastic paraplegia 92, autosomal recessive
+MONDO:0979273 # ADAR-related hereditary spastic paraplegia
+MONDO:0000355 # Ullrich congenital muscular dystrophy
+MONDO:0002128 # mononeuritis multiplex
+MONDO:0003084 # uremic neuropathy
+MONDO:0004280 # asymmetric motor neuropathy
+MONDO:0004546 # lumbar plexus neoplasm
+MONDO:0005684 # bulbar polio
+MONDO:0006683 # brachial plexus neuropathy
+MONDO:0007103 # amyotrophic lateral sclerosis type 1
+MONDO:0007307 # Charcot-Marie-Tooth disease type 1B
+MONDO:0007592 # familial recurrent peripheral facial palsy
+MONDO:0008026 # autosomal dominant childhood-onset proximal spinal muscular atrophy without contractures
+MONDO:0008028 # muscular dystrophy, Barnes type
+MONDO:0008034 # muscular dystrophy, pseudohypertrophic, with Internalized capillaries
+MONDO:0008055 # myotonia congenita, autosomal dominant
+MONDO:0008458 # spinocerebellar ataxia type 2
+MONDO:0008758 # mitochondrial DNA depletion syndrome 4a
+MONDO:0008759 # oxoglutaricaciduria
+MONDO:0008954 # peroxisome biogenesis disorder 2A (Zellweger)
+MONDO:0009680 # congenital muscular dystrophy-infantile cataract-hypogonadism syndrome
+MONDO:0009690 # congenital myasthenic syndrome 10
+MONDO:0010156 # Troyer syndrome
+MONDO:0010311 # Becker muscular dystrophy
+MONDO:0010400 # X-linked scapuloperoneal muscular dystrophy
+MONDO:0010678 # muscular dystrophy, progressive Pectorodorsal
+MONDO:0010680 # X-linked Emery-Dreifuss muscular dystrophy
+MONDO:0010688 # hereditary sensory neuropathy X-linked
+MONDO:0010733 # hereditary spastic paraplegia 2
+MONDO:0011002 # neuropathy, hereditary motor and sensory, type 6A
+MONDO:0011076 # myofibrillar myopathy 1
+MONDO:0011181 # fibrosis of extraocular muscles, congenital, 2
+MONDO:0011445 # hereditary spastic paraplegia 11
+MONDO:0011468 # hereditary motor and sensory neuropathy, Okinawa type
+MONDO:0011475 # Charcot-Marie-Tooth disease type 4B2
+MONDO:0011803 # hereditary spastic paraplegia 7
+MONDO:0011894 # Charcot-Marie-Tooth disease type 2E
+MONDO:0011909 # Charcot-Marie-Tooth disease dominant intermediate D
+MONDO:0011925 # congenital merosin-deficient muscular dystrophy 1A
+MONDO:0012120 # pyruvate dehydrogenase phosphatase deficiency
+MONDO:0012410 # Finnish upper limb-onset distal myopathy
+MONDO:0012766 # hereditary spastic paraplegia 37
+MONDO:0012866 # hereditary spastic paraplegia 35
+MONDO:0012890 # pontocerebellar hypoplasia type 2B
+MONDO:0013049 # DPM3-congenital disorder of glycosylation
+MONDO:0013438 # pontocerebellar hypoplasia type 2D
+MONDO:0013758 # Charcot-Marie-Tooth disease dominant intermediate E
+MONDO:0013838 # coenzyme Q10 deficiency, primary, 3
+MONDO:0013967 # peroxisome biogenesis disorder 14B
+MONDO:0014024 # hereditary spastic paraplegia 43
+MONDO:0014101 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a, 12
+MONDO:0014154 # Charcot-Marie-Tooth disease recessive intermediate C
+MONDO:0014259 # neuronopathy, distal hereditary motor, type 2D
+MONDO:0014543 # congenital myasthenic syndrome 14
+MONDO:0014567 # glutamate pyruvate transaminase 2 deficiency
+MONDO:0014640 # frontotemporal dementia and/or amyotrophic lateral sclerosis 3
+MONDO:0014788 # autosomal recessive limb-girdle muscular dystrophy type 2W
+MONDO:0014807 # spinal muscular atrophy with congenital bone fractures 2
+MONDO:0014882 # hereditary spastic paraplegia 77
+MONDO:0015363 # neuronopathy, distal hereditary motor, autosomal recessive
+MONDO:0015364 # hereditary sensory and autonomic neuropathy
+MONDO:0016102 # subacute inflammatory demyelinating polyneuropathy
+MONDO:0016372 # glossopharyngeal neuralgia
+MONDO:0017373 # poliomyelitis
+MONDO:0017575 # mitochondrial neurogastrointestinal encephalomyopathy
+MONDO:0017730 # metachromatic leukodystrophy, adult form
+MONDO:0017999 # fatty acid hydroxylase-associated neurodegeneration
+MONDO:0018005 # spastic paraplegia-Paget disease of bone syndrome
+MONDO:0018151 # coenzyme Q10 deficiency
+MONDO:0018319 # familial episodic pain syndrome
+MONDO:0018420 # autosomal recessive spastic paraplegia type 68
+MONDO:0018423 # autosomal recessive spastic paraplegia type 71
+MONDO:0018949 # distal myopathy
+MONDO:0019950 # congenital muscular dystrophy
+MONDO:0020336 # autosomal dominant Emery-Dreifuss muscular dystrophy
+MONDO:0020483 # acetazolamide-responsive myotonia
+MONDO:0021083 # congenital fibrosis of extraocular muscles type 1
+MONDO:0021667 # neuralgia
+MONDO:0024457 # neurodegeneration with brain iron accumulation 2A
+MONDO:0025622 # Charcot-Marie-Tooth disease, axonal, mitochondrial form, 1
+MONDO:0032597 # myasthenic syndrome, congenital, 24, presynaptic
+MONDO:0032728 # Charcot-Marie-Tooth disease, axonal, type 2EE
+MONDO:0033556 # muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type B, 15
+MONDO:0035649 # adult-onset Steinert myotonic dystrophy
+MONDO:0044299 # myasthenic syndrome, congenital, 22
+MONDO:0044648 # kyphoscoliosis-lateral tongue atrophy-hereditary spastic paraplegia syndrome
+MONDO:0054833 # Charcot-Marie-tooth disease, axonal, type 2DD
+MONDO:0100261 # peroxisome biogenesis disorder due to PEX3 defect
+MONDO:0100262 # peroxisome biogenesis disorder due to PEX5 defect
+MONDO:0100428 # progressive bulbar palsy of childhood
+MONDO:0700075 # congenital muscular dystrophy caused by variation in POMGNT2
+MONDO:0700466 # presynaptic congenital myasthenic syndrome
+MONDO:0800365 # peroxisome biogenesis disorder, complementation group K
+MONDO:0859311 # Charcot-Marie-Tooth disease, demyelinating, type 1J
+MONDO:0957111 # neurological muscular channelopathy due to a genetic sodium channel defect
+MONDO:0957112 # neurological muscular channelopathy due to a genetic chloride channel defect
+MONDO:0957958 # spastic paraplegia 72b, autosomal recessive
+MONDO:0971009 # amyloidosis, hereditary systemic 5
+MONDO:0971149 # spastic paraplegia 30B, autosomal recessive
+MONDO:0975848 # Morimoto-Ryu-Malicdan neuromuscular syndrome
+MONDO:0980969 # Charcot-Marie-Tooth disease, axonal, type 2LL
+MONDO:8000019 # vertigo, benign recurrent, 1
+MONDO:0001765 # polyneuropathy in collagen vascular disease
+MONDO:0003607 # neuritis of upper limb
+MONDO:0004372 # chronic toxic polyneuropathy
+MONDO:0006960 # sciatic neuropathy
+MONDO:0007311 # Charcot-Marie-Tooth disease type 1E
+MONDO:0008029 # Bethlem myopathy
+MONDO:0008087 # hereditary neuropathy with liability to pressure palsies
+MONDO:0008224 # hyperkalemic periodic paralysis
+MONDO:0008407 # neurogenic scapuloperoneal syndrome, Kaeser type
+MONDO:0009529 # pyruvate dehydrogenase E3 deficiency
+MONDO:0009667 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A3
+MONDO:0009712 # congenital multicore myopathy with external ophthalmoplegia
+MONDO:0009746 # hereditary sensory and autonomic neuropathy type 4
+MONDO:0009748 # hereditary sensory and autonomic neuropathy with spastic paraplegia
+MONDO:0010043 # hereditary spastic paraplegia 17
+MONDO:0010044 # hereditary spastic paraplegia 15
+MONDO:0010338 # X-linked distal spinal muscular atrophy type 3
+MONDO:0010794 # NARP syndrome
+MONDO:0010884 # muscular dystrophy, scapulohumeral
+MONDO:0011006 # hereditary spastic paraplegia 9A
+MONDO:0011246 # megaconial type congenital muscular dystrophy
+MONDO:0011436 # autosomal recessive distal spinal muscular atrophy 1
+MONDO:0011486 # congenital muscular dystrophy 1B
+MONDO:0011663 # juvenile primary lateral sclerosis
+MONDO:0011674 # Charcot-Marie-Tooth disease dominant intermediate B
+MONDO:0011785 # hereditary spastic paraplegia 19
+MONDO:0011801 # spinocerebellar ataxia, autosomal recessive, with axonal neuropathy 1
+MONDO:0011829 # coenzyme Q10 deficiency, primary, 1
+MONDO:0011835 # sensory ataxic neuropathy, dysarthria, and ophthalmoparesis
+MONDO:0012092 # hereditary sensory and autonomic neuropathy type 5
+MONDO:0012157 # congenital myasthenic syndrome 4C
+MONDO:0012248 # autosomal recessive limb-girdle muscular dystrophy type 2K
+MONDO:0012250 # Charcot-Marie-Tooth disease type 4H
+MONDO:0012286 # myopathy, autophagic vacuolar, infantile-onset
+MONDO:0012643 # hereditary spastic paraplegia 32
+MONDO:0012945 # amyotrophic lateral sclerosis type 11
+MONDO:0013048 # hereditary spastic paraplegia 50
+MONDO:0013132 # hereditary spastic paraplegia 36
+MONDO:0013161 # autosomal recessive limb-girdle muscular dystrophy type 2O
+MONDO:0013239 # hereditary spastic paraplegia 41
+MONDO:0013342 # hereditary spastic paraplegia 48
+MONDO:0013550 # distal myopathy with posterior leg and anterior hand involvement
+MONDO:0013552 # hereditary spastic paraplegia 52
+MONDO:0013836 # familial steroid-resistant nephrotic syndrome with sensorineural deafness
+MONDO:0013884 # neuronopathy, distal hereditary motor, type 5B
+MONDO:0013927 # peroxisome biogenesis disorder 3A (Zellweger)
+MONDO:0013930 # peroxisome biogenesis disorder 4A (Zellweger)
+MONDO:0013943 # peroxisome biogenesis disorder 8B
+MONDO:0013951 # peroxisome biogenesis disorder 12A (Zellweger)
+MONDO:0014120 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A13
+MONDO:0014121 # autosomal dominant childhood-onset proximal spinal muscular atrophy with contractures
+MONDO:0014141 # muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B14
+MONDO:0014181 # amyotrophic lateral sclerosis type 20
+MONDO:0014474 # autosomal recessive limb-girdle muscular dystrophy type 2U
+MONDO:0014485 # pontocerebellar hypoplasia, type 1C
+MONDO:0014566 # Charcot-Marie-Tooth disease axonal type 2U
+MONDO:0014584 # congenital myasthenic syndrome 3B
+MONDO:0014590 # congenital myasthenic syndrome 18
+MONDO:0014644 # hereditary spastic paraplegia 74
+MONDO:0014726 # Charcot-Marie-Tooth disease axonal type 2X
+MONDO:0014874 # pontocerebellar hypoplasia, type 2F
+MONDO:0014890 # PERCHING syndrome
+MONDO:0014939 # congenital myasthenic syndrome 20
+MONDO:0015250 # spinal atrophy-ophthalmoplegia-pyramidal syndrome
+MONDO:0016396 # pontocerebellar hypoplasia type 1
+MONDO:0016759 # pontocerebellar hypoplasia type 2
+MONDO:0017047 # infantile axonal neuropathy
+MONDO:0017729 # metachromatic leukodystrophy, late infantile form
+MONDO:0018006 # adult-onset distal myopathy due to VCP mutation
+MONDO:0018416 # autosomal recessive spastic paraplegia type 59
+MONDO:0018776 # demyelinating hereditary motor and sensory neuropathy
+MONDO:0018951 # distal myopathy with vocal cord weakness
+MONDO:0018959 # potassium-aggravated myotonia
+MONDO:0018977 # polyneuropathy associated with IgM monoclonal gammapathy with anti-MAG
+MONDO:0018995 # Charcot-Marie-Tooth disease type 4
+MONDO:0018996 # spinocerebellar ataxia, autosomal recessive, with axonal neuropathy 2
+MONDO:0020765 # neuropathy, congenital hypomyelinating, 2
+MONDO:0024537 # Brown-Vialetto-van Laere syndrome 1
+MONDO:0030456 # muscular dystrophy, limb-girdle, autosomal recessive 27
+MONDO:0030860 # neuronopathy, distal hereditary motor, type 5C
+MONDO:0032737 # spastic paraplegia 80, autosomal dominant
+MONDO:0033352 # neuropathy, congenital hypomelinating
+MONDO:0033614 # spastic paraplegia 83, autosomal recessive
+MONDO:0054549 # peroxisome biogenesis disorder 10B
+MONDO:0100138 # X-linked recessive mitochondrial myopathy
+MONDO:0100265 # peroxisome biogenesis disorder due to PEX5 defect in the PEX7-binding domain
+MONDO:0100266 # peroxisome biogenesis disorder due to PEX12 defect
+MONDO:0100279 # peroxisome biogenesis disorder due to PEX11B defect
+MONDO:0100307 # adult Refsum disease due to PEX7 defect
+MONDO:0100446 # CNGB3-related retinopathy
+MONDO:0100552 # ATTRV30M amyloidosis
+MONDO:0800304 # neuropathy, hereditary sensory and autonomic, type IId
+MONDO:0859279 # spinal muscular atrophy, distal, autosomal recessive, 6
+MONDO:0859363 # spastic paraplegia 79A, autosomal dominant, with ataxia
+MONDO:0957113 # neurological muscular channelopathy due to a genetic calcium channel defect
+MONDO:0957309 # spastic paraplegia 90B, autosomal recessive
+MONDO:0958129 # COQ7-related distal hereditary motor neuropathy
+MONDO:0958176 # oculopharyngeal muscular dystrophy 1
+MONDO:0958233 # Bethlem myopathy 1B
+MONDO:0971010 # amyloidosis, hereditary systemic 6
+MONDO:0000171 # muscular dystrophy-dystroglycanopathy, type A
+MONDO:0001294 # Horner syndrome
+MONDO:0001408 # ischemic neuropathy
+MONDO:0001458 # ulnar nerve lesion
+MONDO:0001542 # common peroneal nerve lesion
+MONDO:0001583 # diabetic polyneuropathy
+MONDO:0001829 # lumbosacral plexus lesion
+MONDO:0002130 # upper limb mononeuronitis
+MONDO:0002910 # peroneal neuropathy
+MONDO:0004224 # chronic metabolic polyneuropathy
+MONDO:0004797 # mononeuritis of lower limb
+MONDO:0004900 # peripheral vertigo
+MONDO:0006626 # diabetic neuropathy
+MONDO:0006682 # brachial plexus neuritis
+MONDO:0007309 # Charcot-Marie-Tooth disease type 1A
+MONDO:0007312 # Charcot-Marie-Tooth disease with ptosis and parkinsonism
+MONDO:0008024 # neuronopathy, distal hereditary motor, type 7A
+MONDO:0008692 # abetalipoproteinemia
+MONDO:0008782 # amyotrophic lateral sclerosis with polyglucosan bodies
+MONDO:0008972 # rhizomelic chondrodysplasia punctata type 1
+MONDO:0009181 # epidermolysis bullosa simplex 5B, with muscular dystrophy
+MONDO:0009681 # Ullrich congenital muscular dystrophy 1A
+MONDO:0009685 # Miyoshi myopathy
+MONDO:0009689 # congenital myasthenic syndrome 6
+MONDO:0009796 # ornithine aminotransferase deficiency
+MONDO:0009959 # peroxisome biogenesis disorder type 3B
+MONDO:0010057 # spinal muscular atrophy, Ryukyuan type
+MONDO:0010100 # Tay-Sachs disease
+MONDO:0010479 # Charcot-Marie-Tooth disease X-linked dominant 6
+MONDO:0010787 # Kearns-Sayre syndrome
+MONDO:0010858 # macrocephaly-spastic paraplegia-dysmorphism syndrome
+MONDO:0010936 # frontotemporal dementia and/or amyotrophic lateral sclerosis 7
+MONDO:0011101 # peroxisome biogenesis disorder 1B
+MONDO:0011224 # monomelic amyotrophy
+MONDO:0011283 # mitochondrial DNA depletion syndrome 1
+MONDO:0011691 # amyotrophic lateral sclerosis type 3
+MONDO:0011951 # amyotrophic lateral sclerosis type 6
+MONDO:0012034 # autosomal dominant limb-girdle muscular dystrophy type 1F
+MONDO:0012213 # hereditary spastic paraplegia 26
+MONDO:0012231 # Charcot-Marie-Tooth disease type 2A2
+MONDO:0012297 # spastic paraplegia, optic atropy, and neuropathy
+MONDO:0012411 # giant axonal neuropathy 2
+MONDO:0012448 # hereditary spastic paraplegia 33
+MONDO:0012714 # early-onset myopathy with fatal cardiomyopathy
+MONDO:0012753 # amyotrophic lateral sclerosis type 9
+MONDO:0012787 # hereditary spastic paraplegia 39
+MONDO:0013177 # congenital muscular dystrophy due to integrin alpha-7 deficiency
+MONDO:0013337 # neuropathy, hereditary sensory and autonomic, type 1C
+MONDO:0013350 # mitochondrial DNA depletion syndrome 4b
+MONDO:0013440 # autosomal recessive limb-girdle muscular dystrophy type 2P
+MONDO:0013501 # frontotemporal dementia and/or amyotrophic lateral sclerosis 6
+MONDO:0013620 # congenital myasthenic syndrome 16
+MONDO:0013839 # hereditary sensory and autonomic neuropathy type 6
+MONDO:0013891 # amyotrophic lateral sclerosis type 18
+MONDO:0013939 # peroxisome biogenesis disorder 7B
+MONDO:0014015 # hereditary spastic paraplegia 56
+MONDO:0014223 # amyotrophic lateral sclerosis type 19
+MONDO:0014246 # episodic pain syndrome, familial, 2
+MONDO:0014304 # hereditary spastic paraplegia 61
+MONDO:0014467 # Charcot-Marie-Tooth disease recessive intermediate D
+MONDO:0014542 # congenital myasthenic syndrome 15
+MONDO:0014582 # congenital myasthenic syndrome 2C
+MONDO:0014583 # congenital myasthenic syndrome 3A
+MONDO:0014587 # congenital myasthenic syndrome 9
+MONDO:0014671 # neuropathy, hereditary motor and sensory, type 6B
+MONDO:0014729 # hereditary spastic paraplegia 75
+MONDO:0014764 # spastic paraplegia-severe developmental delay-epilepsy syndrome
+MONDO:0014877 # myopathy, distal, 5
+MONDO:0014977 # autosomal recessive limb-girdle muscular dystrophy type 2R1
+MONDO:0016830 # Emery-Dreifuss muscular dystrophy
+MONDO:0017416 # postpoliomyelitis syndrome
+MONDO:0017721 # Sandhoff disease, infantile form
+MONDO:0017937 # autosomal dominant intermediate Charcot-Marie-Tooth disease with neuropathic pain
+MONDO:0018343 # periodic paralysis with later-onset distal motor neuropathy
+MONDO:0018421 # autosomal recessive spastic paraplegia type 69
+MONDO:0018422 # autosomal recessive spastic paraplegia type 70
+MONDO:0018528 # congenital myopathy with myasthenic-like onset
+MONDO:0018868 # metachromatic leukodystrophy
+MONDO:0018979 # multifocal motor neuropathy
+MONDO:0019606 # simple cryoglobulinemia
+MONDO:0019941 # hereditary sensory and autonomic neuropathy type 2
+MONDO:0020766 # neuropathy, congenital hypomyelinating, 3
+MONDO:0023757 # meralgia paresthetica
+MONDO:0030014 # muscular dystrophy, limb-girdle, autosomal recessive 26
+MONDO:0030872 # frontotemporal dementia and/or amyotrophic lateral sclerosis 8
+MONDO:0035648 # juvenile-onset Steinert myotonic dystrophy
+MONDO:0036484 # Charcot-Marie-Tooth disease, dominant intermediate G
+MONDO:0043982 # cubital tunnel syndrome
+MONDO:0044647 # kyphosis-lateral tongue atrophy-myofibrillar myopathy syndrome
+MONDO:0100149 # PNPLA6-related spastic paraplegia with or without ataxia
+MONDO:0100263 # peroxisome biogenesis disorder due to PEX6 defect
+MONDO:0100643 # vitamin deficiency related neuropathy
+MONDO:0700303 # Erb palsy
+MONDO:0800364 # peroxisome biogenesis disorder, complementation group 3
+MONDO:0957274 # spastic paraplegia 89, autosomal recessive
+MONDO:0957874 # neuronopathy, distal hereditary motor, autosomal recessive 9
+MONDO:0958122 # idiopathic small fibers neuropathy
+MONDO:0975920 # RNASEH2B-related hereditary spastic paraplegia
+MONDO:0976133 # myopathy, myofibrillar, 13, with rimmed vacuoles
+MONDO:0980937 # oculopharyngodistal myopathy 5
+MONDO:0000182 # congenital myasthenic syndrome with tubular aggregates
+MONDO:0001729 # active cochlear Meniere disease
+MONDO:0001824 # polyneuropathy
+MONDO:0002316 # motor peripheral neuropathy
+MONDO:0002643 # vestibular disorder
+MONDO:0006645 # alcoholic polyneuropathy
+MONDO:0006759 # femoral neuropathy
+MONDO:0007310 # Charcot-Marie-Tooth disease, Guadalajara neuronal type
+MONDO:0007790 # Charcot-Marie-Tooth disease type 3
+MONDO:0007972 # Meniere disease
+MONDO:0008049 # myopathy, distal, infantile-onset
+MONDO:0008409 # congenital myopathy 7A, myosin storage, autosomal dominant
+MONDO:0008437 # hereditary spastic paraplegia 3A
+MONDO:0008695 # VPS13A-related neurodegenerative disease
+MONDO:0009502 # pyruvate dehydrogenase E2 deficiency
+MONDO:0009503 # pyruvate dehydrogenase E3-binding protein deficiency
+MONDO:0009665 # biotinidase deficiency
+MONDO:0009669 # spinal muscular atrophy, type 1
+MONDO:0009875 # achromatopsia 3
+MONDO:0010065 # spinocerebellar degeneration with slow eye movements
+MONDO:0010184 # methylmalonic aciduria and homocystinuria type cblC
+MONDO:0010949 # Charcot-Marie-Tooth disease type 2B
+MONDO:0011088 # congenital myasthenic syndrome 1A
+MONDO:0011091 # Charcot-Marie-Tooth disease type 2D
+MONDO:0011170 # autosomal recessive limb-girdle muscular dystrophy type 2G
+MONDO:0011466 # distal myopathy, Welander type
+MONDO:0011489 # hereditary spastic paraplegia 12
+MONDO:0011522 # hereditary spastic paraplegia 14
+MONDO:0011532 # hereditary spastic paraplegia 13
+MONDO:0011585 # autosomal recessive distal spinal muscular atrophy 2
+MONDO:0011687 # Charcot-Marie-Tooth disease axonal type 2F
+MONDO:0011871 # Niemann-Pick disease type B
+MONDO:0011902 # Charcot-Marie-Tooth disease type 1F
+MONDO:0012262 # fibrosis of extraocular muscles, congenital, 3c
+MONDO:0012467 # cold-induced sweating syndrome 2
+MONDO:0012518 # congenital myasthenic syndrome 12
+MONDO:0012699 # autosomal recessive limb-girdle muscular dystrophy type 2M
+MONDO:0012708 # primary lateral sclerosis, adult, 1
+MONDO:0012790 # amyotrophic lateral sclerosis type 10
+MONDO:0012891 # pontocerebellar hypoplasia type 2C
+MONDO:0012928 # hereditary spastic paraplegia 42
+MONDO:0013382 # progressive demyelinating neuropathy with bilateral striatal necrosis
+MONDO:0013584 # hereditary sensory neuropathy-deafness-dementia syndrome
+MONDO:0013686 # distal myopathy, Tateyama type
+MONDO:0013853 # pontocerebellar hypoplasia type 1B
+MONDO:0013947 # neuronopathy, distal hereditary motor, autosomal recessive 5
+MONDO:0013959 # Charcot-Marie-Tooth disease type 4F
+MONDO:0014052 # congenital myasthenic syndrome 8
+MONDO:0014071 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a, 11
+MONDO:0014395 # frontotemporal dementia and/or amyotrophic lateral sclerosis 2
+MONDO:0014455 # cataract-growth hormone deficiency-sensory neuropathy-sensorineural hearing loss-skeletal dysplasia syndrome
+MONDO:0014676 # Emery-Dreifuss muscular dystrophy 3, autosomal recessive
+MONDO:0014702 # autosomal recessive complex spastic paraplegia type 9B
+MONDO:0014736 # Charcot-Marie-Tooth disease axonal type 2Z
+MONDO:0014743 # rhizomelic chondrodysplasia punctata type 5
+MONDO:0014827 # autosomal recessive spastic paraplegia type 76
+MONDO:0015151 # muscular dystrophy, limb-girdle, autosomal dominant
+MONDO:0015355 # distal hereditary motor neuropathy type 7
+MONDO:0016107 # myotonic dystrophy
+MONDO:0016319 # congenital insensitivity to pain with hyperhidrosis
+MONDO:0017362 # neuralgic amyotrophy
+MONDO:0018190 # autosomal dominant childhood-onset proximal spinal muscular atrophy
+MONDO:0018281 # congenital muscular dystrophy with hyperlaxity
+MONDO:0018993 # Charcot-Marie-Tooth disease type 2
+MONDO:0018994 # Charcot-Marie-Tooth disease type X
+MONDO:0019056 # neuromuscular disease
+MONDO:0019064 # hereditary spastic paraplegia
+MONDO:0019169 # pyruvate dehydrogenase deficiency
+MONDO:0019550 # hereditary motor and sensory neuropathy with acrodystrophy
+MONDO:0020129 # acquired motor neuron disease
+MONDO:0020344 # postsynaptic congenital myasthenic syndrome
+MONDO:0020485 # King-Denborough syndrome
+MONDO:0022768 # chronic polyradiculoneuritis
+MONDO:0023204 # Fukuda-Miyanomae-Nakata syndrome
+MONDO:0023671 # oculopharyngodistal myopathy 3
+MONDO:0024334 # peripheral nerve lesion
+MONDO:0027694 # amyotrophic lateral sclerosis type 23
+MONDO:0029136 # muscular dystrophy, limb-girdle, autosomal recessive 23
+MONDO:0030883 # carpal tunnel syndrome 2
+MONDO:0033135 # Charcot-Marie-Tooth disease, demyelinating, type 1G
+MONDO:0033615 # coenzyme q10 deficiency, primary, 9
+MONDO:0034022 # Bethlem myopathy 2
+MONDO:0034092 # optic atrophy-ataxia-peripheral neuropathy-global developmental delay syndrome
+MONDO:0035647 # childhood-onset Steinert myotonic dystrophy
+MONDO:0044651 # early-onset progressive encephalopathy-spastic ataxia-distal spinal muscular atrophy syndrome
+MONDO:0100227 # ALS2-related motor neuron disease
+MONDO:0100259 # peroxisome biogenesis disorder due to PEX1 defect
+MONDO:0100264 # peroxisome biogenesis disorder due to PEX10 defect
+MONDO:0100270 # peroxisome biogenesis disorder due to PEX19 defect
+MONDO:0100272 # peroxisome biogenesis disorder due to PEX7 defect
+MONDO:0100350 # neuronopathy, distal hereditary motor, type 5
+MONDO:0100584 # SNUPN-related muscular dystrophy with or without multi-system involvement
+MONDO:0800298 # peroxisome biogenesis disorder, complementation group 2
+MONDO:0957538 # amyotrophic lateral sclerosis 28
+MONDO:0958235 # Ullrich congenital muscular dystrophy 1B
+MONDO:0958353 # intermediate collagen VI-related muscular dystrophy
+MONDO:0971004 # amyloidosis, hereditary systemic 1
+MONDO:0979362 # calf-predominant weakness-gastrocnemius medialis atrophy-distal myopathy
+MONDO:1010194 # KY-related neuromyopathy
+MONDO:1040033 # congenital muscular dystrophy without intellectual disability
+MONDO:0001073 # idiopathic progressive polyneuropathy
+MONDO:0001300 # autonomic neuropathy
+MONDO:0001818 # facial neuralgia
+MONDO:0003598 # median nerve neuropathy
+MONDO:0004714 # atrophic muscular disease
+MONDO:0006702 # chronic inflammatory demyelinating polyradiculoneuropathy
+MONDO:0006994 # tarsal tunnel syndrome
+MONDO:0006997 # tibial neuropathy
+MONDO:0007384 # congenital trigeminal anesthesia
+MONDO:0007735 # congenital Horner syndrome
+MONDO:0007975 # meralgia paraesthetica, familial
+MONDO:0008050 # MYH7-related skeletal myopathy
+MONDO:0008086 # neuropathy, hereditary sensory and autonomic, type 1A
+MONDO:0008599 # trigeminal neuralgia
+MONDO:0008781 # juvenile amyotrophic lateral sclerosis with dementia
+MONDO:0008809 # polyneuropathy-hand defect syndrome
+MONDO:0008891 # riboflavin transporter deficiency
+MONDO:0009590 # metachromatic leukodystrophy due to saposin B deficiency
+MONDO:0009676 # autosomal recessive limb-girdle muscular dystrophy type 2B
+MONDO:0009677 # autosomal recessive limb-girdle muscular dystrophy type 2C
+MONDO:0009682 # muscular dystrophy, congenital, with rapid progression
+MONDO:0009897 # adult polyglucosan body disease
+MONDO:0010047 # hereditary spastic paraplegia 5A
+MONDO:0010049 # spastic paraplegia-glaucoma-intellectual disability syndrome
+MONDO:0010378 # X-linked hereditary sensory and autonomic neuropathy with hearing loss
+MONDO:0010549 # Charcot-Marie-Tooth disease X-linked dominant 1
+MONDO:0011028 # autosomal recessive limb-girdle muscular dystrophy type 2F
+MONDO:0011889 # Charcot-Marie-Tooth disease type 2I
+MONDO:0011901 # Charcot-Marie-Tooth disease axonal type 2H
+MONDO:0012096 # Charcot-Marie-Tooth disease axonal type 2L
+MONDO:0012310 # fibrosis of extraocular muscles, congenital, with synergistic divergence
+MONDO:0013138 # vertigo, benign recurrent, 2
+MONDO:0013142 # neuropathy, hereditary sensory and autonomic, type 2B
+MONDO:0013160 # muscular dystrophy-dystroglycanopathy (congenital with intellectual disability), type B2
+MONDO:0013178 # congenital muscular dystrophy due to LMNA mutation
+MONDO:0013243 # neuronopathy, distal hereditary motor, type 2C
+MONDO:0013381 # neuropathy, hereditary sensory, type 1D
+MONDO:0013737 # hereditary spastic paraplegia 46
+MONDO:0013762 # lipoic acid synthetase deficiency
+MONDO:0013933 # peroxisome biogenesis disorder 5B
+MONDO:0013937 # peroxisome biogenesis disorder 6B
+MONDO:0014244 # hereditary sensory and autonomic neuropathy type 7
+MONDO:0014247 # familial episodic pain syndrome with predominantly lower limb involvement
+MONDO:0014303 # hereditary spastic paraplegia 64
+MONDO:0014585 # congenital myasthenic syndrome 3C
+MONDO:0014641 # frontotemporal dementia and/or amyotrophic lateral sclerosis 4
+MONDO:0014665 # Charcot-Marie-Tooth disease axonal type 2V
+MONDO:0014733 # Charcot-Marie-Tooth disease type 4K
+MONDO:0014735 # Charcot-Marie-Tooth disease type 2Y
+MONDO:0014800 # progressive scapulohumeroperoneal distal myopathy
+MONDO:0014806 # spinal muscular atrophy with congenital bone fractures 1
+MONDO:0014836 # Charcot-Marie-Tooth disease axonal type 2CC
+MONDO:0014866 # Charcot-Marie-Tooth disease axonal type 2T
+MONDO:0015087 # autosomal dominant complex spastic paraplegia
+MONDO:0015091 # autosomal dominant spastic paraplegia type 9
+MONDO:0015352 # distal hereditary motor neuropathy type 2
+MONDO:0015923 # acquired peripheral neuropathy
+MONDO:0016089 # infantile Krabbe disease
+MONDO:0016171 # polyradiculoneuropathy associated with IgG/IgA/IgM monoclonal gammopathy without known antibodies
+MONDO:0016371 # combined hyperactive dysfunction syndrome of the cranial nerves
+MONDO:0016374 # cranial neuralgia
+MONDO:0016809 # spinocerebellar ataxia with epilepsy
+MONDO:0016814 # maternally-inherited Leigh syndrome
+MONDO:0016971 # limb-girdle muscular dystrophy
+MONDO:0017058 # autosomal recessive intermediate Charcot-Marie-Tooth disease
+MONDO:0017593 # juvenile amyotrophic lateral sclerosis
+MONDO:0017724 # Tay-Sachs disease, b variant, infantile form
+MONDO:0018098 # autosomal dominant limb-girdle muscular dystrophy type 1E (DES)
+MONDO:0018155 # lateral sclerosis
+MONDO:0018431 # cold-induced sweating syndrome - hyperthermia spectrum
+MONDO:0018778 # intermediate Charcot-Marie-Tooth disease
+MONDO:0018940 # congenital myasthenic syndrome
+MONDO:0019119 # muscular channelopathy
+MONDO:0019549 # severe early-onset axonal neuropathy due to MFN2 deficiency
+MONDO:0020124 # neuromuscular junction disease
+MONDO:0020482 # myotonia permanens
+MONDO:0024607 # congenital muscular dystrophy with cataracts and intellectual disability
+MONDO:0030055 # neuronopathy, distal hereditary motor, autosomal recessive 8
+MONDO:0030134 # oculopharyngodistal myopathy 2
+MONDO:0030341 # myasthenic syndrome, congenital, 7B, presynaptic, autosomal recessive
+MONDO:0030354 # facioscapulohumeral muscular dystrophy 3, digenic
+MONDO:0030689 # Charcot-Marie-Tooth disease, demyelinating, IIA 1H
+MONDO:0032660 # spinal muscular atrophy, lower extremity-predominant, 2b, prenatal onset, autosomal dominant
+MONDO:0032792 # neuropathy, hereditary motor and sensory, type VIc, with optic atrophy
+MONDO:0044720 # cerebellar ataxia with neuropathy and bilateral vestibular areflexia syndrome
+MONDO:0100228 # LAMA2-related muscular dystrophy
+MONDO:0100531 # Emery-Dreifuss muscular dystrophy 1, X-linked
+MONDO:0100642 # infectious neuropathy
+MONDO:0100644 # paraproteinemia-associated neuropathy
+MONDO:0800468 # SCN4A-related channelopathy
+MONDO:0850170 # spinal muscular atrophy type 0
+MONDO:0859300 # neuronopathy, distal hereditary motor, autosomal dominant 10
+MONDO:0859309 # spastic paraplegia 88, autosomal dominant
+MONDO:0859529 # amyotrophic lateral sclerosis 27, juvenile
+MONDO:0957912 # organophosphate-induced delayed polyneuropathy
+MONDO:0958077 # collagen 6-related congenital muscular dystrophy
+MONDO:0958236 # Ullrich congenital muscular dystrophy 1C
+MONDO:0975796 # spastic paraplegia 93, autosomal recessive
+MONDO:0976226 # neuronopathy, distal hereditary motor, autosomal dominant 15
+MONDO:0979361 # asymetric thumb-handgrip weakness-distal myopathy
+MONDO:0000128 # giant axonal neuropathy
+MONDO:0000172 # muscular dystrophy-dystroglycanopathy, type B
+MONDO:0000340 # bulbospinal polio
+MONDO:0000341 # paralytic poliomyelitis
+MONDO:0001541 # plantar nerve lesion
+MONDO:0001544 # tibial nerve palsy
+MONDO:0001727 # active cochleovestibular Meniere disease
+MONDO:0001957 # critical illness polyneuropathy
+MONDO:0002121 # mononeuritis simplex
+MONDO:0002122 # neuritis
+MONDO:0002321 # sensory peripheral neuropathy
+MONDO:0004004 # motor nerve neuritis
+MONDO:0007614 # congenital fibrosis of extraocular muscles
+MONDO:0008025 # neuronopathy, distal hereditary motor, type 2A
+MONDO:0008030 # facioscapulohumeral muscular dystrophy 1
+MONDO:0008116 # oculopharyngeal muscular dystrophy
+MONDO:0008439 # spastic paraplegia-epilepsy-intellectual disability syndrome
+MONDO:0008736 # peroxisome biogenesis disorder 2B
+MONDO:0009364 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A1
+MONDO:0009678 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 4
+MONDO:0009715 # myotonia congenita, autosomal recessive
+MONDO:0009751 # neuropathy, hereditary sensory, atypical
+MONDO:0010058 # scapuloperoneal spinal muscular atrophy, autosomal recessive
+MONDO:0010287 # hereditary spastic paraplegia 16
+MONDO:0010401 # X-linked myopathy with postural muscle atrophy
+MONDO:0010532 # infantile-onset X-linked spinal muscular atrophy
+MONDO:0010676 # muscular dystrophy, Hemizygous lethal type
+MONDO:0010878 # hereditary spastic paraplegia 6
+MONDO:0010912 # fibrosis of extraocular muscles, congenital, 3A, with or without extraocular involvement
+MONDO:0011066 # Charcot-Marie-Tooth disease type 4B1
+MONDO:0011197 # hereditary thermosensitive neuropathy
+MONDO:0011266 # myotonic dystrophy type 2
+MONDO:0011570 # Charcot-Marie-Tooth disease type 2B2
+MONDO:0011633 # Charcot-Marie-Tooth disease axonal type 2C
+MONDO:0011688 # muscular dystrophy-dystroglycanopathy type B5
+MONDO:0011787 # autosomal recessive limb-girdle muscular dystrophy type 2I
+MONDO:0011903 # Charcot-Marie-Tooth disease type 2J
+MONDO:0012077 # amyotrophic lateral sclerosis type 8
+MONDO:0012127 # autosomal recessive limb-girdle muscular dystrophy type 2J
+MONDO:0012181 # hereditary spastic paraplegia 27
+MONDO:0012256 # hereditary spastic paraplegia 28
+MONDO:0012858 # primary CD59 deficiency
+MONDO:0012867 # hereditary spastic paraplegia 38
+MONDO:0013157 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A5
+MONDO:0013162 # autosomal recessive limb-girdle muscular dystrophy type 2N
+MONDO:0013179 # hereditary spastic paraplegia 44
+MONDO:0013551 # hereditary spastic paraplegia 47
+MONDO:0013867 # Brown-Vialetto-van Laere syndrome 2
+MONDO:0013904 # muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a, 8
+MONDO:0013931 # peroxisome biogenesis disorder 4B
+MONDO:0013932 # peroxisome biogenesis disorder 5A (Zellweger)
+MONDO:0013945 # peroxisome biogenesis disorder 9B
+MONDO:0013948 # peroxisome biogenesis disorder 10A (Zellweger)
+MONDO:0013949 # peroxisome biogenesis disorder 11A (Zellweger)
+MONDO:0013962 # hereditary spastic paraplegia 53
+MONDO:0014144 # autosomal recessive limb-girdle muscular dystrophy type R18
+MONDO:0014209 # early-onset progressive neurodegeneration-blindness-ataxia-spasticity syndrome
+MONDO:0014305 # hereditary spastic paraplegia 63
+MONDO:0014468 # congenital myasthenic syndrome 7
+MONDO:0014531 # amyotrophic lateral sclerosis type 22
+MONDO:0014578 # congenital myasthenic syndrome 17
+MONDO:0014588 # congenital myasthenic syndrome 11
+MONDO:0014711 # autosomal dominant Charcot-Marie-Tooth disease type 2W
+MONDO:0014782 # autosomal recessive limb-girdle muscular dystrophy type 2X
+MONDO:0015150 # complex hereditary spastic paraplegia
+MONDO:0015152 # autosomal recessive limb-girdle muscular dystrophy
+MONDO:0015626 # Charcot-Marie-Tooth disease
+MONDO:0016106 # progressive muscular dystrophy
+MONDO:0017237 # hereditary sensorimotor neuropathy with hyperelastic skin
+MONDO:0017364 # POEMS syndrome
+MONDO:0017940 # autosomal dominant Charcot-Marie-Tooth disease type 2 due to KIF5A mutation
+MONDO:0018213 # hereditary sensory and autonomic neuropathy type 1
+MONDO:0018280 # muscle-eye-brain disease with bilateral multicystic leucodystrophy
+MONDO:0018826 # Lewis-Sumner syndrome
+MONDO:0019011 # Charcot-Marie-Tooth disease type 1
+MONDO:0019079 # proximal spinal muscular atrophy
+MONDO:0019441 # ATTRV122I amyloidosis
+MONDO:0020121 # muscular dystrophy
+MONDO:0020127 # hereditary peripheral neuropathy
+MONDO:0020559 # O'Sullivan-McLeod syndrome
+MONDO:0020730 # carpal tunnel syndrome 1
+MONDO:0021677 # post-infectious neuralgia
+MONDO:0021824 # adult progressive spinal muscular atrophy, Aran Duchenne type
+MONDO:0024771 # myopathy, distal, 7, adult-onset, X-linked
+MONDO:0030433 # Charcot-Marie-Tooth disease, axonal, type 2FF
+MONDO:0030512 # spastic paraplegia 85, autosomal recessive
+MONDO:0030712 # oculopharyngodistal myopathy 4
+MONDO:0030977 # neuronopathy, distal hereditary motor, autosomal recessive 7
+MONDO:0035646 # congenital-onset Steinert myotonic dystrophy
+MONDO:0041052 # postherpetic neuralgia
+MONDO:0100061 # PRPS1 deficiency disorder
+MONDO:0100267 # peroxisome biogenesis disorder due to PEX13 defect
+MONDO:0100271 # peroxisome biogenesis disorder due to PEX26 defect
+MONDO:0100641 # chemotherapy-induced neuropathy
+MONDO:0800209 # fibrosis of extraocular muscles, congenital, 3b
+MONDO:0957273 # Charcot-Marie-Tooth disease, dominant intermediate A
+MONDO:0975919 # IFIH1-related hereditary spastic paraplegia
+MONDO:0976227 # Charcot-Marie-tooth disease, axonal, type 2JJ
+MONDO:0979359 # TARDBP-related predominantly upper-limb distal myopathy
+MONDO:0980963 # Charcot-Marie-Tooth disease, axonal, type 2KK
+MONDO:0000209 # prenatal-onset spinal muscular atrophy with congenital bone fractures
+MONDO:0000774 # autoimmune neuropathy
+MONDO:0003100 # nerve plexus neoplasm
+MONDO:0004976 # amyotrophic lateral sclerosis
+MONDO:0007006 # ulnar neuropathy
+MONDO:0007105 # frontotemporal dementia and/or amyotrophic lateral sclerosis 1
+MONDO:0008045 # spinal muscular atrophy-progressive myoclonic epilepsy syndrome
+MONDO:0008455 # spinal muscular atrophy, segmental
+MONDO:0009069 # congenital lactic acidosis, Saguenay-Lac-Saint-Jean type
+MONDO:0009562 # beta-mannosidosis
+MONDO:0009679 # arthrogryposis due to muscular dystrophy
+MONDO:0009683 # autosomal recessive limb-girdle muscular dystrophy type 2H
+MONDO:0010550 # Charcot-Marie-Tooth disease X-linked recessive 2
+MONDO:0010559 # MASA syndrome
+MONDO:0010684 # X-linked myopathy with excessive autophagy
+MONDO:0010689 # Charcot-Marie-Tooth disease X-linked recessive 4
+MONDO:0010839 # neuronopathy, distal hereditary motor, autosomal dominant 8
+MONDO:0011196 # amyotrophic lateral sclerosis type 5
+MONDO:0011408 # hereditary spastic paraplegia 10
+MONDO:0011534 # Charcot-Marie-Tooth disease type 4G
+MONDO:0011730 # fumaric aciduria
+MONDO:0011968 # autosomal recessive limb-girdle muscular dystrophy type 2D
+MONDO:0011992 # hereditary spastic paraplegia 25
+MONDO:0012012 # Charcot-Marie-Tooth disease dominant intermediate C
+MONDO:0012476 # hereditary spastic paraplegia 30
+MONDO:0012639 # hereditary spastic paraplegia 18
+MONDO:0012651 # spastic ataxia 2
+MONDO:0012784 # autosomal recessive ataxia due to ubiquinone deficiency
+MONDO:0012792 # mitochondrial DNA depletion syndrome 8a
+MONDO:0012984 # PHARC syndrome
+MONDO:0013580 # pyruvate dehydrogenase E1-beta deficiency
+MONDO:0013715 # amyotrophic lateral sclerosis type 16
+MONDO:0013753 # Charcot-Marie-Tooth disease axonal type 2P
+MONDO:0014012 # Charcot-Marie-Tooth disease axonal type 2Q
+MONDO:0014020 # hereditary spastic paraplegia 55
+MONDO:0014023 # congenital muscular dystrophy with intellectual disability and severe epilepsy
+MONDO:0014302 # hereditary spastic paraplegia 62
+MONDO:0014511 # Charcot-Marie-Tooth disease axonal type 2S
+MONDO:0014538 # fibrosis of extraocular muscles, congenital, 5
+MONDO:0014654 # Ullrich congenital muscular dystrophy 2
+MONDO:0015149 # pure hereditary spastic paraplegia
+MONDO:0016049 # congenital myopathy, Paradas type
+MONDO:0016091 # adult Krabbe disease
+MONDO:0017722 # Sandhoff disease, juvenile form
+MONDO:0017917 # maternally-inherited spastic paraplegia
+MONDO:0018278 # congenital muscular dystrophy with intellectual disability
+MONDO:0018371 # nebulin-related early-onset distal myopathy
+MONDO:0018417 # autosomal recessive spastic paraplegia type 60
+MONDO:0019551 # hereditary motor and sensory neuropathy type 6
+MONDO:0020558 # autosomal dominant Charcot-Marie-Tooth disease type 2K
+MONDO:0021569 # Emery-Dreifuss muscular dystrophy 2, autosomal dominant
+MONDO:0024333 # sciatica
+MONDO:0024454 # sacral nerve plexus disorder
+MONDO:0030355 # facioscapulohumeral muscular dystrophy 4, digenic
+MONDO:0030885 # amyotrophic lateral sclerosis 26 with or without frontotemporal dementia
+MONDO:0032906 # spastic paraplegia 82, autosomal recessive
+MONDO:0034041 # congenital axonal neuropathy with encephalopathy
+MONDO:0060585 # neuronopathy, distal hereditary motor, type 9
+MONDO:0100268 # peroxisome biogenesis disorder due to PEX14 defect
+MONDO:0100322 # non-Zellweger spectrum disorder
+MONDO:0100633 # toxic polyneuropathy
+MONDO:0800318 # Emery-Dreifuss muscular dystrophy 6, X-linked
+MONDO:0850415 # rhabdomyolysis-myalgia syndrome
+MONDO:0957308 # spastic paraplegia 90A, autosomal dominant
