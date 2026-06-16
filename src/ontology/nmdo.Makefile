@@ -7,6 +7,8 @@
 
 ifeq ($(IMP),true)
 
+ALL_TERMS = $(foreach imp, $(IMPORTS), $(IMPORTDIR)/$(imp)_terms.txt) $(IMPORTDIR)/mondo_terms_nmd_branch.txt
+
 ## Overwrite merged_import
 # Changes from original command in Makefile:
 #    - Added "remove --term IAO:0000102 ..." line to remove the 'data about an ontology part' class and all descendents
@@ -14,7 +16,7 @@ ifeq ($(IMP),true)
 #	 - Added "--term-file $(IMPORTDIR)/mondo_terms_nmd_branch.txt" to the extract command and filename to dependency list
 #    - Added "collapse ..." line to remove unnecessary intermediate classes
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
-				$(IMPORTSEED) $(IMPORTDIR)/mondo_terms_nmd_branch.txt | all_robot_plugins
+				$(IMPORTSEED) | all_robot_plugins
 	$(ROBOT) merge --input $< \
 		 remove --select "<http://purl.obolibrary.org/obo/BFO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/CHEBI_*>" \
@@ -36,7 +38,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://identifiers.org/ncbigene/*>" \
 		 remove --term IAO:0000102 --select "self descendants" --signature true \
 		 remove --term MONDO:0021178 --select "self descendants" --signature true \
-		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) --term-file $(IMPORTDIR)/mondo_terms_nmd_branch.txt $(T_IMPORTSEED) \
+		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \
 		         --method STAR \
