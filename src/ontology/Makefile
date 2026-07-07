@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                cbbdb2986388a77c11d301e1d0ca798ff9dfc25da471d80d4cd9dd82422f2bbc
+CONFIG_HASH=                115a34a9dc3721e60ffc56dfb241c6a8f543730a53732c9860ca8dd6df2d69d0
 
 
 # ----------------------------------------
@@ -538,8 +538,7 @@ mirror-mondo: | $(TMPDIR)
 .PRECIOUS: $(MIRRORDIR)/ncit.owl
 ifeq ($(IMP_LARGE),true)
 mirror-ncit: | $(TMPDIR)
-	curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(TMPDIR)/ncit-download.owl --retry 4 --max-time 500 && \
-	$(ROBOT) remove -i $(TMPDIR)/ncit-download.owl --base-iri NCIT --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
+	$(ROBOT) remove -I https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl --base-iri http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#  --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
 endif
 
 
