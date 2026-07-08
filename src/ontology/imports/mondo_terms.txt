@@ -973,3 +973,6 @@ MONDO:0031068  # Charcot-Marie-Tooth disease, axonal, IIa 2II
 MONDO:0976227  # Charcot-Marie-tooth disease, axonal, type 2JJ
 MONDO:0030055  # neuronopathy, distal hereditary motor, autosomal recessive 8
 MONDO:0012747  # glycogen storage disease due to aldolase A deficiency
+MONDO:0009709  # myopathy, centronuclear, 2
+MONDO:0014418  # myopathy, centronuclear, 5
+MONDO:0009725  # nemaline myopathy 2
