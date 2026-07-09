@@ -976,3 +976,8 @@ MONDO:0012747  # glycogen storage disease due to aldolase A deficiency
 MONDO:0009709  # myopathy, centronuclear, 2
 MONDO:0014418  # myopathy, centronuclear, 5
 MONDO:0009725  # nemaline myopathy 2
+MONDO:1060001  # AChR+ myasthenia gravis
+MONDO:1060002  # ocular myasthenia gravis
+MONDO:1060003  # muscle-specific tyrosine kinase-associated myasthenia gravis
+MONDO:1060004  # seronegative myasthenia gravis
+MONDO:1060006  # generalized myasthenia gravis
