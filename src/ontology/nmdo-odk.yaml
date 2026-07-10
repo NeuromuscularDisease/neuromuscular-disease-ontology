@@ -1,10 +1,12 @@
 id: nmdo
 title: "Neuromuscular Disease Ontology"
+description: "A project ontology designed to support the integration and mapping of neuromuscular disease data in patient registries."
+license: https://creativecommons.org/publicdomain/zero/1.0/
 github_org: NeuromuscularDisease
 repo: neuromuscular-disease-ontology
 git_main_branch: main
-uribase: https://w3id.org
-create_obo_metadata: FALSE
+#uribase: https://w3id.org
+create_obo_metadata: TRUE
 remove_owl_nothing: TRUE
 release_artefacts: 
   - full
@@ -14,7 +16,7 @@ edit_format: obo
 export_formats:
   - owl
   - obo
-#  - json
+  - json
 use_templates: TRUE
 import_group:
   use_base_merging: TRUE
