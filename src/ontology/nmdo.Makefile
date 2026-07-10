@@ -45,7 +45,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		        --select complement --select annotation-properties \
-		 odk:normalize --base-iri https://w3id.org \
+		 odk:normalize --base-iri http://purl.obolibrary.org/obo \
 		               --subset-decls true --synonym-decls true \
 		 collapse $(foreach f, $(ALL_TERMS), --precious-terms $(f)) \
 		 repair --merge-axiom-annotations true \
