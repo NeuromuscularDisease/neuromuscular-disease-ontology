@@ -4,6 +4,7 @@ NCIT:P384       # Term Source
 NCIT:P207       # UMLS_CUI
 NCIT:C142378    # Clinical Outcome Assessment
 NCIT:C25209     # Measurement
+NCIT:C62103     # Device
 NCIT:C87802     # Physical Strength
 NCIT:C100060
 NCIT:C100779
@@ -27,3 +28,12 @@ NCIT:C38084
 NCIT:C38053
 NCIT:C83502
 NCIT:C111361
+NCIT:C226982	# DM1-Activ-c Scale
+NCIT:C226986	# Picking Up Coins Test
+NCIT:C226983	# Myotonic Dystrophy Health Index
+NCIT:C226990	# Iowa Oral Performance Instrument
+NCIT:C226987	# Supine-to-Sit Test
+NCIT:C226988	# Step Test
+NCIT:C226989	# Video Hand Opening Time Test
+NCIT:C226984	# Medical Research Council Scale for Muscle Strength
+NCIT:C226985	# Domain Delta Questionnaire

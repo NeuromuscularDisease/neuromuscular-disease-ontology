@@ -7,9 +7,13 @@
 
 ifeq ($(IMP),true)
 
+# Add "mondo_terms_nmd_branch.txt" to the ALL_TERMS list to use in the merged_import.owl command
+ALL_TERMS = $(foreach imp, $(IMPORTS), $(IMPORTDIR)/$(imp)_terms.txt) $(IMPORTDIR)/mondo_terms_nmd_branch.txt
+
 ## Overwrite merged_import
 # Changes from original command in Makefile:
 #    - Added "remove --term IAO:0000102 ..." line to remove the 'data about an ontology part' class and all descendents
+#	 - Added "remove --term MONDO:0021178 ..." line to remove the Mondo 'injury' branch
 #    - Added "collapse ..." line to remove unnecessary intermediate classes
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 				$(IMPORTSEED) | all_robot_plugins
@@ -22,6 +26,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/MAXO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \
@@ -30,7 +35,9 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.uniprot.org/uniprot/*>" \
 		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
 		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
+		 remove --select "<http://identifiers.org/ncbigene/*>" \
 		 remove --term IAO:0000102 --select "self descendants" --signature true \
+		 remove --term MONDO:0021178 --select "self descendants" --signature true \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \
@@ -38,7 +45,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		        --select complement --select annotation-properties \
-		 odk:normalize --base-iri https://w3id.org \
+		 odk:normalize --base-iri http://purl.obolibrary.org/obo \
 		               --subset-decls true --synonym-decls true \
 		 collapse $(foreach f, $(ALL_TERMS), --precious-terms $(f)) \
 		 repair --merge-axiom-annotations true \
@@ -46,6 +53,11 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 
 endif # IMP=true
 
+
+# Get all descendants of "neuromuscular disease" (MONDO:0019056) and write to an import term file
+$(IMPORTDIR)/mondo_terms_nmd_branch.txt: $(MIRRORDIR)/mondo.owl
+	runoak -i sqlite:obo:mondo descendants MONDO:0019056 -p i -o $@ && \
+	sed -i 's/!/\#/g' $@
 
 
 ifeq ($(MIR),true)
@@ -63,15 +75,21 @@ mirror-hgnc: | $(TMPDIR)
 .PHONY: mirror-ncit
 .PRECIOUS: $(MIRRORDIR)/ncit.owl
 ifeq ($(IMP_LARGE),true)
-mirror-ncit: $(IMPORTDIR)/ncit_terms.txt $(IMPORTDIR)/ncit_terms_exclude.txt | $(TMPDIR)
-	curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(TMPDIR)/ncit-download.owl --retry 4 --max-time 500 && \
-	$(ROBOT) remove -i $(TMPDIR)/ncit-download.owl --base-iri NCIT --axioms external --preserve-structure false --trim false \
+# Using the source EVS version of NCIT instead of the OBO edition one in order to use newly created terms (EVS has a monthly release cycle).
+# The `postprocess-ncit-*.ru` scripts replace some of the NCIT annotation properties with OBO properties (similar to what is done in the OBO edition version).
+mirror-ncit: $(IMPORTDIR)/ncit_terms.txt $(IMPORTDIR)/ncit_terms_exclude.txt $(SPARQLDIR)/postprocess-ncit-import.ru $(SPARQLDIR)/postprocess-ncit-import-cleanup.ru | $(TMPDIR)
+	$(ROBOT) --prefix "NCIT: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#" \
+			remove -I https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl --base-iri http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl# \
+				--axioms external --preserve-structure false --trim false \
 			extract --term-file $< \
 		         --force true --copy-ontology-annotations true \
 		         --individuals exclude \
 		         --method STAR \
 			remove --term-file $(IMPORTDIR)/ncit_terms_exclude.txt --select "self" \
-			-o $(TMPDIR)/$@.owl
+			query --update $(SPARQLDIR)/postprocess-ncit-import.ru \
+			query --update $(SPARQLDIR)/postprocess-ncit-import-cleanup.ru \
+			-o $(TMPDIR)/$@.tmp.owl && \
+	perl -npe 's@http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#@http://purl.obolibrary.org/obo/NCIT_@g' $(TMPDIR)/$@.tmp.owl > $(TMPDIR)/$@.owl
 endif
 
 endif # MIR=true
