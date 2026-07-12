@@ -87,9 +87,16 @@ data.each_with_index do |row, i|
     # Build row in existing-file format: drop Type(3) and Parent(4) columns,
     # replace ID with the matched NMDO IRI, keep PROMOT IRI as cross-reference.
     review_note = "PROMOT mapping: '#{label}' (LLM score: #{score}) | Candidates: #{alternatives}"
-    matched_row = [nmdo_iri] + row.values_at(*EXISTING_COLS.select { |i| i < row.size })[1..] +
+    src_values = row.values_at(*EXISTING_COLS.select { |i| i < row.size })[1..]
+    # src_values = [promot_label, promot_definition, promot_xref, annotations...].
+    # Label/Definition must describe the matched NMDO class, not the PROMOT source —
+    # the header's LABEL column is a ROBOT directive that asserts rdfs:label, so
+    # writing the PROMOT label there would overwrite the existing class's real label.
+    # Definition is left blank for the same reason (the API doesn't return the
+    # target's definition, and the PROMOT one isn't the target's).
+    matched_row = [nmdo_iri, nmdo_lbl, ''] + src_values[2..] +
                   [score.to_s, alternatives, review_note]
-    matched << matched_row
+    matched << [matched_row, label]
   else
     warn "    ✗ best: #{nmdo_lbl.empty? ? '(none)' : nmdo_lbl} (#{score})"
     unmatched << row + [score.to_s, alternatives]
@@ -123,15 +130,20 @@ NOTE_COL  = matched_h1.size + 2
 XREF_COL  = 3
 ANNO_RANGE = (4...matched_h1.size).freeze
 
-matched_by_nmdo = matched.group_by { |row| row[0] }
+# matched entries are [row, promot_label] tuples — promot_label is kept out of the
+# CSV row itself (it must not land in the LABEL column) but is still needed below
+# to report each contributing PROMOT class's own name in the conflicts file.
+matched_by_nmdo = matched.group_by { |(row, _label)| row[0] }
 
-# Rows where >1 PROMOT class claimed the same NMDO IRI.
-conflicts = matched_by_nmdo.select { |_, rows| rows.size > 1 }
+# Groups where >1 PROMOT class claimed the same NMDO IRI.
+conflicts = matched_by_nmdo.select { |_, entries| entries.size > 1 }
 warn "Conflicts (>1 PROMOT class → same NMDO IRI): #{conflicts.size}"
 
 # Produce one merged row per NMDO IRI.
-merged_matched = matched_by_nmdo.map do |nmdo_iri, rows|
-  next rows.first if rows.size == 1
+merged_matched = matched_by_nmdo.map do |nmdo_iri, entries|
+  next entries.first[0] if entries.size == 1
+
+  rows = entries.map { |(row, _label)| row }
 
   # Highest-scoring row provides Label and Definition for the merged row.
   best = rows.max_by { |r| r[SCORE_COL].to_f }
@@ -169,15 +181,15 @@ conflicts_path = File.join(TEMPLATES_DIR, 'promot-annotations-llm-conflicts.csv'
 warn "Writing #{conflicts_path}..."
 CSV.open(conflicts_path, 'w') do |csv|
   csv << ['NMDO IRI', 'PROMOT Count', 'PROMOT IRIs', 'PROMOT Labels', 'LLM Scores', 'Review Note']
-  conflicts.each do |nmdo_iri, rows|
-    rows_by_score = rows.sort_by { |r| -r[SCORE_COL].to_f }
+  conflicts.each do |nmdo_iri, entries|
+    entries_by_score = entries.sort_by { |(row, _label)| -row[SCORE_COL].to_f }
     csv << [
       nmdo_iri,
-      rows.size,
-      rows_by_score.map { |r| r[XREF_COL] }.join(' | '),
-      rows_by_score.map { |r| r[1] }.join(' | '),
-      rows_by_score.map { |r| r[SCORE_COL] }.join(' | '),
-      "#{rows.size} PROMOT classes mapped to same NMDO IRI — verify whether NMDO needs splitting"
+      entries.size,
+      entries_by_score.map { |(row, _label)| row[XREF_COL] }.join(' | '),
+      entries_by_score.map { |(_row, label)| label }.join(' | '),
+      entries_by_score.map { |(row, _label)| row[SCORE_COL] }.join(' | '),
+      "#{entries.size} PROMOT classes mapped to same NMDO IRI — verify whether NMDO needs splitting"
     ]
   end
 end
