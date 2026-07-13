@@ -45,7 +45,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		        --select complement --select annotation-properties \
-		 odk:normalize --base-iri https://w3id.org \
+		 odk:normalize --base-iri http://purl.obolibrary.org/obo \
 		               --subset-decls true --synonym-decls true \
 		 collapse $(foreach f, $(ALL_TERMS), --precious-terms $(f)) \
 		 repair --merge-axiom-annotations true \
@@ -75,15 +75,21 @@ mirror-hgnc: | $(TMPDIR)
 .PHONY: mirror-ncit
 .PRECIOUS: $(MIRRORDIR)/ncit.owl
 ifeq ($(IMP_LARGE),true)
-mirror-ncit: $(IMPORTDIR)/ncit_terms.txt $(IMPORTDIR)/ncit_terms_exclude.txt | $(TMPDIR)
-	curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(TMPDIR)/ncit-download.owl --retry 4 --max-time 500 && \
-	$(ROBOT) remove -i $(TMPDIR)/ncit-download.owl --base-iri NCIT --axioms external --preserve-structure false --trim false \
+# Using the source EVS version of NCIT instead of the OBO edition one in order to use newly created terms (EVS has a monthly release cycle).
+# The `postprocess-ncit-*.ru` scripts replace some of the NCIT annotation properties with OBO properties (similar to what is done in the OBO edition version).
+mirror-ncit: $(IMPORTDIR)/ncit_terms.txt $(IMPORTDIR)/ncit_terms_exclude.txt $(SPARQLDIR)/postprocess-ncit-import.ru $(SPARQLDIR)/postprocess-ncit-import-cleanup.ru | $(TMPDIR)
+	$(ROBOT) --prefix "NCIT: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#" \
+			remove -I https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl --base-iri http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl# \
+				--axioms external --preserve-structure false --trim false \
 			extract --term-file $< \
 		         --force true --copy-ontology-annotations true \
 		         --individuals exclude \
 		         --method STAR \
 			remove --term-file $(IMPORTDIR)/ncit_terms_exclude.txt --select "self" \
-			-o $(TMPDIR)/$@.owl
+			query --update $(SPARQLDIR)/postprocess-ncit-import.ru \
+			query --update $(SPARQLDIR)/postprocess-ncit-import-cleanup.ru \
+			-o $(TMPDIR)/$@.tmp.owl && \
+	perl -npe 's@http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#@http://purl.obolibrary.org/obo/NCIT_@g' $(TMPDIR)/$@.tmp.owl > $(TMPDIR)/$@.owl
 endif
 
 endif # MIR=true

@@ -20,7 +20,7 @@ These are the current imports in NMDO
 | hp | http://purl.obolibrary.org/obo/hp.owl | slme |
 | iao | http://purl.obolibrary.org/obo/iao.owl | filter |
 | mondo | http://purl.obolibrary.org/obo/mondo.owl | slme |
-| ncit | http://purl.obolibrary.org/obo/ncit.owl | slme |
+| ncit | https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl | slme |
 | omo | http://purl.obolibrary.org/obo/omo.owl | filter |
 | pato | http://purl.obolibrary.org/obo/pato.owl | filter |
 | ro | http://purl.obolibrary.org/obo/ro.owl | filter |

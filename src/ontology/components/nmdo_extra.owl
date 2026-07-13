@@ -1,4 +1,4 @@
-Prefix(:=<https://w3id.org/nmdo/components/nmdo_extra.owl#>)
+Prefix(:=<http://purl.obolibrary.org/obo/nmdo/components/nmdo_extra.owl#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -6,9 +6,9 @@ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
-Ontology(<https://w3id.org/nmdo/components/nmdo_extra.owl>
-<https://w3id.org/nmdo/releases/2026-05-21/components/nmdo_extra.owl>
-Annotation(owl:versionInfo "2026-05-21")
+Ontology(<http://purl.obolibrary.org/obo/nmdo/components/nmdo_extra.owl>
+<http://purl.obolibrary.org/obo/nmdo/releases/2026-07-10/components/nmdo_extra.owl>
+Annotation(owl:versionInfo "2026-07-10")
 
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0000005>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0012823>))

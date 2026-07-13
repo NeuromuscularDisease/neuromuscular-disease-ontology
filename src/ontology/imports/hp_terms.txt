@@ -6,28 +6,32 @@ HP:0000007  # Autosomal recessive inheritance
 HP:0001427  # Mitochondrial inheritance
 HP:0001417  # X-linked inheritance
 HP:0012823  # Clinical modifier
+HP:0025285  # Aggravated by
+HP:0032443  # Past medical history
+HP:4000112  # Medication history
+HP:0001197  # Abnormality of prenatal development or birth
 HP:0000496
 HP:0000951
 HP:0003581
 HP:0030674
 HP:0003327
-HP:0001638
-HP:0100543
+HP:0001638  # Cardiomyopathy 
+HP:0100543  # Cognitive impairment
 HP:0003577
 HP:0002019
-HP:0009053
+HP:0009053  # Distal lower limb muscle weakness
 HP:0002460
-HP:0008959
-HP:0002015
+HP:0008959  # Distal upper limb muscle weakness
+HP:0002015  # Dysphagia 
 HP:0003236
 HP:0030235
 HP:0030319
-HP:0002527
+HP:0002527  # Falls
 HP:0012378
 HP:0001371
 HP:0002020
-HP:0030234
-HP:0001252
+HP:0030234  # Highly elevated creatine kinase 
+HP:0001252  # Hypotonia
 HP:0003593
 HP:0000062
 HP:0001382
@@ -35,9 +39,9 @@ HP:0003621
 HP:0003584
 HP:0003325
 HP:0003596
-HP:0008180
-HP:0001270
-HP:0003750
+HP:0008180  # Mildly elevated creatine kinase 
+HP:0001270  # Motor delay
+HP:0003750  # Increased muscle fatiguability
 HP:0001324
 HP:0003326
 HP:0003623
@@ -45,16 +49,16 @@ HP:0012531
 HP:0003760
 HP:0008994
 HP:0008997
-HP:0000508
+HP:0000508  # Ptosis 
 HP:0002098
-HP:0002747
-HP:0003691
+HP:0002747  # Respiratory insufficiency due to muscle weakness
+HP:0003691  # Scapular winging
 HP:0003202
-HP:0003712
-HP:0003306
-HP:0003376
+HP:0003712  # Skeletal muscle hypertrophy
+HP:0003306  # Spinal rigidity 
+HP:0003376  # Steppage gait 
 HP:0030051
-HP:0002515
+HP:0002515  # Waddling gait
 HP:0410280
 HP:0011462
 HP:0002650
@@ -65,3 +69,76 @@ HP:0012825  # Mild
 HP:0012826  # Moderate
 HP:0012829  # Profound
 HP:0012828  # Severe
+HP:0000819	# Diabetes mellitus
+HP:0100651	# Type I diabetes mellitus
+HP:0005978	# Type II diabetes mellitus
+HP:0031508	# Abnormal circulating thyroid hormone concentration
+HP:0000821	# Hypothyroidism
+HP:0000836	# Hyperthyroidism
+HP:0002664	# Neoplasm
+HP:0100006	# Neoplasm of the central nervous system 
+HP:0008069	# Neoplasm of the skin 
+HP:0007378	# Neoplasm of the gastrointestinal tract
+HP:0100606	# Neoplasm of the respiratory system 
+HP:0010786	# Urinary tract neoplasm 
+HP:0010787	# Genital neoplasm
+HP:0004377	# Hematological neoplasm
+HP:0100568	# Neoplasm of the endocrine system
+HP:0008046	# Abnormal retinal vascular morphology
+HP:0011476	# Profound sensorineural hearing impairment
+HP:0000407	# Sensorineural hearing impairment
+HP:0001250	# Seizure 
+HP:0000726	# Dementia
+HP:0020110	# Bone fracture
+HP:4000114	# Statin exposure
+HP:0005268	# Miscarriage
+HP:6000091	# Postpartum exacerbation
+HP:0002047  # Malignant hyperthermia	
+HP:0002355	# Difficulty walking
+HP:0001249	# Intellectual disability	
+HP:0001262	# Respiratory insufficiency due to muscle weakness
+HP:0010628	# Facial Palsy
+HP:0009023	# Abdominal wall muscle weakness
+HP:0003547  # Shoulder girdle muscle weakness
+HP:0003749	# Pelvic girdle muscle weakness 
+HP:0012532	# Chronic pain
+HP:0008050	# Abnormality of the palpebral fissures
+HP:0000501  # Glaucoma	
+HP:0000597  # Ophthalmoparesis
+HP:0000648	# Optic atrophy
+HP:0000639	# Nystagmus
+HP:0010729	# Cherry red spot of the macula
+HP:0000518	# Cataract
+HP:0012507	# Weakness of orbicularis oculi muscle
+HP:0033475	# Limited shoulder abduction
+HP:0003551	# Difficulty climbing stairs
+HP:0002540	# Inability to walk
+HP:6000490	# Impaired heel-walking ability
+HP:0034052	# Impaired toe-walking ability
+HP:0030664	# Beevor's sign
+HP:0002943	# Thoracic scoliosis
+HP:0004626	# Lumbar scoliosis
+HP:0003307	# Hyperlordosis	
+HP:0002486	# Myotonia
+HP:0012900	# Myotonia of the face
+HP:0012899	# Handgrip myotonia
+HP:0010548	# Percussion myotonia
+HP:0002292	# Frontal balding
+HP:0001611	# Hypernasal speech
+HP:0003719	# Muscle mounding
+HP:0007715	# Weak extraocular muscles
+HP:0034392	# Joint contracture
+HP:0000467	# Neck muscle weakness
+HP:0001761	# Pes cavus
+HP:0002913	# Myoglobinuria
+HP:0000218	# High palate
+HP:0011675	# Arrhythmia
+HP:0001635	# Congestive heart failure
+HP:0003458	# EMG: myopathic abnormalities
+HP:0003445	# EMG: neuropathic changes
+HP:0003730	# EMG: myotonic runs
+HP:0030177	# Abnormality of peripheral nervous system electrophysiology
+HP:0030878	# Abnormality on pulmonary function testing
+HP:0032341	# Reduced forced vital capacity
+HP:0012496	# Reduced maximal inspiratory pressure
+HP:0012497	# Reduced maximal expiratory pressure
