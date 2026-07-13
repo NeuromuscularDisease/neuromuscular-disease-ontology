@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                b01d923cd85126087763f86cc8ada785f4bf7fdcdd7711eef1cf0ae208efb785
+CONFIG_HASH=                e81b0ab7e8e57f90da109a91769bb19356e000c8785cfeea9ea0226641dd99bc
 
 
 # ----------------------------------------
@@ -19,9 +19,9 @@ CONFIG_HASH=                b01d923cd85126087763f86cc8ada785f4bf7fdcdd7711eef1cf
 # these can be overwritten on the command line
 
 OBOBASE=                    http://purl.obolibrary.org/obo
-URIBASE=                    https://w3id.org
+URIBASE=                    http://purl.obolibrary.org/obo
 ONT=                        nmdo
-ONTBASE=                    https://w3id.org/nmdo
+ONTBASE=                    http://purl.obolibrary.org/obo/nmdo
 EDIT_FORMAT=                obo
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 MAKE_FAST=                  $(MAKE) IMP=false PAT=false COMP=false MIR=false
@@ -63,7 +63,7 @@ ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
 
-FORMATS = $(sort  owl obo owl)
+FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 RELEASE_ARTEFACTS = $(sort $(ONT)-full )
 
@@ -380,7 +380,7 @@ $(IMPORTSEED): $(PRESEED) | $(TMPDIR)
 
 T_IMPORTSEED = --term-file $(IMPORTSEED)
 
-ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
+ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 IAO:0000116 IAO:0000111 oboInOwl:hasDbXref oboInOwl:source rdfs:comment rdfs:seeAlso oboInOwl:hasAlternativeId oboInOwl:hasBroadSynonym oboInOwl:hasExactSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasSynonymType oboInOwl:SynonymTypeProperty skos:broadMatch skos:closeMatch skos:exactMatch skos:narrowMatch skos:relatedMatch owl:deprecated IAO:0000231 IAO:0100001 oboInOwl:consider NCIT:P378 NCIT:P383 NCIT:P384 NCIT:P207 
 
 # ----------------------------------------
 # Import modules
@@ -404,6 +404,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
+		 remove --select "<http://purl.obolibrary.org/obo/MAXO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \
@@ -412,6 +413,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.uniprot.org/uniprot/*>" \
 		 remove --select "<http://www.informatics.jax.org/accession/MGI*>" \
 		 remove --select "<http://rgd.mcw.edu/rgdweb/report/gene/*>" \
+		 remove --select "<http://identifiers.org/ncbigene/*>" \
 		 extract $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		         --force true --copy-ontology-annotations false \
 		         --individuals exclude \
@@ -419,7 +421,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        $(foreach f, $(ALL_TERMS), --term-file $(f)) $(T_IMPORTSEED) \
 		        --select complement --select annotation-properties \
-		 odk:normalize --base-iri https://w3id.org \
+		 odk:normalize --base-iri http://purl.obolibrary.org/obo \
 		               --subset-decls true --synonym-decls true \
 		 repair --merge-axiom-annotations true \
 		 $(ANNOTATE_CONVERT_FILE)
@@ -537,8 +539,7 @@ mirror-mondo: | $(TMPDIR)
 .PRECIOUS: $(MIRRORDIR)/ncit.owl
 ifeq ($(IMP_LARGE),true)
 mirror-ncit: | $(TMPDIR)
-	curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(TMPDIR)/ncit-download.owl --retry 4 --max-time 500 && \
-	$(ROBOT) remove -i $(TMPDIR)/ncit-download.owl --base-iri NCIT --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
+	$(ROBOT) remove -I https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl --base-iri http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#  --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
 endif
 
 
@@ -615,6 +616,10 @@ $(SUBSETDIR)/%.owl: $(ONT).owl | $(SUBSETDIR) all_robot_plugins
 $(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
 
+$(SUBSETDIR)/%.json: $(SUBSETDIR)/%.owl
+	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
+	mv $@.tmp.json $@
+
 
 # ---------------------------------------------
 # Sparql queries: Table exports / Query Reports
@@ -636,6 +641,10 @@ endif
 
 $(ONT)-full.obo: $(ONT)-full.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
+$(ONT)-full.json: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
@@ -646,6 +655,10 @@ $(ONT).owl: $(ONT)-full.owl
 
 $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
+$(ONT).json: $(ONT).owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
 # -----------------------------------------------------

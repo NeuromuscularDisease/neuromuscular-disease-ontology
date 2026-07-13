@@ -1,10 +1,12 @@
 id: nmdo
 title: "Neuromuscular Disease Ontology"
+description: "A project ontology designed to support the integration and mapping of neuromuscular disease data in patient registries."
+license: https://creativecommons.org/publicdomain/zero/1.0/
 github_org: NeuromuscularDisease
 repo: neuromuscular-disease-ontology
 git_main_branch: main
-uribase: https://w3id.org
-create_obo_metadata: FALSE
+#uribase: https://w3id.org
+create_obo_metadata: TRUE
 remove_owl_nothing: TRUE
 release_artefacts: 
   - full
@@ -14,7 +16,7 @@ edit_format: obo
 export_formats:
   - owl
   - obo
-#  - json
+  - json
 use_templates: TRUE
 use_context: TRUE
 import_group:
@@ -42,6 +44,7 @@ import_group:
     - skos:narrowMatch
     - skos:relatedMatch
     - owl:deprecated
+    - IAO:0000231   # has obsolescence reason
     - IAO:0100001   # term replaced by
     - oboInOwl:consider
     - NCIT:P378   # Definition Source
@@ -57,6 +60,7 @@ import_group:
     - <http://purl.obolibrary.org/obo/ECTO_*>
     - <http://purl.obolibrary.org/obo/GO_*>
     - <http://purl.obolibrary.org/obo/HsapDv_*>
+    - <http://purl.obolibrary.org/obo/MAXO_*>
     - <http://purl.obolibrary.org/obo/MF_*>
     - <http://purl.obolibrary.org/obo/NBO_*>
     - <http://purl.obolibrary.org/obo/NCBITaxon_*>
@@ -65,6 +69,7 @@ import_group:
     - <http://purl.uniprot.org/uniprot/*>
     - <http://www.informatics.jax.org/accession/MGI*>
     - <http://rgd.mcw.edu/rgdweb/report/gene/*>
+    - <http://identifiers.org/ncbigene/*>
   module_type: slme
   module_type_slme: STAR
   slme_individuals: exclude
@@ -84,9 +89,10 @@ import_group:
       use_base: TRUE
     - id: ncit
       is_large: TRUE
+      mirror_from: https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl
       make_base: TRUE
       base_iris:
-        - NCIT
+        - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#
     - id: omo
       module_type: filter
     - id: pato

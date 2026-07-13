@@ -10,11 +10,11 @@ build:
   system: git
   path: "."
 contact:
-  email: 
-  label: 
-  github: 
-description: Neuromuscular Disease Ontology is an ontology...
-domain: stuff
+  email: peter-bram.thoen@radboudumc.nl
+  label: Peter-Bram 't Hoen
+  github: pacthoen
+description: Neuromuscular Disease Ontology is a project ontology built to support the mapping and integration of neuromuscular disease datasets.
+domain: health
 homepage: https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology
 products:
   - id: nmdo.owl
@@ -23,19 +23,23 @@ products:
     name: "Neuromuscular Disease Ontology additional release in OBO format"
   - id: nmdo.json
     name: "Neuromuscular Disease Ontology additional release in OBOJSon format"
-  - id: nmdo/nmdo-base.owl
+  - id: nmdo/nmdo-full.owl
     name: "Neuromuscular Disease Ontology main release in OWL format"
-  - id: nmdo/nmdo-base.obo
+  - id: nmdo/nmdo-full.obo
     name: "Neuromuscular Disease Ontology additional release in OBO format"
-  - id: nmdo/nmdo-base.json
+  - id: nmdo/nmdo-full.json
     name: "Neuromuscular Disease Ontology additional release in OBOJSon format"
 dependencies:
+- id: hgnc
 - id: hp
 - id: mondo
+- id: ncit
+- id: pato
+- id: uberon
 tracker: https://github.com/NeuromuscularDisease/neuromuscular-disease-ontology/issues
 license:
-  url: http://creativecommons.org/licenses/by/3.0/
-  label: CC-BY
+  url: https://creativecommons.org/publicdomain/zero/1.0/
+  label: CC0
 activity_status: active
 ---
 
