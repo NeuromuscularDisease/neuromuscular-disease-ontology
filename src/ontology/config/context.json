@@ -17,6 +17,6 @@
 		"void": "http://rdfs.org/ns/void#",
 
 		"HGNC": "http://identifiers.org/hgnc/",
-		"nmdo": "https://w3id.org/nmdo/"
+		"nmdo": "http://purl.obolibrary.org/obo/NMDO_"
 	}
 }
