@@ -37,3 +37,80 @@ NCIT:C226988	# Step Test
 NCIT:C226989	# Video Hand Opening Time Test
 NCIT:C226984	# Medical Research Council Scale for Muscle Strength
 NCIT:C226985	# Domain Delta Questionnaire
+NCIT:C112376	# Percent Predicted Forced Expiratory Volume in 1 Second
+NCIT:C112384	# Percent Predicted Peak Expiratory Flow
+NCIT:C114184	# MRI Without Contrast
+NCIT:C117773	# Aggregate PR Interval
+NCIT:C117785	# Single Beat QTCB Interval
+NCIT:C119246	# Cardiac Output
+NCIT:C119259	# Mean Heart Rate by Electrocardiogram
+NCIT:C120919	# Left Ventricular End Diastolic Pressure
+NCIT:C135372	# End Diastolic Volume
+NCIT:C135373	# End Systolic Volume
+NCIT:C135494	# Maximal Expiratory Pressure
+NCIT:C135495	# Percent Predicted Maximal Expiratory Pressure
+NCIT:C135496	# Maximal Inspiratory Pressure
+NCIT:C135497	# Percent Predicted Maximal Inspiratory Pressure
+NCIT:C135498	# Peak Cough Flow
+NCIT:C138965	# Major Axis Internal Diameter
+NCIT:C138966	# Minor Axis Internal Diameter
+NCIT:C138967	# Isometric Muscle Strength
+NCIT:C139210	# Grip Strength
+NCIT:C139211	# Pinch Strength
+NCIT:C61545     # Bone Mineral Density Test
+NCIT:C139217	# Bone Mineral Density Z-Score
+NCIT:C139218	# Body Fat Percentage
+NCIT:C139219	# Lean Body Mass to Total Body Mass Ratio
+NCIT:C139220	# Brooke Modified Medical Research Council Manual Muscle Test Score
+NCIT:C139228	# Medical Research Council Manual Muscle Test Score, Extension
+NCIT:C139221 	# Brooke Modified Medical Research Council Manual Muscle Test Score, Plantar Flexion
+NCIT:C139229 	# Medical Research Council Manual Muscle Test Score, Plantar Flexion
+NCIT:C139222	# Brooke Modified Medical Research Council Manual Muscle Test Score, Flexion
+NCIT:C139230	# Medical Research Council Manual Muscle Test Score, Flexion
+NCIT:C139223	# Brooke Modified Medical Research Council Manual Muscle Test Score
+NCIT:C139231	# Medical Research Council Manual Muscle Test Score, Abduction
+NCIT:C139224 	# Brooke Modified Medical Research Council Manual Muscle Test Score, Lateral Rotation
+NCIT:C139232 	# Medical Research Council Manual Muscle Test Score, Lateral Rotation
+NCIT:C139225	# Brooke Modified Medical Research Council Manual Muscle Test Score, Dorsiflexion
+NCIT:C139233	# Medical Research Council Manual Muscle Test Score, Dorsiflexion
+NCIT:C139226	# Brooke Modified Medical Research Council Manual Muscle Test Score, Inversion
+NCIT:C139234	# Medical Research Council Manual Muscle Test Score, Inversion
+NCIT:C139227	# Brooke Modified Medical Research Council Manual Muscle Test Score, Eversion
+NCIT:C139235	# Medical Research Council Manual Muscle Test Score, Eversion
+NCIT:C142243	# Left Ventricular Mass Index
+NCIT:C15190	    # Needle Biopsy
+NCIT:C15341	    # Tracheotomy
+NCIT:C15386	    # Incisional Biopsy
+NCIT:C16809	    # Magnetic Resonance Imaging
+NCIT:C172266	# Global Longitudinal Strain
+NCIT:C209456	# Global Longitudinal Strain Measurement
+NCIT:C209439	# Circumferential Strain Measurement
+NCIT:C209440	# Late Gadolinium Enhancement
+NCIT:C209441	# Longitudinal Strain Measurement
+NCIT:C209442	# Dystrophin Measurement
+NCIT:C209455	# Global Circumferential Strain Measurement
+NCIT:C209532	# Late Gadolinium Enhancement Percentage
+NCIT:C209533	# Late Gadolinium Enhancement Segment Count
+NCIT:C209534	# Myocardial Extracellular Volume
+NCIT:C209535	# Right Ventricular Ejection Fraction
+NCIT:C209535	# Right Ventricular Ejection Fraction
+NCIT:C209536	# Segmental Late Gadolinium Enhancement
+NCIT:C35462	    # Left Ventricular Mass
+NCIT:C37946	    # Measurement of Left Ventricular Ejection Fraction
+NCIT:C38020	    # Left Ventricular Fractional Shortening Determination
+NCIT:C38020	    # Left Ventricular Fractional Shortening Determination
+NCIT:C41255	    # Interpretation
+NCIT:C41372	    # Peak Expiratory Flow
+NCIT:C46087	    # Contrast-enhanced Magnetic Resonance Imaging
+NCIT:C53682	    # Thick-Walled Vessels Present
+NCIT:C62086	    # Mean PR Duration
+NCIT:C62095	    # Mean Heart Rate
+NCIT:C62433	    # Valvular Stenosis
+NCIT:C63507	    # Range of Motion
+NCIT:C80363	    # Longitudinal Relaxation Time
+NCIT:C80364	    # Transverse Spin Relaxation Time
+NCIT:C80404	    # Transthoracic Echocardiography Test
+NCIT:C96610	    # N-Terminal ProB-type Natriuretic Peptide
+NCIT:C99524	    # Left Ventricular Ejection Fraction
+NCIT:C99524	    # Left Ventricular Ejection Fraction
+NCIT:C99977	    # Left Ventricular Dimension at End-Systole

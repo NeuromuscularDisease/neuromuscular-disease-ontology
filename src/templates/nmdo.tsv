@@ -8,3 +8,23 @@ NCIT:C87802	Physical Strength	owl:Class	NCIT:C25209	Measurement
 SO:0000400	sequence_attribute	owl:Class	PATO:0000001	quality
 SO:0001260	sequence_collection	owl:Class	PATO:0000001	quality
 SO:0001589	frameshift_variant	owl:Class	PATO:0000001	quality
+NCIT:C139220	Brooke Modified Medical Research Council Manual Muscle Test Score	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139228	"Medical Research Council Manual Muscle Test Score, Extension"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139221	"Brooke Modified Medical Research Council Manual Muscle Test Score, Plantar Flexion"	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139229	"Medical Research Council Manual Muscle Test Score, Plantar Flexion"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139222	"Brooke Modified Medical Research Council Manual Muscle Test Score, Flexion"	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139230	"Medical Research Council Manual Muscle Test Score, Flexion"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139223	Brooke Modified Medical Research Council Manual Muscle Test Score	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139231	"Medical Research Council Manual Muscle Test Score, Abduction"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139224	"Brooke Modified Medical Research Council Manual Muscle Test Score, Lateral Rotation"	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139232	"Medical Research Council Manual Muscle Test Score, Lateral Rotation"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139225	"Brooke Modified Medical Research Council Manual Muscle Test Score, Dorsiflexion"	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139233	"Medical Research Council Manual Muscle Test Score, Dorsiflexion"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139226	"Brooke Modified Medical Research Council Manual Muscle Test Score, Inversion"	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139234	"Medical Research Council Manual Muscle Test Score, Inversion"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C139227	"Brooke Modified Medical Research Council Manual Muscle Test Score, Eversion"	owl:Class	NCIT:C20993	Research or Clinical Assessment Tool
+NCIT:C139235	"Medical Research Council Manual Muscle Test Score, Eversion"	owl:Class	NCIT:C226984	Medical Research Council Scale for Muscle Strength
+NCIT:C138966	Minor Axis Internal Diameter	owl:Class	NCIT:C100084	Cardiac Diagnostic Procedure
+NCIT:C138965	Major Axis Internal Diameter	owl:Class	NCIT:C100084	Cardiac Diagnostic Procedure
+NCIT:C139217	Bone Mineral Density Z-Score	owl:Class	NCIT:C61545	Bone Mineral Density Test
+NCIT:C48789	Dual X-ray Absorptiometry	owl:Class	NCIT:C16502	Diagnostic Imaging Testing
