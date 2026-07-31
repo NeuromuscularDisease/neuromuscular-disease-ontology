@@ -142,3 +142,14 @@ HP:0030878	# Abnormality on pulmonary function testing
 HP:0032341	# Reduced forced vital capacity
 HP:0012496	# Reduced maximal inspiratory pressure
 HP:0012497	# Reduced maximal expiratory pressure
+HP:0001642	# Pulmonic stenosis
+HP:0001650	# Aortic valve stenosis
+HP:0001653	# Mitral regurgitation
+HP:0001659	# Aortic Regurgitation
+HP:0001718	# Mitral stenosis
+HP:0005180	# Tricuspid regurgitation
+HP:0010444	# Pulmonic regurgitation
+HP:0010446	# Tricuspid stenosis
+HP:0012834	# Right
+HP:0012835	# Left
+HP:0030879	# Interlobular septal thickening

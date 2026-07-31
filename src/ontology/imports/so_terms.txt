@@ -1,1 +1,2 @@
 SO:0000704	 # gene
+SO:0001589	 # frameshift_variant

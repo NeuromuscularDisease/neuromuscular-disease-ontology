@@ -1,0 +1,2 @@
+UBERON:0001379	# vastus lateralis
+UBERON:0001389	# soleus muscle
