@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                e81b0ab7e8e57f90da109a91769bb19356e000c8785cfeea9ea0226641dd99bc
+CONFIG_HASH=                43c21c817e35a85a7cebe66b2e78852445125d8560395b1f4022dffc0c9d5bf9
 
 
 # ----------------------------------------
@@ -187,7 +187,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  hgnc hp iao mondo ncit omo pato ro so uberon
+IMPORTS =  hgnc hp iao maxo mondo ncit omo pato ro so uberon
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -403,7 +403,6 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
-		 remove --select "<http://purl.obolibrary.org/obo/MAXO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \
@@ -523,6 +522,14 @@ mirror-hp: | $(TMPDIR)
 mirror-iao: | $(TMPDIR)
 	curl -L $(OBOBASE)/iao.owl --create-dirs -o $(TMPDIR)/iao-download.owl --retry 4 --max-time 500 && \
 	$(ROBOT) convert -i $(TMPDIR)/iao-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: maxo
+.PHONY: mirror-maxo
+.PRECIOUS: $(MIRRORDIR)/maxo.owl
+mirror-maxo: | $(TMPDIR)
+	curl -L $(OBOBASE)/maxo/maxo-base.owl --create-dirs -o $(TMPDIR)/maxo-download.owl --retry 4 --max-time 500 && \
+	$(ROBOT) convert -i $(TMPDIR)/maxo-download.owl -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: mondo

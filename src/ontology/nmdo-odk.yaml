@@ -59,7 +59,6 @@ import_group:
     - <http://purl.obolibrary.org/obo/ECTO_*>
     - <http://purl.obolibrary.org/obo/GO_*>
     - <http://purl.obolibrary.org/obo/HsapDv_*>
-    - <http://purl.obolibrary.org/obo/MAXO_*>
     - <http://purl.obolibrary.org/obo/MF_*>
     - <http://purl.obolibrary.org/obo/NBO_*>
     - <http://purl.obolibrary.org/obo/NCBITaxon_*>
@@ -84,6 +83,8 @@ import_group:
       module_type: filter
       base_iris:
         - IAO
+    - id: maxo
+      use_base: TRUE
     - id: mondo
       use_base: TRUE
     - id: ncit

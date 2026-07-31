@@ -2,9 +2,9 @@ format-version: 1.2
 import: http://purl.obolibrary.org/obo/nmdo/components/nmdo_extra.owl
 import: http://purl.obolibrary.org/obo/nmdo/imports/merged_import.owl
 ontology: nmdo
-property_value: http://purl.org/dc/terms/title "Neuromuscular Disease Ontology" xsd:string
 property_value: http://purl.org/dc/terms/description "A project ontology designed to support the integration and mapping of neuromuscular disease data in patient registries. This ontology is being prepared for submission for inclusion in the OBO Foundry." xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
+property_value: http://purl.org/dc/terms/title "Neuromuscular Disease Ontology" xsd:string
 
 [Typedef]
 id: http://purl.org/dc/terms/description

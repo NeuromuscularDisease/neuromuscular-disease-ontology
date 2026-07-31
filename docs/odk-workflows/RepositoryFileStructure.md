@@ -19,6 +19,7 @@ These are the current imports in NMDO
 | hgnc | https://w3id.org/biopragmatics/resources/hgnc/hgnc.ofn | filter |
 | hp | http://purl.obolibrary.org/obo/hp.owl | slme |
 | iao | http://purl.obolibrary.org/obo/iao.owl | filter |
+| maxo | http://purl.obolibrary.org/obo/maxo.owl | slme |
 | mondo | http://purl.obolibrary.org/obo/mondo.owl | slme |
 | ncit | https://evs.nci.nih.gov/ftp1/rdf/Thesaurus.owl | slme |
 | omo | http://purl.obolibrary.org/obo/omo.owl | filter |
