@@ -26,7 +26,6 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(ALL_TERMS) \
 		 remove --select "<http://purl.obolibrary.org/obo/ECTO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/GO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/HsapDv_*>" \
-		 remove --select "<http://purl.obolibrary.org/obo/MAXO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/MF_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NBO_*>" \
 		 remove --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" \

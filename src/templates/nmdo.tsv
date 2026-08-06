@@ -7,4 +7,4 @@ NCIT:C215116	Body Organ or System Test	owl:Class	NCIT:C25209	Measurement
 NCIT:C87802	Physical Strength	owl:Class	NCIT:C25209	Measurement
 SO:0000400	sequence_attribute	owl:Class	PATO:0000001	quality
 SO:0001260	sequence_collection	owl:Class	PATO:0000001	quality
-SO:0001589	frameshift_variant	owl:Class	PATO:0000001	quality
+SO:0001060	sequence_variant	owl:Class	PATO:0000001	quality

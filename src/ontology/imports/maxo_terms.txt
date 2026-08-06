@@ -1,0 +1,6 @@
+MAXO:0000503	#artificial respiration		
+MAXO:0000509	#positive controlled ventilation	
+MAXO:0000514	#chest wall oscillation	
+MAXO:0000516	#chest physiotherapy
+MAXO:0000622	#noninvasive positve-pressure ventilation		
+MAXO:0000002    #therapeutic procedure

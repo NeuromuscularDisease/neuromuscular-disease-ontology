@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/nmdo/components/nmdo_extra.owl>
-<http://purl.obolibrary.org/obo/nmdo/releases/2026-07-10/components/nmdo_extra.owl>
-Annotation(owl:versionInfo "2026-07-10")
+<http://purl.obolibrary.org/obo/nmdo/releases/2026-07-31/components/nmdo_extra.owl>
+Annotation(owl:versionInfo "2026-07-31")
 
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0000005>))
 Declaration(Class(<http://purl.obolibrary.org/obo/HP_0012823>))
@@ -19,6 +19,7 @@ Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C25209>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCIT_C87802>))
 Declaration(Class(<http://purl.obolibrary.org/obo/PATO_0000001>))
 Declaration(Class(<http://purl.obolibrary.org/obo/SO_0000400>))
+Declaration(Class(<http://purl.obolibrary.org/obo/SO_0001060>))
 Declaration(Class(<http://purl.obolibrary.org/obo/SO_0001260>))
 
 
@@ -49,6 +50,10 @@ SubClassOf(<http://purl.obolibrary.org/obo/NCIT_C87802> <http://purl.obolibrary.
 # Class: <http://purl.obolibrary.org/obo/SO_0000400> (<http://purl.obolibrary.org/obo/SO_0000400>)
 
 SubClassOf(<http://purl.obolibrary.org/obo/SO_0000400> <http://purl.obolibrary.org/obo/PATO_0000001>)
+
+# Class: <http://purl.obolibrary.org/obo/SO_0001060> (<http://purl.obolibrary.org/obo/SO_0001060>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/SO_0001060> <http://purl.obolibrary.org/obo/PATO_0000001>)
 
 # Class: <http://purl.obolibrary.org/obo/SO_0001260> (<http://purl.obolibrary.org/obo/SO_0001260>)
 
