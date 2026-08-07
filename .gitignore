@@ -7,6 +7,7 @@ bin/
 
 promot_V0.71.owl
 nmdo_promot.owl
+src/ontology/promot/nmdo-preview.owl
 
 *.tmp
 *.tmp.obo
