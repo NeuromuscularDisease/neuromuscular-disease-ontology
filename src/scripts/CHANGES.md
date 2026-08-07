@@ -5,6 +5,28 @@ Maintained for clinical research audit purposes.
 
 ---
 
+## 2026-08-07 — Session 5: Switch annotation property base to OBO PURL
+
+**Lead:** Mark Wilkinson
+
+### Problem identified
+
+Ontology curator review on PR #37 flagged that the `ID` field in
+`annotations-robot-template.csv` used the `https://w3id.org/nmdo/` URI base instead
+of the registered OBO PURL base (`http://purl.obolibrary.org/obo/nmdo`), which is
+what the rest of NMDO (classes, imports, `ONTBASE` in the Makefile) actually uses.
+
+### Changes made
+
+- **`parse_promot.rb`** and **`llm_match_promot.rb`**: `BASE_NS` changed from
+  `https://w3id.org/nmdo/` to `http://purl.obolibrary.org/obo/nmdo#`.
+- **`annotations-robot-template.csv`**: regenerated so all 14 property `ID`s use the
+  new base.
+- **`src/templates/README.md`**: `--prefix "nmdo: ..."` flags and namespace notes
+  updated to match.
+
+---
+
 ## 2026-07-12 — Session 4: Label/Definition fix + first full-PROMOT run
 
 **Lead:** Mark Wilkinson
@@ -190,7 +212,7 @@ See `project_robot_pipeline.md` in memory for full commands. Key requirement:
 
 ## Annotation properties introduced
 
-All declared in `annotations-robot-template.csv`. Namespace: `https://w3id.org/nmdo/`
+All declared in `annotations-robot-template.csv`. Namespace: `http://purl.obolibrary.org/obo/nmdo#`
 
 | Property | Source PROMOT property | Semantic role |
 |---|---|---|

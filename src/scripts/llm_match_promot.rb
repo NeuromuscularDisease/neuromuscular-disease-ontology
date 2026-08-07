@@ -21,7 +21,7 @@ require 'net/http'
 require 'json'
 require 'uri'
 
-BASE_NS     = 'https://w3id.org/nmdo/'.freeze
+BASE_NS     = 'http://purl.obolibrary.org/obo/nmdo#'.freeze
 SEARCH_BASE = 'https://simpathic.services/llm_search/search'.freeze
 TEMPLATES_DIR = File.expand_path('../templates', __dir__)
 MISSING_CSV   = File.join(TEMPLATES_DIR, 'promot-annotations-missing.csv')

@@ -6,6 +6,7 @@ semantic.cache
 bin/
 
 promot_V0.71.owl
+nmdo_promot.owl
 
 *.tmp
 *.tmp.obo
