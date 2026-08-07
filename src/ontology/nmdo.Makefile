@@ -119,10 +119,10 @@ $(PROMOTDIR):
 	mkdir -p $@
 
 # This goal creates a version of the NMDO that has the annotations extracted from the PROMOT ontology merged in for review purposes.
-.PHONY: promot_import
-promot_import: $(PROMOTDIR)/nmdo_promot_import.owl
+.PHONY: promot_integration
+promot_integration: $(PROMOTDIR)/nmdo-preview.owl
 
-$(PROMOTDIR)/nmdo_promot_import.owl: ../../nmdo-full.owl $(TEMPLATEDIR)/annotations-robot-template.csv $(TEMPLATEDIR)/promot-annotations-llm-matched.csv
+$(PROMOTDIR)/nmdo-preview.owl: ../../nmdo-full.owl $(TEMPLATEDIR)/annotations-robot-template.csv $(TEMPLATEDIR)/promot-annotations-llm-matched.csv
 	$(ROBOT) template -i $< --merge-before \
         --template $(TEMPLATEDIR)/annotations-robot-template.csv \
         --template $(TEMPLATEDIR)/promot-annotations-llm-matched.csv \
