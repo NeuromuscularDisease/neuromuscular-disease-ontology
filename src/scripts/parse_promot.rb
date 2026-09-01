@@ -23,7 +23,7 @@ warn "Loading #{NMDO_OWL}..."
 nmdo = RDF::Graph.load(NMDO_OWL, format: :rdfxml)
 warn "  #{nmdo.count} triples"
 
-BASE_NS = 'https://w3id.org/nmdo/'.freeze
+BASE_NS = 'http://purl.obolibrary.org/obo/nmdo#'.freeze
 
 # ── Routing: source ObjectProperty → target annotation key ───────────────────
 # :assesses is a special case: filler namespace determines the sub-key.

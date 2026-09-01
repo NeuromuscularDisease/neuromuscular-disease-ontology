@@ -83,7 +83,7 @@ corresponding PROMOT class with its full annotation data.
 ```bash
 # Declare annotation properties
 ~/bin/robot template \
-  --prefix "nmdo: https://w3id.org/nmdo/" \
+  --prefix "nmdo: http://purl.obolibrary.org/obo/nmdo#" \
   --input nmdo-full.owl --merge-before \
   --template src/templates/annotations-robot-template.csv \
   --output /tmp/step1-props.owl
@@ -95,7 +95,7 @@ corresponding PROMOT class with its full annotation data.
 
 # Apply class annotations
 ~/bin/robot template \
-  --prefix "nmdo: https://w3id.org/nmdo/" \
+  --prefix "nmdo: http://purl.obolibrary.org/obo/nmdo#" \
   --input /tmp/nmdo-merged.owl \
   --template src/templates/promot-annotations-llm-matched.csv \
   --output /tmp/annotations-only.owl
@@ -106,7 +106,7 @@ corresponding PROMOT class with its full annotation data.
   --output /tmp/nmdo-preview.owl
 ```
 
-> The `--prefix "nmdo: https://w3id.org/nmdo/"` flag is **required** on every
+> The `--prefix "nmdo: http://purl.obolibrary.org/obo/nmdo#"` flag is **required** on every
 > `robot template` call. Without it, ROBOT throws `ANNOTATION PROPERTY ERROR`
 > even when the properties are declared in the input ontology.
 
@@ -124,7 +124,7 @@ Then commit and push `promot_integration` branch and open PR targeting `main`.
 
 ## Annotation properties introduced
 
-All in namespace `https://w3id.org/nmdo/` (prefix `nmdo:`):
+All in namespace `http://purl.obolibrary.org/obo/nmdo#` (prefix `nmdo:`):
 
 | Property | Semantic role | Source in PROMOT |
 | --- | --- | --- |

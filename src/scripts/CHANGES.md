@@ -5,6 +5,105 @@ Maintained for clinical research audit purposes.
 
 ---
 
+## 2026-08-07 — Session 5: Switch annotation property base to OBO PURL
+
+**Lead:** Mark Wilkinson
+
+### Problem identified
+
+Ontology curator review on PR #37 flagged that the `ID` field in
+`annotations-robot-template.csv` used the `https://w3id.org/nmdo/` URI base instead
+of the registered OBO PURL base (`http://purl.obolibrary.org/obo/nmdo`), which is
+what the rest of NMDO (classes, imports, `ONTBASE` in the Makefile) actually uses.
+
+### Changes made
+
+- **`parse_promot.rb`** and **`llm_match_promot.rb`**: `BASE_NS` changed from
+  `https://w3id.org/nmdo/` to `http://purl.obolibrary.org/obo/nmdo#`.
+- **`annotations-robot-template.csv`**: regenerated so all 14 property `ID`s use the
+  new base.
+- **`src/templates/README.md`**: `--prefix "nmdo: ..."` flags and namespace notes
+  updated to match.
+
+---
+
+## 2026-07-12 — Session 4: Label/Definition fix + first full-PROMOT run
+
+**Lead:** Mark Wilkinson
+
+### Problem identified
+
+`promot-annotations-llm-matched.csv` populated its `LABEL` and `Definition` columns
+from the **source** PROMOT class's own label/definition, not the **matched NMDO
+class's**. `LABEL` is a reserved ROBOT template directive that asserts `rdfs:label`
+on the row's `ID` — since `ID` is the matched (existing) NMDO/NCIT/HP IRI, applying
+this template via ROBOT would have silently overwritten that class's real label with
+the PROMOT source class's label. E.g. the merged row for `NCIT_C202084` carried
+`Label: "Assessment using Sydney Swallow Questionnaire (SSQ)"` (a PROMOT class name)
+instead of the class's actual label. This affected every matched row, not just
+conflict rows.
+
+### Changes made
+
+- **`llm_match_promot.rb`**:
+  - `Label` column now comes from the search API's `top['label']` (the matched NMDO
+    class's real label) instead of the PROMOT source row.
+  - `Definition` is left blank for matched rows — the search API doesn't return the
+    target's definition, and the PROMOT source definition describes the wrong class.
+  - Internal bookkeeping change to support this: `matched` entries are now
+    `[row, promot_label]` tuples so the PROMOT source label is still available for the
+    conflicts report (`promot-annotations-llm-conflicts.csv`'s "PROMOT Labels" column)
+    without leaking into the CSV's `LABEL` column.
+  - Verified: matched output for `NCIT_C202084` now correctly shows
+    `Label: "Eating Assessment Tool-10"`.
+
+### First full-PROMOT run (unscoped — no root-iri)
+
+Ran the full pipeline end-to-end for the first time, without the SNOMED-subtree
+scoping used for Batch 1. Curator sign-off: match quality is not a gate — every
+matched/conflict row is manually reviewed by domain experts downstream, so low
+scores and many-to-one conflicts are expected, useful signal rather than errors to
+prevent.
+
+```bash
+ruby parse_promot.rb /home/osboxes/Desktop/promot_V0.71.owl ../../nmdo-full.owl
+ruby llm_match_promot.rb
+```
+
+| Metric | Value |
+| --- | --- |
+| PROMOT classes found (`PROMOT_0xxxxx` + WHO-ICD entity) | 338 |
+| Restriction-based annotations routed | 411 |
+| Direct IRI/SKOS matches (`promot-annotations-existing.csv`) | 4 (Pain, Vestibular labyrinth, Heart, Congenital) |
+| Sent to LLM matching | 334 |
+| LLM matched (score ≥ 0.20) | 334 / 334 |
+| Unique NMDO target classes after dedup | 201 |
+| Conflict groups (NMDO IRI claimed by >1 PROMOT class) | 67 (sizes 2–11; 200 of the 334 PROMOT classes fall into one) |
+
+Confirmed search index freshness before running: `simpathic.services/llm_search/health`
+reported `built_at: 2026-07-11T11:03:52Z`, after the `2026-07-10` NMDO release commit
+that last changed `nmdo-full.owl` — no reindex needed.
+
+Notable low-confidence outliers worth flagging to curators (not blocking, expected noise
+from now including top-level WHO-ICF category classes like "Activity"/"Participation"
+that were previously out of scope):
+
+- `Participation` → `disseminated` (0.2472) — barely above threshold, generic ICF
+  category vs. an oncology staging term
+- `Activity` → `Falls` (0.3577) — generic ICF category, weak match
+
+### Output files (regenerated, superseding Batch 1's scoped subset)
+
+- `promot-annotations-existing.csv` — 4 rows
+- `promot-annotations-llm-matched.csv` — 201 rows
+- `promot-annotations-llm-conflicts.csv` — 67 rows
+- `promot-annotations-llm-unmatched.csv` — 0 rows (nothing fell below threshold)
+
+Batch 1's prior scoped output is recoverable from git history (`c67a121`) if needed —
+not manually archived since it's a strict subset of this run's results.
+
+---
+
 ## 2026-06-12 — Session 3: Duplicate ID fix in llm_match_promot.rb
 
 **Lead:** Mark Wilkinson
@@ -113,7 +212,7 @@ See `project_robot_pipeline.md` in memory for full commands. Key requirement:
 
 ## Annotation properties introduced
 
-All declared in `annotations-robot-template.csv`. Namespace: `https://w3id.org/nmdo/`
+All declared in `annotations-robot-template.csv`. Namespace: `http://purl.obolibrary.org/obo/nmdo#`
 
 | Property | Source PROMOT property | Semantic role |
 |---|---|---|
