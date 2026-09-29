@@ -57,9 +57,47 @@ rescue StandardError => e
   []
 end
 
+# ── Rerank: prefer an exact match over a merely higher-scoring neighbor ─────────
+# The cosine-similarity top-1 is sometimes an imprecise/over-specified relative
+# of the true match (e.g. querying "proximal muscle weakness" top-scores on
+# "Proximal upper limb muscle weakness" while an exact "Proximal muscle
+# weakness" sits at rank 2 or 3 — measured 2026-09 against this same search
+# API). Since `search` already fetches TOP_K=3 candidates, check whether a
+# later one is an exact label/synonym match before settling for the raw top-1.
+def normalize_label(s)
+  (s || '').strip.downcase.gsub(/[^a-z0-9 ]+/, ' ').gsub(/\s+/, ' ').strip
+end
+
+# Returns [chosen_result_or_nil, reranked_boolean]. Preserves the script's
+# existing "unmatched" reporting behavior: if the raw top-1 is already below
+# min_score, nothing changes (still returns the true top-1 and its real score,
+# so sub-threshold rows keep showing curators the actual nearest match rather
+# than being masked to 0.0). Only swaps when the top-1 clears min_score but a
+# later candidate is BOTH an exact match AND itself clears min_score.
+def pick_exact_match(query, results, min_score)
+  return [nil, false] if results.empty?
+
+  top = results.first
+  return [top, false] if (top['score'] || 0) < min_score
+
+  nq = normalize_label(query)
+  exact = lambda do |r|
+    return true if normalize_label(r['label']) == nq
+    (r['synonyms'] || []).any? { |s| normalize_label(s) == nq }
+  end
+  return [top, false] if exact.call(top)
+
+  results[1..].each do |c|
+    next unless (c['score'] || 0) >= min_score
+    return [c, true] if exact.call(c)
+  end
+  [top, false]
+end
+
 # ── Process each missing class ─────────────────────────────────────────────────
 matched   = []
 unmatched = []
+reranked_count = 0
 
 data.each_with_index do |row, i|
   promot_iri = row[0]
@@ -74,16 +112,17 @@ data.each_with_index do |row, i|
   warn "  [#{i + 1}/#{data.size}] #{label}"
   results = search(label)
 
-  top       = results.first
+  top, reranked = pick_exact_match(label, results, MIN_SCORE)
   score     = top ? top['score'].round(4) : 0.0
   nmdo_iri  = top ? top['iri']   : ''
   nmdo_lbl  = top ? top['label'] : ''
+  reranked_count += 1 if reranked
 
   # Build a readable alternatives string for the reviewer (top 3, pipe-separated)
   alternatives = results.map { |r| "#{r['label']} [#{r['score'].round(3)}]" }.join(' | ')
 
   if score >= MIN_SCORE
-    warn "    ✓ #{nmdo_lbl} (#{score})"
+    warn "    ✓ #{nmdo_lbl} (#{score})#{reranked ? ' [reranked to exact match]' : ''}"
     # Build row in existing-file format: drop Type(3) and Parent(4) columns,
     # replace ID with the matched NMDO IRI, keep PROMOT IRI as cross-reference.
     review_note = "PROMOT mapping: '#{label}' (LLM score: #{score}) | Candidates: #{alternatives}"
@@ -105,7 +144,7 @@ data.each_with_index do |row, i|
   sleep 0.05  # be polite to the API
 end
 
-warn "Matched: #{matched.size} | Unmatched: #{unmatched.size}"
+warn "Matched: #{matched.size} | Unmatched: #{unmatched.size} | Reranked to exact match: #{reranked_count}"
 
 # ── Extra column headers ───────────────────────────────────────────────────────
 # LLM Score and LLM Top Candidates are CSV-only review aids (ROBOT ignores them).

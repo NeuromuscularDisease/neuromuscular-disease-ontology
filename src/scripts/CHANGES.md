@@ -5,6 +5,84 @@ Maintained for clinical research audit purposes.
 
 ---
 
+## 2026-09-08 — Session 6: Final PROMOT release, SapBERT embedder, top-3 rerank
+
+**Lead:** Mark Wilkinson
+
+### Full re-run against the final PROMOT release
+
+Ran the full pipeline end-to-end against `promot-full.owl` (versionIRI release
+`2026-08-17`) — the final, official PROMOT release, superseding the `promot_V0.71.owl`
+(`2026-03-13`) snapshot used in Session 4 — against `nmdo-full.owl` (release
+`2026-07-10`), confirmed byte-identical to both `origin/main` and `upstream/main`
+before running (so the branch's copy was already current with `main`, no separate
+fetch needed).
+
+```bash
+ruby parse_promot.rb /home/osboxes/Desktop/promot-full.owl ../../nmdo-full.owl
+ruby llm_match_promot.rb
+```
+
+| Metric | Value |
+| --- | --- |
+| PROMOT classes found | 389 (vs. 338 in Session 4 — final release added ~50 classes) |
+| Restriction-based annotations routed | 477 |
+| Direct IRI/SKOS matches | 4 |
+| Sent to LLM matching | 385 |
+| Unique NMDO targets after dedup | 201 |
+| Conflict groups | 86 (vs. 67 in Session 4) |
+
+### Embedder switch caught mid-session: initial run used the wrong model
+
+The NMDO search service (`nmdo-search`, in the SIMPATHIC2 repo) had switched its
+embedding model from `sentence-transformers/all-MiniLM-L6-v2` to the biomedical
+`cambridgeltl/SapBERT-UMLS-2020AB-all-lang-from-XLMR` — but only as an **uncommitted
+local change**, not yet deployed to the production service at
+`simpathic.services`. The pipeline's first run this session therefore silently used
+the old MiniLM model (confirmed after the fact: no `nmdo-search` containers running
+locally, the SapBERT change was uncommitted on SIMPATHIC2's `spreadsheet-2-care`
+branch, and `/llm_search/health`'s `built_at` hadn't moved since the July NMDO
+release). That run's numbers (385 sent to LLM matching, 383 matched / 2 unmatched,
+73 conflicts) were discarded — not archived, since the rerun below fully supersedes
+them.
+
+Fix: committed the embedder change (SIMPATHIC2 commit `3c6fe5c`, branch
+`spreadsheet-2-care` — **note this branch still needs merging to `main`**), pushed
+so it could be pulled and deployed to the server, confirmed deployment via
+`/llm_search/health` (`built_at` moved to `2026-09-08T08:29:13Z`, `term_count` 3942
+→ 4502), then re-ran `llm_match_promot.rb` — this is the run whose numbers appear
+in the table above and in `README.md`'s Run History.
+
+### Top-3 exact-match rerank picked up for the first time in a full run
+
+The `pick_exact_match()` rerank added 2026-09-02 (checks whether a lower-ranked
+candidate among the search API's top-3 is an exact label/synonym match before
+settling for a merely-higher-scoring imprecise top-1) fired once in this run
+(`Reranked to exact match: 1`) — the first full-batch confirmation it works as
+intended, previously only spot-verified against individual queries.
+
+### Notes on match quality under the new model
+
+SapBERT scores run on a different, generally higher and tighter scale than MiniLM's:
+this run's 385 LLM-matched rows ranged 0.41–0.83 (mean 0.589), with 0 falling below
+the 0.20 threshold (Session 4, on MiniLM, also had 0 below threshold but a lower/wider
+score spread). Manual spot-check found a handful of matches that look like
+overlapping-word artifacts rather than true concept matches (e.g. `Power of tibialis
+anterior` → `anterior neural tube`, `Power of rhomboid minor` → `presumptive
+hindbrain`) — consistent with the existing curation policy (every matched/conflict row
+is reviewed by domain experts; low-quality matches are useful signal, not a pipeline
+defect), not flagged as a regression. Only 6 of 201 deduplicated rows matched to the
+generic `physical quality` class — no sign of embedding collapse across the batch.
+
+### Output files (regenerated, superseding Session 4's)
+
+- `promot-annotations-existing.csv` — 4 rows
+- `promot-annotations-llm-matched.csv` — 201 rows
+- `promot-annotations-llm-conflicts.csv` — 86 rows
+- `promot-annotations-llm-unmatched.csv` — 0 rows
+
+---
+
 ## 2026-08-07 — Session 5: Switch annotation property base to OBO PURL
 
 **Lead:** Mark Wilkinson

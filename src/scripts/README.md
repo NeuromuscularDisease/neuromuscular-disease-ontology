@@ -37,6 +37,12 @@ Check `git branch` before starting — don't assume you're already on it.
   (`git log -1 -- ../../nmdo-full.owl`). The index does **not** rebuild automatically
   when the ontology changes — if it looks stale, someone needs to trigger
   `POST /llm_search/reindex` on the service before results can be trusted.
+  As of 2026-09 the service embeds with `cambridgeltl/SapBERT-UMLS-2020AB-all-lang-from-XLMR`
+  (biomedical/UMLS-tuned, cross-lingual), replacing the earlier general-purpose
+  `sentence-transformers/all-MiniLM-L6-v2`. This is configured on the search
+  service itself (see the `nmdo-search` project's `embedder/app.py`), not in
+  this repo — nothing to change here, but match quality/behavior reflects
+  whichever model is currently deployed there.
 - A local copy of the PROMOT OWL file. **`promot_V0.71.owl` is gitignored** — it is
   not checked into this repo. Supply your own path; it does not need to live inside
   the repo (e.g. `/home/osboxes/Desktop/promot_V0.71.owl` was used for the Session 4
@@ -64,6 +70,16 @@ Two scripts, run in sequence:
    `promot-annotations-llm-unmatched.csv`. When multiple PROMOT classes match the same
    NMDO class, they're merged into one row (annotations unioned) and also reported in
    `promot-annotations-llm-conflicts.csv` for curator review.
+
+The search API fetches the top 3 candidates per query (not just top 1). Before
+settling on a match, the script checks whether a lower-ranked candidate is an
+*exact* label/synonym match to the query while the raw top-1 is merely a
+higher-scoring but imprecise neighbor (e.g. an over-specified relative like
+"Proximal upper limb muscle weakness" outscoring an exact "Proximal muscle
+weakness" sitting at rank 2) — see `pick_exact_match()` in
+`llm_match_promot.rb`. All 3 candidates are still recorded in the `LLM Top
+Candidates` column regardless of which one is chosen, so reviewers can see
+the full picture.
 
 Every matched/conflict row carries an `rdfs:comment` with the LLM score and
 alternative candidates, so reviewers can see match provenance directly in Protégé or
@@ -107,6 +123,45 @@ graphs with no indexing, so it is slow relative to file size — expect on the o
 10+ minutes for a ~30MB combined PROMOT+NMDO load, not seconds. `llm_match_promot.rb`
 is bounded by one HTTP round-trip per unmatched class (roughly 0.3–0.5s including a
 polite 0.05s sleep) — a few hundred classes takes a few minutes.
+
+---
+
+## Run history
+
+| Metric | Session 6 (2026-09-08, SapBERT) | Session 4 (2026-07-12, MiniLM) |
+| --- | --- | --- |
+| PROMOT source | `promot-full.owl`, release `2026-08-17` | `promot_V0.71.owl`, release `2026-03-13` |
+| NMDO source | `nmdo-full.owl`, release `2026-07-10` | `nmdo-full.owl`, release `2026-07-10` |
+| Embedding model | `cambridgeltl/SapBERT-UMLS-2020AB-all-lang-from-XLMR` | `sentence-transformers/all-MiniLM-L6-v2` |
+| PROMOT classes found | 389 | 338 |
+| Direct IRI/SKOS matches | 4 | 4 |
+| Sent to LLM matching | 385 | 334 |
+| LLM matched (score ≥ 0.20) | 385 | 334 |
+| Unmatched (below threshold) | 0 | 0 |
+| Reranked to exact match | 1 | n/a (rerank added 2026-09) |
+| Unique NMDO targets after dedup | 201 | 201 |
+| Conflict groups | 86 | 67 |
+
+Session 6 is the first run against the final PROMOT release (389 classes found vs.
+338 in the earlier `V0.71` snapshot — the final release added roughly 50 classes),
+the first full run since the search service switched its embedding model from
+`all-MiniLM-L6-v2` to `cambridgeltl/SapBERT-UMLS-2020AB-all-lang-from-XLMR` (see
+Prerequisites, above), and the first full run to pick up the top-3 exact-match
+rerank (see "Pipeline overview", above), which fired once this run.
+
+SapBERT scores run on a different, generally higher and tighter scale than
+MiniLM's (this run: min 0.41 / mean 0.59 / max 0.83, all 385 classes above the
+0.20 threshold — vs. Session 4's 0/334 below threshold on the old model). A
+handful of individual matches look semantically odd on manual spot-check (e.g.
+overlapping-word matches rather than true concept matches); this is the same
+expected noise the curation policy already accounts for — every matched/conflict
+row is reviewed by domain experts before anything is applied to NMDO. Note the
+initial run this session (against the not-yet-redeployed MiniLM service) produced
+383 matched / 2 unmatched / 73 conflicts and was discarded once the model mismatch
+was caught — see `CHANGES.md`, Session 6, for the full story.
+
+`nmdo-full.owl` on this branch was confirmed byte-identical to both `origin/main`
+and `upstream/main` before running, so no separate "latest main" copy was needed.
 
 ---
 
